@@ -1,0 +1,109 @@
+/* Styles de base pour le thème sombre */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1a1a1a; /* Fond sombre */
+    color: #e0e0e0; /* Texte clair */
+    line-height: 1.6;
+}
+
+/* En-tête */
+header {
+    background-color: #121212;
+    color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffcc00; /* Couleur accent pour attirer l’attention */
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: #ffcc00; /* Lien couleur accent */
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 25px;
+    background-color: #222222;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #ffcc00; /* Titre de section en couleur accent */
+    margin-bottom: 15px;
+}
+
+p, ul {
+    margin-bottom: 15px;
+}
+
+ul li {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+/* Vidéo */
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+iframe {
+    border: 3px solid #ffcc00;
+    border-radius: 10px;
+}
+
+/* Liens de téléchargement et jeux */
+a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin-top: 20px;
+    border-top: 2px solid #333;
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #777777;
+}

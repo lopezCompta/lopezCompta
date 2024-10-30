@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compteur de Score</title>
+    <link rel="stylesheet" href="styleJeu.css">
+    <style>
+        #imageActivity {
+            width: 300px; /* largeur fixe */
+            height: 300px; /* hauteur fixe */
+            object-fit: cover; /* ajuste l'image sans déformation */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="main-content">
+
+            <table>
+                <tr></tr>
+            </table>
+            <div id="affichage">
+                <h1>Argent disponible : <span id="score">0</span> €     Clients disponibles : <span id="customers">600</span></h1>
+                <h1>Fatigue générale : <span id="fatigue"> 10 </span>    Prix : <span id="price">0</span> € </h1>
+                <h1>Jour : <span id="day">1</span> 
+                    Mois : <span id="month">1</span>
+                    Année : <span id="year">1</span> 
+                </h1>
+                <h1>Nombre d'employés : <span id="employees"> 0 </span></h1>
+                <h1>Nombre de Cabinets : <span id="cabinet"> 1 </span></h1>
+            </div>
+
+            <div id="boutons">
+                <button id="increaseButton" class="game-button">Passer des écritures comptables</button>
+                <button id="restButton" class="game-button">Se Reposer</button>
+                <br><br>
+                <button id="increasePriceButton" class="game-button">Augmenter les prix</button>
+                <button id="decreasePriceButton" class="game-button">Diminuer les prix</button>
+                <br><br>
+                <button id="hireButton" class="game-button">Embaucher</button>
+                <button id="openCabinetButton" class="game-button">Ouvrir un nouveau cabinet</button>
+                <br><br>
+                <button id="automationButton" class="game-button">Travail / repos automatique</button>
+                <button id="stopAutomationButton" class="game-button">Stop</button>
+                <br><br>
+            </div>
+
+            <div id="boutoninfo">
+                <button id="infoButton" class="game-button">Comment jouer</button>
+                <button id="menuButton">Revenir au Menu</button>
+            </div>
+        </div>
+
+        <div id="profil-section">
+            <h1>Votre profil : <span id="profil">"Youngblood"</span></h1>
+            <img id="imageProfil" src="image/youngblood.jpg" alt="Image de profil">
+            <br><br>
+            <h1>Activité : </h1>
+            <img id="imageActivity" src="image/intro.jpg" alt="Image de profil">
+        </div>
+    </div>
+
+    <script src="scriptIdleCompta.js"></script>
+</body>
+</html>

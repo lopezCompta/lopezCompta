@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercices d'Écritures Comptables</title>
+    <link rel="stylesheet" href="styleJeu.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Le FACTURATOR</h1>
+        <p id="exercise-display">Clique sur le bouton pour générer un exercice !</p>
+        <button id="exerciceButton">Nouvel Exercice</button>
+    </div>
+
+    <table class="entry-table">
+        <tbody>
+            
+            <tr>
+                <tr>
+                    <th class="header">Code Journal</th>
+                    <th class="header">Date</th>
+                    <th class="header">Libellé</th>
+                </tr>
+                    <tr>
+                        <td colspan="6" style="height: 3px;"></td> <!-- Ligne vide avec une hauteur spécifique -->
+                    </tr>
+                    <td><input type="text" placeholder="Ex : ACH ou VTE" id="codeJournal"/></td>
+                    <td><input type="text" placeholder="Ex:01/04/2024" id = "date"/></td>
+                    <td><input type="text" placeholder="Ex : 12345" id="libelle"/></td>
+
+                    <tr>
+                        <td colspan="6" style="height: 20px;"></td> <!-- Ligne vide avec une hauteur spécifique -->
+                    </tr>
+                <tr>
+                    <th class="header">Nom du Compte</th>
+                    <th class="header">Intitulé du Compte</th>
+                    <th class="header">Débit (€)</th>
+                    <th class="header">Crédit (€)</th>   
+                </tr>
+                <tr>
+                    <td colspan="6" style="height: 20px;"></td> <!-- Ligne vide avec une hauteur spécifique -->
+                </tr>
+                <td><input type="text" placeholder="Ex : 401" id="repNumCpt1" /></td>
+                <td><input type="text" placeholder="Ex : Fournisseur" id="intit1" /></td>
+                <td><input type="number" placeholder="0.00" id="repDeb1" /></td>
+                <td><input type="number" placeholder="0.00" id="repCred1" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="Ex : 512" id="repNumCpt2" /></td>
+                <td><input type="text" placeholder="Ex : Banque" id="intit2" /></td>
+                <td><input type="number" placeholder="0.00" id="repDeb2" /></td>
+                <td><input type="number" placeholder="0.00" id="repCred2" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="Ex : 512" id="repNumCpt3" /></td>
+                <td><input type="text" placeholder="Ex : Banque" id="intit3" /></td>
+                <td><input type="number" placeholder="0.00" id="repDeb3" /></td>
+                <td><input type="number" placeholder="0.00" id="repCred3" /></td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+    <div class="container">
+        <br>
+        <button id="generateDesignationsButton">Générer intitulés</button>
+        <button id="validationButton">Valider réponse</button>
+    </div>
+    <div class="scoring">
+        <h1>Score</h1>
+        <p id="exercise-display">Votre score est </p>
+        <p id="scoreAffiche">0</p>
+    </div>
+
+    <div class ="container">
+        <br><br><br><br>
+        <button id="infoButton">Information</button>
+        <button id="menuButton">Revenir au Menu</button>
+    </div>
+
+    <script src="script2.js"></script>
+</body>
+</html>
