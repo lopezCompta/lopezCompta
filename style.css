@@ -107,3 +107,14 @@ footer p {
     font-size: 0.9em;
     color: #777777;
 }
+
+
+.center {
+    text-align: center; /* Centre le contenu à l'intérieur du div */
+}
+
+img {
+    width: 80%; /* Définit la largeur de l'image à 80% de la largeur du conteneur */
+    max-width: 600px; /* Définit la largeur maximale de l'image */
+    height: auto; /* Maintient le ratio d'aspect */
+}
