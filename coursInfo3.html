@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapitre 3 : Les Bases de données</title>
+    <link rel="stylesheet" href="styleCours.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="cours.html">Retour aux cours</a>
+    </div>
+    
+    <h1>Chapitre 3 : Les Bases de Données</h1>
+    <h2>La base de données (définition)</h2>
+    <p>Une base de données est un ensemble structuré de données organisées de manière à être facilement accessibles, gérées
+        et mises à jour. Dans le contexte comptable, les
+        bases de données jouent un rôle crucial en stockant de manière efficace et sécurisée les informations financières de
+        l'entreprise. Elles permettent de centraliser
+        les données, facilitant ainsi leur analyse et leur utilisation pour la prise de décision. Les bases de données
+        modernes offrent également des fonctionnalités avancées
+        telles que la gestion des accès utilisateurs et la sauvegarde automatique des données.</p>
+    <h2>Le SGBDR</h2>
+    <p>Un Système de Gestion de Base de Données Relationnelle
+        (SGBDR) est un logiciel qui permet de stocker, organiser et gérer des données dans une base de données
+        relationnelle. Il assure l'intégrité, la sécurité
+        et la cohérence des données tout en facilitant leur manipulation et leur récupération. Les SGBDR les plus couramment
+        utilisés incluent MySQL,
+        Oracle, et Microsoft SQL Server. Dans un contexte comptable, un SGBDR est essentiel pour gérer efficacement les
+        grandes quantités de données financières,
+        permettant des opérations complexes comme la consolidation des comptes ou l'analyse financière détaillée.</p>
+    <h2>L'organisation des données (avec les tables)</h2>
+    <p>Dans une base de données relationnelle, les données sont organisées en tables, également appelées relations. Chaque
+        table représente une entité spécifique (par
+        exemple, clients, factures, produits) et contient des colonnes (attributs) et des lignes (enregistrements). Cette
+        structure permet une organisation logique et
+        efficace des données, facilitant leur accès et leur manipulation. Pour une entreprise, cette organisation peut se
+        traduire par des tables distinctes pour les
+        clients, les fournisseurs, les transactions, les produits, etc., chacune contenant les informations pertinentes à
+        son domaine.</p>
+    <h2>Les tables et les relations</h2>
+    <p>Les tables dans une base de données sont liées entre elles par des relations, créant ainsi une structure interconnectée. Ces relations sont établies à l'aide de
+        clés primaires et étrangères. Une clé primaire est un identifiant unique pour chaque enregistrement dans une table, tandis qu'une clé étrangère est une référence
+        à la clé primaire d'une autre table. Par exemple, une table "Factures" peut avoir une clé étrangère faisant référence à la table "Clients", établissant ainsi u
+        ne relation entre ces deux entités. Cette structure relationnelle permet de maintenir l'intégrité des données et facilite les requêtes complexes impliquant plusieurs tables.</p>
+    <h2>Le modèle relationnel</h2>
+    <p>Le modèle relationnel est un modèle de données qui représente les données sous forme de tables reliées e
+        ntre elles. Il se base sur la théorie mathématique des relations et offre une structure logique pour organiser et
+        manipuler les données. Dans ce modèle, ch
+        aque table représente une relation, et les liens entre les tables sont définis par des contraintes d'intégrité. Le
+        modèle relationnel offre plusieurs avan
+        tages, notamment :</p>
+    <ul>
+        <li>Flexibilité dans la structuration des données</li>
+        <li>Facilité de mise à jour et de maintenance</li>
+        <li>Possibilité d'ef
+            fectuer des requêtes complexes</li>
+        <li>Garantie de l'intégrité et de la cohérence des données</li>
+    </ul>
+    <h2>Les requêtes de projection (avec exemple
+        )</h2>
+    <p>Les requêtes de projection permettent de sélectionner des colonnes spécifiques d'une table. Elles sont utilisées pour
+        extraire uniqueme
+        nt les informations nécessaires, réduisant ainsi la quantité de données traitées. En SQL, ces requêtes utilisent la
+        clause SELECT suivie des noms des colonnes désirées.</p>
+    <p><strong>Exemple</strong> :</p>
+    <pre><code>SELECT nom, prenom, solde_compte FROM Clients;</code></pre>
+    <p>Cette requête extrait uniquement les colonnes nom, prénom et so
+        lde du compte de la table Clients, ignorant les autres informations potentiellement présentes dans la table.</p>
+    <h2>Les requêtes avec restriction (avec exemple)</h2>
+    <p>Les requêtes avec restriction permettent de filtrer les données selon des critères spécifiques. Elles utilisent la
+        clause WHERE pour définir les conditions que le
+        s enregistrements doivent satisfaire pour être inclus dans le résultat. Ces requêtes sont particulièrement utiles
+        pour analyser des sous-ensembles de données.</p>
+    <p><strong>Exemple</strong> :</p>
+    <pre><code>SELECT * FROM Factures WHERE montant > 1000 AND date_facture >= '2024-01-01';</code></pre>
+    <p>Cette requête sélectio
+        nne toutes les factures dont le montant est supérieur à 1000 et émises à partir du 1er janvier 2024.</p>
+    <h2>Les jointures (avec exemples)</h2>
+    <p>Les jointur
+        es permettent de combiner des données provenant de plusieurs tables en se basant sur les relations entre ces tables.
+        Elles sont essentielles pour extraire
+        des informations complexes qui sont réparties sur différentes tables. Il existe plusieurs types de jointures,
+        notamment les jointures internes, externes,
+        et croisées.</p>
+    <p><strong>Exemple de jointure interne</strong> :</p>
+    <pre><code>SELECT Factures.numero, Clients.nom, Factures.montant FROM Factures INNER JOIN Clients ON Factures.id_client = Clients.id;</code></pre>
+    <p>Cette requête combine les informations des factures avec les noms des clients correspondants.</p>
+    <h2>Simplification avec les alias des requêtes</h2>
+    <p>Les alias sont utilisés pour donner des noms temporaires aux tables ou aux
+        colonnes dans une requête. Ils permettent de simplifier l'écriture des requêtes, particulièrement lorsqu'elles
+        impliquent plusieurs tables ou
+        des noms de colonnes longs. Les alias rendent les requêtes plus lisibles et plus faciles à maintenir.</p>
+    <p><strong>Exemple</strong> :</p>
+    <pre><code>SELECT f.numero, c.nom, f.montant FROM Factures f INNER JOIN Clients c ON f.id_client = c.id;</code></pre>
+    <p>Ici, 'f' est un ali
+        as pour Factures et 'c' pour Clients, simplifiant ainsi la requête.</p>
+    <h2>Les fonctions dans les requêtes (avec exemples)</h2>
+    <p>Les fo
+    
+    
+    
+        nctions SQL permettent d'effectuer des calculs ou des manipulations sur les données lors de l'exécution des
+        requêtes. Elles peuvent êt
+        re utilisées pour des opérations arithmétiques, des manipulations de chaînes de caractères, ou des calculs de dates.
+        Les fonctions d'a
+        grégation comme SUM, AVG, COUNT sont particulièrement utiles en comptabilité.</p>
+    <p><strong>Exemples</strong> :</p>
+    <pre><code>SELECT SUM(montant) FROM Factures;</code></pre> (Calcule le total des montants des factures)
+    <pre><code>SELECT AVG(solde_compte) FROM;</code></pre> (Calcule la moyenne des soldes des comptes clients)
+    <pre><code>SELECT COUNT(*) FROM Transactions WHERE = CURDATE();</code></pre> (Compte le nombre de transactions du jour)
+    <h2>Les requêtes avec GROUP BY et HAVING (avec e
+        xemples)</h2>
+    <p>La clause GROUP BY est utilisée pour regrouper les résultats d'une requête selon une ou plusieurs colo
+        nnes. Elle est souvent utilisée avec des fonctions d'agrégation pour effectuer des calculs sur chaque groupe.
+        La clause HAVING permet d'appliquer des conditions aux groupes, similaire à WHERE mais pour les données agrégées.
+    </p>
+    <p><strong>Exemple</strong> :</p>
+    <pre><code>SELECT categorie, SUM(montant) as total_ventes FROM Ventes GROUP BY HAVING total_ventes > 10000;</code></pre>
+    <p>Cette requête groupe les ventes par catégorie et affiche
+        les catégories dont le total des ventes dépasse 10000.</p>
+    <h2>Les requêtes de tri avec ORDER BY (avec exemples)</h2>
+    <p>La clause ORDER BY est utilisée pour trier les résultats d'une requête selon une ou plus
+        ieurs colonnes. Elle permet de présenter les données dans un ordre spécifique, ce qui est souvent crucial pour
+        l'analyse financière et la présentation des rapports.
+        Le tri peut être ascendant (ASC, par défaut) ou descendant (DESC).</p>
+    <p><strong>Exemples</strong> :</p>
+    <pre><code>SELECT * FROM Clients ORDER BY nom ASC, prenom DESC;</code></pre> (Trie les clients par nom en ordre
+    alphabétique, puis par prénom en ordre inverse)
+    <pre><code>SELECT numero, date_facture, montant FROM Factures ORDER BY date_facture DESC, montant DESC;</code></pre>
+    (Trie les factures par date la plus récente, puis par montant le plus élevé)
+    <p>Ces requêtes de tri sont particulièrement utiles pour générer des rapports financiers structurés ou pour analyser les
+        tendances dans les données comptables.</p>
+
+
+        <br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#facture {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 40px;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fournisseur, .client {
+    margin-bottom: 30px;
+}
+
+.fournisseur {
+    float: left;
+    width: 50%;
+}
+
+.client {
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+strong {
+    color: #2c3e50;
+}
+
+.table-container {
+    width: 70%;
+    margin: 20px auto;
+}
+
+#compteTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#compteTable th, #compteTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#compteTable th {
+    background-color: #f2f2f2;
+}
+
+#compteTable input[type="text"], 
+#compteTable input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+#validateButton {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #27ae60;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#validateButton:hover {
+    background-color: #2ecc71;
+}
+
+.additional-inputs {
+    width: 70%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.additional-inputs input {
+    width: 45%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#score {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#facture {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 40px;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fournisseur, .client {
+    margin-bottom: 30px;
+}
+
+.fournisseur {
+    float: left;
+    width: 50%;
+}
+
+.client {
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+strong {
+    color: #2c3e50;
+}
+
+.facture-details {
+    margin-top: 40px;
+    border-top: 2px solid #ecf0f1;
+    padding-top: 20px;
+}
+
+.facture-details h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.facture-details p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.facture-details p strong {
+    font-weight: bold;
+}
+
+.net-a-payer {
+    font-size: 18px;
+    color: #e74c3c;
+    margin-top: 20px;
+    text-align: right;
+}
+
+@media print {
+    body {
+        background-color: #fff;
+    }
+    
+    #facture {
+        box-shadow: none;
+        border: none;
+    }
+    
+    button {
+        display: none;
+    }
+}
