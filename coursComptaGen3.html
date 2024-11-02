@@ -4,21 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapitre 3 : Les Mécanismes Comptables</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 20px 0;
-        }
-        th, td {
-            border: 1px solid #000;
-            padding: 10px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+
     <link rel="stylesheet" href="styleCours.css">
 </head>
 <body>
@@ -62,7 +48,7 @@
         
         <h3>Exemple d'écriture comptable simple</h3>
         <p>Lorsqu'une entreprise achète des marchandises pour un montant de 1 000 € à crédit, l'écriture comptable est la suivante :</p>
-        <table>
+        <div class = "container"><table>
             <thead>
                 <tr>
                     <th>Numéro de Compte</th>
@@ -85,11 +71,11 @@
                     <td>1 000 €</td>
                 </tr>
             </tbody>
-        </table>
+        </table></div>
 
         <h3>Exemple d'écriture comptable avec TVA</h3>
         <p>Si l'achat ci-dessus inclut une TVA de 20 %, le montant total à payer sera de 1 200 € (1 000 € + 200 € de TVA). L'écriture comptable sera alors :</p>
-        <table>
+        <div class = "container"><table>
             <thead>
                 <tr>
                     <th>Numéro de Compte</th>
@@ -118,72 +104,79 @@
                     <td>1 200 €</td>
                 </tr>
             </tbody>
-        </table>
+        </table></div>
         <p>Dans cet exemple, le compte 44566 enregistre la TVA déductible sur les achats, qui pourra être récupérée lors de la déclaration de TVA.</p>
         <h3>Exemple d'écriture comptable pour la Vente de Produits Finis</h3>
 <p>Pour une vente de produits finis d'une valeur de 2 500 € HT avec une TVA de 20 %, l'écriture comptable sera la suivante :</p>
-<table>
-    <thead>
-        <tr>
-            <th>Numéro de Compte</th>
-            <th>Intitulé</th>
-            <th>Débit</th>
-            <th>Crédit</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>701</td>
-            <td>Ventes de produits finis</td>
-            <td></td>
-            <td>2 500 €</td>
-        </tr>
-        <tr>
-            <td>44571</td>
-            <td>TVA collectée</td>
-            <td></td>
-            <td>500 €</td>
-        </tr>
-        <tr>
-            <td>411</td>
-            <td>Clients</td>
-            <td>3 000 €</td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Numéro de Compte</th>
+                <th>Intitulé</th>
+                <th>Débit</th>
+                <th>Crédit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>701</td>
+                <td>Ventes de produits finis</td>
+                <td></td>
+                <td>2 500 €</td>
+            </tr>
+            <tr>
+                <td>44571</td>
+                <td>TVA collectée</td>
+                <td></td>
+                <td>500 €</td>
+            </tr>
+            <tr>
+                <td>411</td>
+                <td>Clients</td>
+                <td>3 000 €</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 <h3>Exemple d'écriture comptable pour l'Achat de Matières Premières</h3>
 <p>Lors de l'achat de matières premières d'une valeur de 1 200 € HT avec une TVA de 20 %, l'écriture comptable sera la suivante :</p>
-<table>
-    <thead>
-        <tr>
-            <th>Numéro de Compte</th>
-            <th>Intitulé</th>
-            <th>Débit</th>
-            <th>Crédit</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>601</td>
-            <td>Achats de matières premières</td>
-            <td>1 200 €</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>44566</td>
-            <td>TVA déductible</td>
-            <td>240 €</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>401</td>
-            <td>Fournisseurs</td>
-            <td></td>
-            <td>1 440 €</td>
-        </tr>
-    </tbody>
-</table>
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Numéro de Compte</th>
+                <th>Intitulé</th>
+                <th>Débit</th>
+                <th>Crédit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>601</td>
+                <td>Achats de matières premières</td>
+                <td>1 200 €</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>44566</td>
+                <td>TVA déductible</td>
+                <td>240 €</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>401</td>
+                <td>Fournisseurs</td>
+                <td></td>
+                <td>1 440 €</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 
 
     </section>

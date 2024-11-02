@@ -61,6 +61,8 @@ body {
     border-radius: 12px;
     border: 2px solid #a3d2ca;
     overflow: auto;
+    justify-content: center;
+    display: flex;
 }
 
 /* Titres */
