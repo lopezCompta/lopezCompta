@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2 : Répartition Primaire et secondaire</title>
+    <link rel="stylesheet" href="styleCours.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="exercices.html">Retour aux Exercices</a>
+    </div>
+
+    <h1>Exercice 2 : Répartition Primaire et secondaire</h1>
+
+    <h2>Contexte :</h2>
+    <p>La société "MeublesPro SARL" est spécialisée dans la fabrication de meubles en bois. Elle dispose de trois ateliers principaux (Découpe, Assemblage, Finition), un centre auxiliaire (Entretien) et un centre administratif.</p>
+
+    <h2>Extrait de la balance annuel :</h2>
+
+    <ul> 
+        <li>601 - Achats de matières premières : 520 000 €</li> 
+        <li>6061 - Fournitures non stockables : 42 000 €</li> 
+        <li>6064 - Fournitures administratives : 9 500 €</li> 
+        <li>6132 - Locations immobilières : 75 000 €</li> 
+        <li>6156 - Maintenance : 28 000 €</li> 
+        <li>6161 - Assurances : 15 000 €</li> 
+        <li>6411 - Salaires : 680 000 €</li> 
+        <li>6811 - Dotations aux amortissements : 55 000 €</li> 
+    </ul>
+    
+    <h2>Charges supplétives :</h2>
+    <ul>
+        <li>Rémunération du dirigeant non salarié : 90 000 €</li>
+        <li>Intérêts sur capitaux propres (2,5% du capital social de 600 000 €) : 15 000 €</li>
+    </ul>
+
+    <h2>Informations complémentaires :</h2>
+    <ul>
+        <li>Surface occupée (en m²) :
+            Admin: 200, Entretien: 100, Découpe: 600, Assemblage: 700, Finition: 400</li>
+        <li>Effectif :
+            Admin: 12, Entretien: 4, Découpe: 20, Assemblage: 28, Finition: 16</li>
+        <li>Valeur des immobilisations (en milliers d'€) :
+            Admin: 150, Entretien: 100, Découpe: 450, Assemblage: 350, Finition: 200</li>
+        <li>Consommation d'électricité (en kWh) :
+            Admin: 15000, Entretien: 10000, Découpe: 80000, Assemblage: 60000, Finition: 35000</li>
+    </ul>   
+
+    <h2>Répartition secondaire :</h2>
+    <p>Répartition du centre Entretien basée sur les heures d'intervention : <br>
+        Admin: 200h, Découpe: 800h, Assemblage: 600h, Finition: 400h</p>
+
+    <h2>Unités d'oeuvres :</h2>
+    <ul>
+        <li>Atelier de découpe : 12 000 heures machine</li>
+        <li>Atelier d'assemblage : 18 000 heures de main-d'œuvre directe</li>
+        <li>Atelier de finition : 6 000 meubles finis</li>
+        <li>Centre administratif : 2 500 milliers d'euros de chiffre d'affaires</li>
+    </ul>
+    
+
+    <h2>Travail à réaliser :</h2>
+    <ul>
+        <li>Établir le tableau de répartition des charges indirectes en effectuant :
+        a) La répartition primaire <br>
+        b) La répartition secondaire du centre auxiliaire Entretien </li>
+        <li>Calculer le coût de l'unité d'œuvre pour chaque centre principal et le centre administratif. </li>
+        <li>Commenter brièvement les résultats obtenus.</li>
+    </ul>
+        
+        <br><br><br><br><br><br><br><br><br><br><br>
+
+
+        <h2>Correction de l'exercice</h2>
+
+<h3>1. Tableau de répartition des charges indirectes</h3>
+
+<h4>a) Répartition primaire</h4>
+
+<p>Tout d'abord, calculons les clés de répartition en pourcentage :</p>
+
+<ul>
+    <li>Surface : Admin 10%, Entretien 5%, Découpe 30%, Assemblage 35%, Finition 20%</li>
+    <li>Effectif : Admin 15%, Entretien 5%, Découpe 25%, Assemblage 35%, Finition 20%</li>
+    <li>Valeur immobilisations : Admin 12%, Entretien 8%, Découpe 36%, Assemblage 28%, Finition 16%</li>
+    <li>Consommation électricité : Admin 7.5%, Entretien 5%, Découpe 40%, Assemblage 30%, Finition 17.5%</li>
+</ul>
+
+<p>Ensuite, procédons à la répartition primaire des charges :</p>
+
+<div class="container">
+<table border="1">
+    <tr>
+        <th>Charges</th>
+        <th>Total</th>
+        <th>Admin</th>
+        <th>Entretien</th>
+        <th>Découpe</th>
+        <th>Assemblage</th>
+        <th>Finition</th>
+    </tr>
+    <tr>
+        <td>Fournitures non stockables</td>
+        <td>42 000</td>
+        <td>3 150</td>
+        <td>2 100</td>
+        <td>16 800</td>
+        <td>12 600</td>
+        <td>7 350</td>
+    </tr>
+    <tr>
+        <td>Fournitures admin</td>
+        <td>9 500</td>
+        <td>9 500</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Locations</td>
+        <td>75 000</td>
+        <td>7 500</td>
+        <td>3 750</td>
+        <td>22 500</td>
+        <td>26 250</td>
+        <td>15 000</td>
+    </tr>
+    <tr>
+        <td>Maintenance</td>
+        <td>28 000</td>
+        <td>3 360</td>
+        <td>2 240</td>
+        <td>10 080</td>
+        <td>7 840</td>
+        <td>4 480</td>
+    </tr>
+    <tr>
+        <td>Assurances</td>
+        <td>15 000</td>
+        <td>1 800</td>
+        <td>1 200</td>
+        <td>5 400</td>
+        <td>4 200</td>
+        <td>2 400</td>
+    </tr>
+    <tr>
+        <td>Salaires</td>
+        <td>680 000</td>
+        <td>102 000</td>
+        <td>34 000</td>
+        <td>170 000</td>
+        <td>238 000</td>
+        <td>136 000</td>
+    </tr>
+    <tr>
+        <td>Dotations amort.</td>
+        <td>55 000</td>
+        <td>6 600</td>
+        <td>4 400</td>
+        <td>19 800</td>
+        <td>15 400</td>
+        <td>8 800</td>
+    </tr>
+    <tr>
+        <td>Rémunération dirigeant</td>
+        <td>90 000</td>
+        <td>90 000</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Intérêts capitaux propres</td>
+        <td>15 000</td>
+        <td>15 000</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td><strong>Total</strong></td>
+        <td><strong>1 009 500</strong></td>
+        <td><strong>238 910</strong></td>
+        <td><strong>47 690</strong></td>
+        <td><strong>244 580</strong></td>
+        <td><strong>304 290</strong></td>
+        <td><strong>174 030</strong></td>
+    </tr>
+</table>
+</div>
+
+<h4>b) Répartition secondaire</h4>
+
+<p>Maintenant, procédons à la répartition secondaire du centre Entretien basée sur les heures d'intervention :</p>
+<p>Admin: 10%, Découpe: 40%, Assemblage: 30%, Finition: 20%</p>
+
+<div class="container">
+<table border="1">
+    <tr>
+        <th>Centres</th>
+        <th>Total</th>
+        <th>Admin</th>
+        <th>Entretien</th>
+        <th>Découpe</th>
+        <th>Assemblage</th>
+        <th>Finition</th>
+    </tr>
+    <tr>
+        <td>Total répartition primaire</td>
+        <td>1 009 500</td>
+        <td>238 910</td>
+        <td>47 690</td>
+        <td>244 580</td>
+        <td>304 290</td>
+        <td>174 030</td>
+    </tr>
+    <tr>
+        <td>Répartition Entretien</td>
+        <td>-</td>
+        <td>4 769</td>
+        <td>-47 690</td>
+        <td>19 076</td>
+        <td>14 307</td>
+        <td>9 538</td>
+    </tr>
+    <tr>
+        <td><strong>Total après répart. secondaire</strong></td>
+        <td><strong>1 009 500</strong></td>
+        <td><strong>243 679</strong></td>
+        <td><strong>0</strong></td>
+        <td><strong>263 656</strong></td>
+        <td><strong>318 597</strong></td>
+        <td><strong>183 568</strong></td>
+    </tr>
+</table>
+</div>
+
+<h3>2. Calcul du coût de l'unité d'œuvre</h3>
+
+<p>Enfin, calculons le coût de l'unité d'œuvre pour chaque centre :</p>
+
+<div class="container">
+<table border="1">
+    <tr>
+        <th>Centres</th>
+        <th>Total charges</th>
+        <th>Nombre d'UO</th>
+        <th>Coût de l'UO</th>
+    </tr>
+    <tr>
+        <td>Découpe</td>
+        <td>263 656</td>
+        <td>12 000 heures machine</td>
+        <td>21,97 €/heure machine</td>
+    </tr>
+    <tr>
+        <td>Assemblage</td>
+        <td>318 597</td>
+        <td>18 000 heures MOD</td>
+        <td>17,70 €/heure MOD</td>
+    </tr>
+    <tr>
+        <td>Finition</td>
+        <td>183 568</td>
+        <td>6 000 meubles finis</td>
+        <td>30,59 €/meuble fini</td>
+    </tr>
+    <tr>
+        <td>Admin</td>
+        <td>243 679</td>
+        <td>2 500 k€ de CA</td>
+        <td>97,47 €/k€ de CA</td>
+    </tr>
+</table></div>
+
+<h3>3. Commentaires sur les résultats</h3>
+
+<p>Analysons brièvement les résultats obtenus :</p>
+
+<ul>
+    <li>L'atelier de découpe a un coût d'UO de 21,97 € par heure machine, reflétant l'importance des équipements dans cette phase.</li>
+    <li>L'atelier d'assemblage a un coût d'UO de 17,70 € par heure de main-d'œuvre directe, indiquant une activité à forte intensité de main-d'œuvre.</li>
+    <li>L'atelier de finition a un coût de 30,59 € par meuble fini, intégrant les opérations finales et le contrôle qualité.</li>
+    <li>Le coût administratif représente 97,47 € pour 1000 € de chiffre d'affaires, soit environ 9,75% du CA, ce qui semble raisonnable pour une PME industrielle.</li>
+</ul>
+
+<p>Cette analyse permet de comprendre la structure des coûts de l'entreprise et peut servir de base pour des décisions de gestion, comme l'optimisation des processus ou la tarification des produits.</p>
+
+<br><br><br><br><br><br><br><br>    
+</body>
+</html>

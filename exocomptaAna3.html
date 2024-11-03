@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Valorisation des stocks</title>
+    <link rel="stylesheet" href="styleCours.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="exercices.html">Retour aux Exercices</a>
+    </div>
+
+    <h1>Exercice 3 : Valorisation des stocks</h1>
+
+    <h2>Exercice : Valorisation des stocks</h2>
+
+    <p>La société MeublesPro fabrique des tables en bois. Voici les mouvements de stock de pieds de table pour le mois de mars :</p>
+    
+    <div class="container"><table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Opération</th>
+            <th>Quantité</th>
+            <th>Prix unitaire</th>
+        </tr>
+        <tr>
+            <td>01/03</td>
+            <td>Stock initial</td>
+            <td>200</td>
+            <td>5,00 €</td>
+        </tr>
+        <tr>
+            <td>05/03</td>
+            <td>Achat</td>
+            <td>300</td>
+            <td>5,50 €</td>
+        </tr>
+        <tr>
+            <td>12/03</td>
+            <td>Sortie</td>
+            <td>350</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>20/03</td>
+            <td>Achat</td>
+            <td>250</td>
+            <td>5,80 €</td>
+        </tr>
+        <tr>
+            <td>28/03</td>
+            <td>Sortie</td>
+            <td>300</td>
+            <td>-</td>
+        </tr>
+    </table></div>
+    
+    <h2>Travail à faire :</h2>
+    <ul>
+        <li>Valorisez les sorties de stock et le stock final selon la méthode du CUMP après chaque entrée.</li>
+        <li>Valorisez les sorties de stock et le stock final selon la méthode du CUMP en fin de période.</li>
+        <li>Valorisez les sorties de stock et le stock final selon la méthode FIFO.</li>
+    </ul>
+    
+    <h2>Correction de l'exercice</h2>
+    
+    <h3>1. Méthode du CUMP après chaque entrée</h3>
+    
+    <div class="container"><table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Opération</th>
+            <th>Entrée Qté</th>
+            <th>Entrée PU</th>
+            <th>Sortie Qté</th>
+            <th>Sortie PU</th>
+            <th>Stock Qté</th>
+            <th>CUMP</th>
+        </tr>
+        <tr>
+            <td>01/03</td>
+            <td>Stock initial</td>
+            <td>200</td>
+            <td>5,00 €</td>
+            <td>-</td>
+            <td>-</td>
+            <td>200</td>
+            <td>5,00 €</td>
+        </tr>
+        <tr>
+            <td>05/03</td>
+            <td>Achat</td>
+            <td>300</td>
+            <td>5,50 €</td>
+            <td>-</td>
+            <td>-</td>
+            <td>500</td>
+            <td>5,30 €</td>
+        </tr>
+        <tr>
+            <td>12/03</td>
+            <td>Sortie</td>
+            <td>-</td>
+            <td>-</td>
+            <td>350</td>
+            <td>5,30 €</td>
+            <td>150</td>
+            <td>5,30 €</td>
+        </tr>
+        <tr>
+            <td>20/03</td>
+            <td>Achat</td>
+            <td>250</td>
+            <td>5,80 €</td>
+            <td>-</td>
+            <td>-</td>
+            <td>400</td>
+            <td>5,61 €</td>
+        </tr>
+        <tr>
+            <td>28/03</td>
+            <td>Sortie</td>
+            <td>-</td>
+            <td>-</td>
+            <td>300</td>
+            <td>5,61 €</td>
+            <td>100</td>
+            <td>5,61 €</td>
+        </tr>
+    </table></div>
+    
+    <p>Valorisation des sorties : (350 * 5,30 €) + (300 * 5,61 €) = 3 538,00 €</p>
+    <p>Valeur du stock final : 100 * 5,61 € = 561,00 €</p>
+    
+    <h3>2. Méthode du CUMP en fin de période</h3>
+    
+    <p>Total des entrées : (200 * 5,00 €) + (300 * 5,50 €) + (250 * 5,80 €) = 3 500,00 €</p>
+    <p>Quantité totale entrée : 200 + 300 + 250 = 750</p>
+    <p>CUMP = 3 500,00 € / 750 = 4,67 €</p>
+    
+    <p>Valorisation des sorties : (350 + 300) * 4,67 € = 3 035,50 €</p>
+    <p>Valeur du stock final : 100 * 4,67 € = 467,00 €</p>
+    
+    <h3>3. Méthode FIFO</h3>
+    
+    <div class="container"><table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Opération</th>
+            <th>Entrée Qté</th>
+            <th>Entrée PU</th>
+            <th>Sortie Qté</th>
+            <th>Sortie Montant</th>
+            <th>Stock Qté</th>
+        </tr>
+        <tr>
+            <td>01/03</td>
+            <td>Stock initial</td>
+            <td>200</td>
+            <td>5,00 €</td>
+            <td>-</td>
+            <td>-</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>05/03</td>
+            <td>Achat</td>
+            <td>300</td>
+            <td>5,50 €</td>
+            <td>-</td>
+            <td>-</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>12/03</td>
+            <td>Sortie</td>
+            <td>-</td>
+            <td>-</td>
+            <td>350</td>
+            <td>1 850,00 €</td>
+            <td>150</td>
+        </tr>
+        <tr>
+            <td>20/03</td>
+            <td>Achat</td>
+            <td>250</td>
+            <td>5,80 €</td>
+            <td>-</td>
+            <td>-</td>
+            <td>400</td>
+        </tr>
+        <tr>
+            <td>28/03</td>
+            <td>Sortie</td>
+            <td>-</td>
+            <td>-</td>
+            <td>300</td>
+            <td>1 650,00 €</td>
+            <td>100</td>
+        </tr>
+    </table></div>
+    
+    <p>Valorisation des sorties : (200 * 5,00 €) + (150 * 5,50 €) + (150 * 5,50 €) + (150 * 5,80 €) = 3 500,00 €</p>
+    <p>Valeur du stock final : 100 * 5,80 € = 580,00 €</p>
+    
+    <h3>Récapitulatif</h3>
+    
+    <div class="container"><table border="1">
+        <tr>
+            <th>Méthode</th>
+            <th>Valeur des sorties</th>
+            <th>Valeur du stock final</th>
+        </tr>
+        <tr>
+            <td>CUMP après chaque entrée</td>
+            <td>3 538,00 €</td>
+            <td>561,00 €</td>
+        </tr>
+        <tr>
+            <td>CUMP en fin de période</td>
+            <td>3 035,50 €</td>
+            <td>467,00 €</td>
+        </tr>
+        <tr>
+            <td>FIFO</td>
+            <td>3 500,00 €</td>
+            <td>580,00 €</td>
+        </tr>
+    </table></div>
+
+
+    <br><br><br><br><br><br><br><br>
+</body>
+</html>
