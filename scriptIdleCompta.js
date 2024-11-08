@@ -188,7 +188,7 @@ function automationStop() {
 }
 
 function backToMenu(){
-    window.location.href = "index.html";    
+    window.location.href = "jeux.html";    
 }
 
 // Ajoute les écouteurs d'événements aux boutons

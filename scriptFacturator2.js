@@ -6,6 +6,9 @@ exerciceButton.addEventListener("click", generateFacture)
 const validateButton = document.getElementById("validateButton");
 validateButton.addEventListener("click", validate)
 
+const backToMenuButton = document.getElementById("backToMenuButton");
+backToMenuButton.addEventListener("click", backToMenu);
+
 
 
 function generateFacture(){
@@ -295,4 +298,9 @@ document.getElementById("a11").addEventListener("input", () => updateInputValue(
 document.getElementById("a21").addEventListener("input", () => updateInputValue("a21", "a22"));
 document.getElementById("a31").addEventListener("input", () => updateInputValue("a31", "a32"));
 document.getElementById("a41").addEventListener("input", () => updateInputValue("a41", "a42"));
+
+
+function backToMenu(){
+    window.location.href = "jeux.html";    
+}
 
