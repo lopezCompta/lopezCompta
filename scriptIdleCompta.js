@@ -170,7 +170,7 @@ function automationLaunch() {
     // Vérifie si l'intervalle est déjà en cours
     if (intervalID === null) {
         intervalID = setInterval(() => {
-            if (fatigue > 0){increaseScore();}
+            if (fatigue > 0 && document.getElementById("customers").textContent>50){increaseScore();}
             else {rest();}
             document.getElementById('imageActivity').src = 'image/workOffice.jpg';
             
