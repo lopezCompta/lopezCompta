@@ -24,6 +24,7 @@ const cabinetElement = document.getElementById('cabinet');
 const increaseButton = document.getElementById('increaseButton');
 const increasePriceButton = document.getElementById('increasePriceButton');
 const decreasePriceButton = document.getElementById('decreasePriceButton');
+const hireTenButton = document.getElementById('hireTenButto');
 const restButton = document.getElementById('restButton');
 const openCabinetButton = document.getElementById('openCabinetButton');
 const openTenCabinetButton = document.getElementById('openCabinetButton');
