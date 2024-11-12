@@ -49,6 +49,7 @@ function increaseScore() {
         else if (score > 50000 && score < 100000){document.getElementById('imageProfil').src = 'image/requin.jpg';}
         else if (score > 100000 && score < 1000000){document.getElementById('imageProfil').src = 'image/shark.jpg';}
         else if (score > 1000000 && score < 1000000000){document.getElementById('imageProfil').src = 'image/wolf.jpg';}
+        else if (score > 1000000000){document.getElementById('imageProfil').src = 'image/final.png';}
         document.getElementById('imageActivity').src = 'image/work.jpg';
         }
         else {alert("Vous n'avez plus de clients disponibles, revenez le mois prochain !")}
