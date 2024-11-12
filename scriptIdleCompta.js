@@ -26,6 +26,7 @@ const increasePriceButton = document.getElementById('increasePriceButton');
 const decreasePriceButton = document.getElementById('decreasePriceButton');
 const restButton = document.getElementById('restButton');
 const openCabinetButton = document.getElementById('openCabinetButton');
+const openTenCabinetButton = document.getElementById('openCabinetButton');
 const infoButton = document.getElementById('infoButton');
 const automationButton = document.getElementById('automationButton');
 const stopAutomationButton = document.getElementById('stopAutomationButton');
@@ -136,6 +137,11 @@ function giveInfo() {
     alert("Bienvenue dans Idle-Compta, Dans ce jeu vous incarnez un Expert Comptable qui rêve de devenir riche. Pour cela vous pouvez passer des écritures comptables et embaucher de nouveaux collaborateurs pour vous aider. Très rapidement vous devrez ouvrir de nouveaux cabinets pour atteindre plus de clients. Gérez bien vos ressources et attention à bien vous reposer. Vous pouvez utiliser les raccourcis suivants : écritures P  se reposer R  et + - pour ajuster les tarifs. Embaucher un collaborateur coute 1000€ puis 2000€ par mois, ouvrir un nouveau cabinet coute 10 000€. Bon jeu !!")
 }
 
+function openTenCabinet(){
+    openCabinet();    openCabinet();    openCabinet();    openCabinet();    openCabinet();
+    openCabinet();    openCabinet();    openCabinet();    openCabinet();    openCabinet();
+}
+
 
 // Ajout d'un écouteur d'événements au bouton
 increaseButton.addEventListener('click', increaseScore);
@@ -144,6 +150,7 @@ decreasePriceButton.addEventListener('click', decreasePrice);
 restButton.addEventListener('click', rest);
 hireButton.addEventListener('click', hire);
 openCabinetButton.addEventListener('click', openCabinet);
+openTenCabinetButton.addEventListener('click', openTenCabinet);
 infoButton.addEventListener('click', giveInfo);
 
 document.addEventListener('keydown', (event) => {
