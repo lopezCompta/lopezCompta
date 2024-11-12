@@ -142,6 +142,10 @@ function openTenCabinet(){
     openCabinet();    openCabinet();    openCabinet();    openCabinet();    openCabinet();
 }
 
+function hireTen(){
+    hire();hire();hire();hire();hire();hire();hire();hire();hire();hire();
+}
+
 
 // Ajout d'un écouteur d'événements au bouton
 increaseButton.addEventListener('click', increaseScore);
@@ -149,6 +153,7 @@ increasePriceButton.addEventListener('click', increasePrice);
 decreasePriceButton.addEventListener('click', decreasePrice);
 restButton.addEventListener('click', rest);
 hireButton.addEventListener('click', hire);
+hireTenButton.addEventListener('click', hireTen);
 openCabinetButton.addEventListener('click', openCabinet);
 openTenCabinetButton.addEventListener('click', openTenCabinet);
 infoButton.addEventListener('click', giveInfo);
