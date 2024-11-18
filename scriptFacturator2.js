@@ -13,6 +13,8 @@ backToMenuButton.addEventListener("click", backToMenu);
 
 function generateFacture(){
     
+    document.querySelector('#exercise-display').innerHTML = " ";
+
     // 1- choisir le type de facture de façon aléatoire 
     if(document.getElementById("caseAvoir").checked){
     document.getElementById("sensFacture").innerHTML = Math.random() < 0.5 ? "d'achat" : "de vente";

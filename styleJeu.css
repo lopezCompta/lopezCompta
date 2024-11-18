@@ -137,13 +137,13 @@ button:hover {
 
 
 #facture {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
     padding: 30px;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, .15);
     font-size: 16px;
-    line-height: 24px;
+    line-height: 14px;
     font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
     color: #333;
     background-color: #fff;
