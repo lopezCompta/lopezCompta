@@ -118,6 +118,26 @@ function goVillage(){
     document.getElementById("validate").style.display = "none";
     document.getElementById("pass").style.display = "block";
     eventActual = "init";
+    if(document.getElementById("slot1").innerText=="Emplacement vide"){
+        if (parseInt(document.getElementById("gold").innerText)>50){
+            document.getElementById("buyItem1").disabled = false;
+        }
+    }
+    if(document.getElementById("slot2").innerText=="Emplacement vide"){
+        if (parseInt(document.getElementById("gold").innerText)>25){
+            document.getElementById("buyItem2").disabled = false;
+        }
+    }
+    if(document.getElementById("slot3").innerText=="Emplacement vide"){
+        if (parseInt(document.getElementById("gold").innerText)>300){
+            document.getElementById("buyItem3").disabled = false;
+        }
+    }
+    if(document.getElementById("slot4").innerText=="Emplacement vide"){
+        if (parseInt(document.getElementById("gold").innerText)>100){
+            document.getElementById("buyItem4").disabled = false;
+        }
+    }
 }
 function goDonjon(){
     document.getElementById("goDonjon").disabled = true;
@@ -132,10 +152,10 @@ function goDonjon(){
     if (lvlDuHero==1){// NIVEAU 1 banquier
         alea = 1;
     }
-    else if (lvlDuHero>1&&lvlDuHero<4){
+    else if (lvlDuHero==3){
         alea = getRandomInt(1,2); // NIVEAU 2 3 banquier rodeur
     }
-    else if (lvlDuHero>2&&lvlDuHero<6){
+    else if (lvlDuHero>3&&lvlDuHero<6){
         alea = getRandomInt(1,3); // NIVEAU 3 5 banquier rodeur
     }
     else if (lvlDuHero>5&&lvlDuHero<8){
