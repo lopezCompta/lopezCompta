@@ -506,7 +506,7 @@ function attack3(){
     if (eventActual=="fight"){
         setText("narration","Vous préparez un Bilan Apocalyptique dans lequel vous faîtes apparaitre le patrimoine ridicule de votre ennemi !");
         document.getElementById("test").value = "";
-        testActual = getRandomInt(1,2);
+        testActual = getRandomInt(1,10);
         if(testActual==1){
             setText("attackText","Pour préparer le Bilan vous devez vous souvenir, qu'est ce que l'ensemble des dettes et créances ?");
         }//
