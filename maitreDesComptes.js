@@ -599,7 +599,7 @@ function validate(){
         else if (testActual == 3 && document.getElementById("test").value == "0"){
             winFight();
         }
-        else if (testActual == 3 && document.getElementById("test").value == "net comm"){
+        else if (testActual == 3 && document.getElementById("test").value == "0"){
             winFight();
         }
         else if (testActual == 4 && document.getElementById("test").value == "net a payer"){
