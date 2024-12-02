@@ -596,64 +596,64 @@ function validate(){
         else if (testActual == 2 && document.getElementById("test").value == "net comm"){
             winFight();
         }
-        else if (testActual == 3 && document.getElementById("0").value == "net comm"){
+        else if (testActual == 3 && document.getElementById("test").value == "0"){
             winFight();
         }
-        else if (testActual == 3 && document.getElementById("rien").value == "net comm"){
+        else if (testActual == 3 && document.getElementById("test").value == "net comm"){
             winFight();
         }
-        else if (testActual == 4 && document.getElementById("rien").value == "net a payer"){
+        else if (testActual == 4 && document.getElementById("test").value == "net a payer"){
             winFight();
         }
-        else if (testActual == 4 && document.getElementById("rien").value == "Net a payer"){
+        else if (testActual == 4 && document.getElementById("test").value == "Net a payer"){
             winFight();
         }
-        else if (testActual == 4 && document.getElementById("rien").value == "net à payer"){
+        else if (testActual == 4 && document.getElementById("test").value == "net à payer"){
             winFight();
         }
-        else if (testActual == 4 && document.getElementById("rien").value == "le net à payer"){
+        else if (testActual == 4 && document.getElementById("test").value == "le net à payer"){
             winFight();
         }
-        else if (testActual == 4 && document.getElementById("rien").value == "le net a payer"){
+        else if (testActual == 4 && document.getElementById("test").value == "le net a payer"){
             winFight();
         }
-        else if (testActual == 5 && document.getElementById("rien").value == "tva en attente"){
+        else if (testActual == 5 && document.getElementById("test").value == "tva en attente"){
             winFight();
         }
-        else if (testActual == 5 && document.getElementById("rien").value == "TVA en attente"){
+        else if (testActual == 5 && document.getElementById("test").value == "TVA en attente"){
             winFight();
         }
-        else if (testActual == 5 && document.getElementById("rien").value == "Tva en attente"){
+        else if (testActual == 5 && document.getElementById("test").value == "Tva en attente"){
             winFight();
         }
-        else if (testActual == 6 && document.getElementById("rien").value == "non"){
+        else if (testActual == 6 && document.getElementById("test").value == "non"){
             winFight();
         }
-        else if (testActual == 6 && document.getElementById("rien").value == "Non"){
+        else if (testActual == 6 && document.getElementById("test").value == "Non"){
             winFight();
         }
-        else if (testActual == 7 && document.getElementById("rien").value == "oui"){
+        else if (testActual == 7 && document.getElementById("test").value == "oui"){
             winFight();
         }
-        else if (testActual == 7 && document.getElementById("rien").value == "Oui"){
+        else if (testActual == 7 && document.getElementById("test").value == "Oui"){
             winFight();
         }
-        else if (testActual == 8 && document.getElementById("rien").value == "non"){
+        else if (testActual == 8 && document.getElementById("test").value == "non"){
             winFight();
         }
-        else if (testActual == 9 && document.getElementById("rien").value == "non"){
+        else if (testActual == 9 && document.getElementById("test").value == "non"){
             winFight();
         }
-        else if (testActual == 10 && document.getElementById("rien").value == "oui"){
+        else if (testActual == 10 && document.getElementById("test").value == "oui"){
             winFight();
         }
-        else if (testActual == 8 && document.getElementById("rien").value == "Non"){
+        else if (testActual == 8 && document.getElementById("test").value == "Non"){
             winFight();
         }
-        else if (testActual == 9 && document.getElementById("rien").value == "Non"){
+        else if (testActual == 9 && document.getElementById("test").value == "Non"){
             winFight();
         }
-        else if (testActual == 10 && document.getElementById("rien").value == "Oui"){
+        else if (testActual == 10 && document.getElementById("test").value == "Oui"){
             winFight();
         }
         else{
