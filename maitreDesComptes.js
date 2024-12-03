@@ -480,7 +480,7 @@ function attack2(){
             setText("attackText","Dans une facture de Doit que doit apparaître au débit d'un compte 401 ?");
         }//0
         else if(testActual==4){
-            setText("attackText","Dans une facture de d'Avoir que doit apparaître au débit d'un compte 401 ?");
+            setText("attackText","Dans une facture d'Avoir que doit apparaître au débit d'un compte 401 ?");
         }//net a payer
         else if(testActual==5){
             setText("attackText","A quoi correspond le compte 4458 ?");
