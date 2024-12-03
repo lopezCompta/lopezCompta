@@ -584,79 +584,35 @@ function validate(){
         }
     }
     else if(eventActual == "fight" && attackActual==2){
-        if (testActual == 1 && document.getElementById("test").value == "rien"){
+        if (testActual == 1 && ["rien", "0"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 1 && document.getElementById("test").value == "0"){
+        else if (testActual == 2 && 
+            ["net commercial", "le net commercial", "net-commercial", "netcommercial"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 2 && document.getElementById("test").value == "net commercial"){
+        else if (testActual == 3 && ["rien", "0"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 2 && document.getElementById("test").value == "le net commercial"){
+        else if (testActual == 4 && ["le net a payer", "net a payer", "net à payer", "le net à payer"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 2 && document.getElementById("test").value == "net comm"){
+        else if (testActual == 5 && ["tva en attente","tva attente", "la tva en attente"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 3 && document.getElementById("test").value == "0"){
+        else if (testActual == 6 && ["non","faux"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 3 && document.getElementById("test").value == "0"){
+        else if (testActual == 7 && ["oui","vrai"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 4 && document.getElementById("test").value == "net a payer"){
+        else if (testActual == 8 && ["non","faux"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 4 && document.getElementById("test").value == "Net a payer"){
+        else if (testActual == 9 && ["non","faux"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 4 && document.getElementById("test").value == "net à payer"){
-            winFight();
-        }
-        else if (testActual == 4 && document.getElementById("test").value == "le net à payer"){
-            winFight();
-        }
-        else if (testActual == 4 && document.getElementById("test").value == "le net a payer"){
-            winFight();
-        }
-        else if (testActual == 5 && document.getElementById("test").value == "tva en attente"){
-            winFight();
-        }
-        else if (testActual == 5 && document.getElementById("test").value == "TVA en attente"){
-            winFight();
-        }
-        else if (testActual == 5 && document.getElementById("test").value == "Tva en attente"){
-            winFight();
-        }
-        else if (testActual == 6 && document.getElementById("test").value == "non"){
-            winFight();
-        }
-        else if (testActual == 6 && document.getElementById("test").value == "Non"){
-            winFight();
-        }
-        else if (testActual == 7 && document.getElementById("test").value == "oui"){
-            winFight();
-        }
-        else if (testActual == 7 && document.getElementById("test").value == "Oui"){
-            winFight();
-        }
-        else if (testActual == 8 && document.getElementById("test").value == "non"){
-            winFight();
-        }
-        else if (testActual == 9 && document.getElementById("test").value == "non"){
-            winFight();
-        }
-        else if (testActual == 10 && document.getElementById("test").value == "oui"){
-            winFight();
-        }
-        else if (testActual == 8 && document.getElementById("test").value == "Non"){
-            winFight();
-        }
-        else if (testActual == 9 && document.getElementById("test").value == "Non"){
-            winFight();
-        }
-        else if (testActual == 10 && document.getElementById("test").value == "Oui"){
+        else if (testActual == 10 && ["oui","vrai"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
         else{
