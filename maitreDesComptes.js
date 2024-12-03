@@ -153,16 +153,19 @@ function goDonjon(){
         alea = 1;
     }
     else if (lvlDuHero==3){
-        alea = getRandomInt(1,2); // NIVEAU 2 3 banquier rodeur
+        alea = getRandomInt(1,2); // NIVEAU 3 banquier rodeur
     }
-    else if (lvlDuHero>3&&lvlDuHero<6){
-        alea = getRandomInt(1,3); // NIVEAU 3 5 banquier rodeur
+    else if (lvlDuHero>2&&lvlDuHero<6){
+        alea = getRandomInt(1,3); // NIVEAU 3 5 
     }
     else if (lvlDuHero>5&&lvlDuHero<8){
-        alea = getRandomInt(1,4); // NIVEAU 6 7 banquier rodeur
+        alea = getRandomInt(2,4); // NIVEAU 6 7 
     }
     else if (lvlDuHero>7){
-        alea = getRandomInt(1,5); // NIVEAU 8+ banquier rodeur
+        alea = getRandomInt(3,5); // NIVEAU 8+ 
+    }
+    else {
+        alea = 5;
     }
 
 
