@@ -25,7 +25,7 @@ buyItem3Button.addEventListener("click",buy3);
 buyItem4Button.addEventListener("click",buy4);
 
 // TOUS LES TEXTES NARRATIFS
-const introTXT = "Vous entrez dans un donjon puant où règne l'anarchie et la terreur, saurez-vous affronter les monstres qui y règnent en maître avec votre plan comptable ?";
+const introTXT = "Vous entrez dans un donjon puant où règne l'anarchie et la terreur, saurez-vous affronter les monstres qui y règnent en maître avec votre dictionnaire ?";
 
 // La variable qui sert à savoir où on en est par défault elle est sur init
 // le programme fonctionne comme suit :
@@ -78,25 +78,25 @@ Une partie :
  */
 
 function buy1(){
-        document.getElementById("slot1").innerText = "Liste des Comptes luminescente +5 ATK";
+        document.getElementById("slot1").innerText = "Encrier de la Sagesse +5 ATK";
         document.getElementById("liste").style.display = "block";
         textPlus("atk",5);
         document.getElementById("buyItem1").disabled = true;
 }
 function buy2(){
-        document.getElementById("slot2").innerText = "Stylo Plume de phénix +15 hp";
+        document.getElementById("slot2").innerText = "Stylus de l'Accord Parfait +15 hp";
         document.getElementById("plume").style.display = "block";
         textPlus("hp",15);textPlus("hpMax",15);
         document.getElementById("buyItem2").disabled = true;
 }
 function buy3(){
-        document.getElementById("slot3").innerText = "costume très charismatique +50hp";
+        document.getElementById("slot3").innerText = "Sceau de l'Accord Subjunctif +50hp";
         document.getElementById("costume").style.display = "block";
         textPlus("hp",50);textPlus("hpMax",50);
         document.getElementById("buyItem3").disabled = true;
 }
 function buy4(){
-        document.getElementById("slot4").innerText = "Cravate magique +15 atk";
+        document.getElementById("slot4").innerText = "Livre des Règles Immuables +15 atk";
         document.getElementById("cravate").style.display = "block";
         textPlus("atk",15);
         document.getElementById("buyItem4").disabled = true;
@@ -156,10 +156,10 @@ function goDonjon(){
         alea = 1;
     }
     else if (lvlDuHero==3){
-        alea = getRandomInt(1,2); // NIVEAU 3
+        alea = getRandomInt(2,3); // NIVEAU 3
     }
     else if (lvlDuHero>3&&lvlDuHero<7){
-        alea = getRandomInt(1,3); // NIVEAU 4 5 6
+        alea = getRandomInt(2,3); // NIVEAU 4 5 6
     }
     else if (lvlDuHero>6&&lvlDuHero<9){
         alea = getRandomInt(2,4); // NIVEAU 7 8
@@ -172,35 +172,35 @@ function goDonjon(){
     }
 
 
-    if(alea == 1){monsterActual="Banquier Sauvage";}
-    else if (alea == 2){monsterActual="Rôdeur Fiscal";}
-    else if (alea == 3){monsterActual="Contrôleur Fantôme";}
-    else if (alea == 4){monsterActual="Oracle des Ressources Humaines";}
-    else if (alea == 5){monsterActual="Avocat du Diable";}
+    if(alea == 1){monsterActual="Malédiction de la Triple Négation";}
+    else if (alea == 2){monsterActual="Verbe Irrégulier Sauvage";}
+    else if (alea == 3){monsterActual="Dictionnaire Obscur";}
+    else if (alea == 4){monsterActual="Pléonasme Géant";}
+    else if (alea == 5){monsterActual="Fantôme de la Syntaxe";}
 
-    if (monsterActual == "Banquier Sauvage"){
-            setText("narration","Un Banquier Sauvage apparaît et vous menace de spéculer sur la valeur de votre cabinet !")
-            document.getElementById("imgMonster").src = "banquier.jpg";
+    if (monsterActual == "Malédiction de la Triple Négation"){
+            setText("narration","Une Malédiction de la Triple Négation apparaît et vous menace de dire des phrases incompréhensibles pour désorienter le héros. !")
+            document.getElementById("imgMonster").src = "image/malediction.jpg";
             document.getElementById("imgMonster").style.display = "block";
         }
-    else if (monsterActual == "Rôdeur Fiscal"){
-            setText("narration","Un Rôdeur Fiscal apparaît et vous menace de faire venir l'inspection des finances !")
-            document.getElementById("imgMonster").src = "rodeur.jpg";
+    else if (monsterActual == "Verbe Irrégulier Sauvage"){
+            setText("narration","Un Verbe Irrégulier Sauvage apparaît et vous menace de ne suivre aucune règle et de se conjuguer n'importe comment !")
+            document.getElementById("imgMonster").src = "image/verbe.jpg";
             document.getElementById("imgMonster").style.display = "block";
         }
-    else if (monsterActual == "Contrôleur Fantôme"){
-            setText("narration","Un Contrôleur Fantôme apparaît et vous menace de controler vos bilans pendant la nuit !")
-            document.getElementById("imgMonster").src = "controleur.jpg";
+    else if (monsterActual == "Dictionnaire Obscur"){
+            setText("narration","Un Dictionnaire Obscur apparaît et vous menace d'invoquer des mots rares pour vous effrayer. !")
+            document.getElementById("imgMonster").src = "image/dictionnaire.jpg";
             document.getElementById("imgMonster").style.display = "block";
         }
-    else if (monsterActual == "Oracle des Ressources Humaines"){
-            setText("narration","Une Oracle des Ressources Humaines apparaît et vous menace de révéler votre salaire à tous vos collègues pour semer la zizanie !")
-            document.getElementById("imgMonster").src = "oracle.jpg";
+    else if (monsterActual == "Pléonasme Géant"){
+            setText("narration","Un Pléonasme Géant apparaît et vous menace d'invoquer une entité verbeuse et redondante qui frappe deux fois à chaque attaque. !")
+            document.getElementById("imgMonster").src = "image/pleonasme.jpg";
             document.getElementById("imgMonster").style.display = "block";
         }
-    else if (monsterActual == "Avocat du Diable"){
-            setText("narration","Un Avocat du Diable apparaît, les Avocats sont la pire espèce, méfiez vous de ses pouvoirs !!!")
-            document.getElementById("imgMonster").src = "avocat.jpg";
+    else if (monsterActual == "Fantôme de la Syntaxe"){
+            setText("narration","Un Fantôme de la Syntaxe apparaît, Une présence invisible qui désorganise les pensées et les mouvements du héros. !!!")
+            document.getElementById("imgMonster").src = "image/fantomeSyntaxique.jpg";
             document.getElementById("imgMonster").style.display = "block";
         }
 }
@@ -265,35 +265,35 @@ function refreshBars(){
 function pass(){
     if(eventActual == "init"){
         eventActual = "intro fight";
-        setText("narration", "Ajustez votre cravate et préparez-vous au combat !");
+        setText("narration", "Ajustez votre dictionnaire et préparez-vous au combat !");
     }
     else if(eventActual == "intro fight"){
-        if(monsterActual == "Banquier Sauvage"){
-            setText("monster", "Banquier Sauvage :");
+        if(monsterActual == "Malédiction de la Triple Négation"){
+            setText("monster", "Malédiction de la Triple Négation :");
             setText("hpMonster","30");
             setText("separBar"," / ");
             setText("hpMaxMonster","30");  
         }
-        else if(monsterActual == "Rôdeur Fiscal"){
-            setText("monster", "Rôdeur Fiscal :");
+        else if(monsterActual == "Verbe Irrégulier Sauvage"){
+            setText("monster", "Verbe Irrégulier Sauvage :");
             setText("hpMonster","75");
             setText("separBar"," / ");
             setText("hpMaxMonster","75");  
         }
-        else if(monsterActual == "Contrôleur Fantôme"){
-            setText("monster", "Contrôleur Fantôme :");
+        else if(monsterActual == "Dictionnaire Obscur"){
+            setText("monster", "Dictionnaire Obscur :");
             setText("hpMonster","140");
             setText("separBar"," / ");
             setText("hpMaxMonster","140");  
         }
-        else if(monsterActual == "Oracle des Ressources Humaines"){
-            setText("monster", "Oracle des Ressources Humaines :");
+        else if(monsterActual == "Pléonasme Géant"){
+            setText("monster", "Pléonasme Géant :");
             setText("hpMonster","220");
             setText("separBar"," / ");
             setText("hpMaxMonster","220");  
         }
-        else if(monsterActual == "Avocat du Diable"){
-            setText("monster", "Avocat du Diable :");
+        else if(monsterActual == "Fantôme de la Syntaxe"){
+            setText("monster", "Fantôme de la Syntaxe :");
             setText("hpMonster","500");
             setText("separBar"," / ");
             setText("hpMaxMonster","500");  
@@ -305,51 +305,51 @@ function pass(){
         document.getElementById("hpMonsterBar").style.display = "block";
         document.getElementById("pass").style.display = "none";
         document.getElementById("launchSpell1").style.display = "block";
-        if(document.getElementById("spell2").innerText=="Facture Empoisonnée"){
+        if(document.getElementById("spell2").innerText=="Accord Fatal"){
             document.getElementById("launchSpell2").style.display = "block";}
             else{document.getElementById("launchSpell2").style.display = "none";}
-        if(document.getElementById("spell3").innerText=="Bilan Apocalyptique"){
+        if(document.getElementById("spell3").innerText=="Pluie de Ponctuation"){
             document.getElementById("launchSpell3").style.display = "block";}
             else{document.getElementById("launchSpell3").style.display = "none";}
     }
     else if(eventActual == "monster turn intro"){
-        if(monsterActual == "Banquier Sauvage"){
-            setText("narration", "Le Banquier Sauvage tente de contre-attaquer en spéculant sur la valeur de votre cabinet !");
+        if(monsterActual == "Malédiction de la Triple Négation"){
+            setText("narration", "La Malédiction de la Triple Négation tente de contre-attaquer !");
         }
-        else if(monsterActual == "Rôdeur Fiscal"){
-            setText("narration", "Le Rôdeur Fiscal tente de contre-attaquer en s'attaquant à vos déclarations fiscales !");
+        else if(monsterActual == "Verbe Irrégulier Sauvage"){
+            setText("narration", "Le Verbe Irrégulier Sauvage tente de contre-attaquer fiscales !");
         }
-        else if(monsterActual == "Contrôleur Fantôme"){
-            setText("narration", "Le Contrôleur Fantôme tente de contre-attaquer en controlant toutes vos écritures !");
+        else if(monsterActual == "Dictionnaire Obscur"){
+            setText("narration", "Le Dictionnaire Obscur tente de contre-attaquer !");
         }
-        else if(monsterActual == "Oracle des Ressources Humaines"){
-            setText("narration", "L'Oracle des Ressources Humaines tente de contre-attaquer en révélant les conventions collectives !");
+        else if(monsterActual == "Pléonasme Géant"){
+            setText("narration", "Le Pléonasme Géant tente de contre-attaquer !");
         }
-        else if(monsterActual == "Avocat du Diable"){
-            setText("narration", "L'Avocat du Diable tente de contre-attaquer en plaidant en faveur des TENEBRES !!");
+        else if(monsterActual == "Fantôme de la Syntaxe"){
+            setText("narration", "Le Fantôme de la Syntaxe tente de contre-attaquer !!");
         }
         setText("attackText","");
         eventActual = "monster turn attack";
     }
     else if(eventActual == "monster turn attack"){
-        if(monsterActual == "Banquier Sauvage"){
-            setText("narration","Le Banquier Sauvage vous inflige 3 points de dégats");
+        if(monsterActual == "Malédiction de la Triple Négation"){
+            setText("narration","La Malédiction de la Triple Négation vous inflige 3 points de dégats");
             textMinus("hp",3);refreshBars();  
         }
-        else if(monsterActual == "Rôdeur Fiscal"){
-            setText("narration","Le Rôdeur Fiscal vous inflige 15 points de dégats");
+        else if(monsterActual == "Verbe Irrégulier Sauvage"){
+            setText("narration","Le Verbe Irrégulier Sauvage vous inflige 15 points de dégats");
             textMinus("hp",15);refreshBars();
         }
-        else if(monsterActual == "Contrôleur Fantôme"){
-            setText("narration","Le Contrôleur Fantôme vous inflige 25 points de dégats");
+        else if(monsterActual == "Dictionnaire Obscur"){
+            setText("narration","Le Dictionnaire Obscur vous inflige 25 points de dégats");
             textMinus("hp",25);refreshBars();
         }
-        else if(monsterActual == "Oracle des Ressources Humaines"){
-            setText("narration","L'Oracle des Ressources Humaines vous inflige 35 points de dégats");
+        else if(monsterActual == "Pléonasme Géant"){
+            setText("narration","Le Pléonasme Géant vous inflige 35 points de dégats");
             textMinus("hp",35);refreshBars();
         }
-        else if(monsterActual == "Avocat du Diable"){
-            setText("narration","L'Avocat du Diable vous inflige 50 points de dégats");
+        else if(monsterActual == "Fantôme de la Syntaxe"){
+            setText("narration","Le Fantôme de la Syntaxe vous inflige 50 points de dégats");
             textMinus("hp",50);refreshBars();
         }
         eventActual = "fight";
@@ -371,33 +371,33 @@ function pass(){
         else{document.getElementById("launchSpell3").style.display = "none";}
     }
     else if(eventActual == "monster dead"){
-        if(monsterActual == "Banquier Sauvage"){
-            setText("narration","Le Banquier Sauvage a été vaincu et retourne en formation avec sa petite valise !");
+        if(monsterActual == "Malédiction de la Triple Négation"){
+            setText("narration","La Malédiction de la Triple Négation a été vaincue et retourne hanter des apprentis grammairiens !");
             setText("attackText","Félicitations ! Vous avez gagné 35 d'xp et 10 pièces d'or !");
             textPlus("gold",10);
             textPlus("exp",35);
       
         }
-        else if(monsterActual == "Rôdeur Fiscal"){
-            setText("narration","Le Rôdeur Fiscal a été vaincu et retourne rôder dans les piteuses entreprises !");
+        else if(monsterActual == "Verbe Irrégulier Sauvage"){
+            setText("narration","Le Verbe Irrégulier Sauvage a été vaincu et retourne hanter des apprentis grammairiens !");
             setText("attackText","Félicitations ! Vous avez gagné 50 d'xp et 30 pièces d'or !");
             textPlus("gold",30);
             textPlus("exp",50);
         }
-        else if(monsterActual == "Contrôleur Fantôme"){
-            setText("narration","Le Contrôleur Fantôme a été vaincu et retourne s'entraîner pour halloween !");
+        else if(monsterActual == "Dictionnaire Obscur"){
+            setText("narration","Le Dictionnaire Obscur a été vaincu et retourne hanter des apprentis grammairiens !");
             setText("attackText","Félicitations ! Vous avez gagné 75 d'xp et 50 pièces d'or !");
             textPlus("gold",50);
             textPlus("exp",75);
         }
-        else if(monsterActual == "Oracle des Ressources Humaines"){
-            setText("narration","L'Oracle des Ressources Humaines a été vaincue et retourne faire des fiches paies dans son entreprise minable !");
+        else if(monsterActual == "Pléonasme Géant"){
+            setText("narration","Le Pléonasme Géant a été vaincue et retourne hanter des apprentis grammairiens !");
             setText("attackText","Félicitations ! Vous avez gagné 75 d'xp et 100 pièces d'or !");
             textPlus("gold",100);
             textPlus("exp",75);
         }
-        else if(monsterActual == "Avocat du Diable"){
-            setText("narration","L'Avocat du Diable a été vaincu , vous êtes le maître incontestable du secteur tertiaire et personne ne peut vous battre !");
+        else if(monsterActual == "Fantôme de la Syntaxe"){
+            setText("narration","Le Fantôme de la Syntaxe a été vaincu , vous êtes le maître incontestable de la grammaire et personne ne peut vous battre !");
             setText("attackText","Félicitations ! Vous avez gagné 200 d'xp et 2500 pièces d'or !");
             textPlus("gold",250);           
             textPlus("exp",200);
@@ -423,83 +423,85 @@ function pass(){
 function attack1(){
     attackActual = 1;
     if (eventActual == "fight"){
-        setText("narration","Vous tentez de lancer un compte sur votre adversaire");
+        setText("narration","Vous tentez de corriger une faute d'orthographe sur votre adversaire");
         testActual = getRandomInt(1,10);
         document.getElementById("test").value = "";
         if (testActual == 1){
-            setText("attackText","Quel est le compte pour les achats de marchandises ?");
-        }//607
+            setText("attackText","Quelle est la bonne orthographe de ce mot dans la phrase : 'Elle est ____ à l'école.' ? (allée/allé)");
+        } // "allée/allé"
         else if(testActual == 2){
-            setText("attackText","Quel est le compte pour les ventes de marchandises ?");
-        }//707
+            setText("attackText","Comment écrit-on correctement ce mot : 'Les oiseaux ___ dans le ciel.' ? (volent/voles)");
+        } // "volent/voles"
         else if(testActual == 3){
-            setText("attackText","Quel est le compte pour Dettes fournisseurs ?");
-        }//401
+            setText("attackText","Complétez cette phrase avec la bonne orthographe : 'Il a ___ ses devoirs avant de sortir.' (fait/faits)");
+        } // "fait/faite"
         else if(testActual == 4){
-            setText("attackText","Quel est le compte pour Banque ?");
-        }//512
+            setText("attackText","Quel est le mot correctement orthographié dans cette phrase : 'Elle a ___ le livre sur la table.' ? (mis/mit)");
+        } // "mis/mi"
         else if(testActual == 5){
-            setText("attackText","Quel est le compte pour TVA Collectée ?");
-        }//44571
+            setText("attackText","Quel est le mot correct : 'Les préparatifs de la fête ___ terminés.' ? (sont/son)");
+        } // "préparatif/préparatifs
         else if(testActual == 6){
-            setText("attackText","Quel est le compte pour TVA Déductible sur Achats de Biens et Services ?");
-        }//44566
+            setText("attackText","Quel est le bon mot à utiliser : 'Les enfants ___ dans le jardin.' ? (jouent/joue)");
+        } // "jouent/joue"
         else if(testActual == 7){
-            setText("attackText","Quel est le compte pour TVA à décaisser ?");
-        }//44551
+            setText("attackText","Quelle est la bonne orthographe dans cette phrase : 'Elle a acheté du _____.' ? (pain/pin)");
+        } // "pain/pain"
         else if(testActual == 8){
-            setText("attackText","Quel est le compte pour Achat de Prestation de Services ?");
-        }//604
+            setText("attackText","Quel mot doit-on utiliser ici : 'La voiture ___ très vite.' ? (allait/allé)");
+        } // "allé/alle"
         else if(testActual == 9){
-            setText("attackText","Quel est le compte pour Escomptes Accordées ?");
-        }//665
+            setText("attackText","Quelle est la bonne orthographe dans cette phrase : 'Il a ___ ses clés.' ? (perdu/perdus)");
+        } // "perdu/perdu"
         else if(testActual == 10){
-            setText("attackText","Quel est le compte pour Acomptes et avances reçus d'un Client ?");
-        }//4191
+            setText("attackText","Quel est le mot correct dans cette phrase : 'Le livre est ___ sur la table.' ? (posé/posée)");
+        } // "posé/posée"
+        
         document.getElementById("launchSpell1").style.display = "none";
         document.getElementById("launchSpell2").style.display = "none";
         document.getElementById("launchSpell3").style.display = "none";
         document.getElementById("test").style.display = "block";
         document.getElementById("validate").style.display = "block";
-
     }
 }
 function attack2(){
     attackActual = 2;
     if (eventActual=="fight"){
-        setText("narration","Vous préparez une facture empoisonnée dans laquelle vous inversez débit et crédit !");
+        setText("narration","Vous vous préparez à corriger les erreurs grammaticales des ennemis, leur infligeant une confusion mortelle. !");
         document.getElementById("test").value = "";
         testActual = getRandomInt(1,10);
+        
         if(testActual==1){
-            setText("attackText","Dans une facture de Doit que doit apparaître au crédit d'un compte 607 ?");
-        }//0
+            setText("attackText","Quelle est la bonne orthographe du mot dans la phrase suivante : 'Elle ___ ravie de sa réussite.' ? (est/et)");
+        } // "est/éte" (correction : "est")
         else if(testActual==2){
-            setText("attackText","Dans une facture de Doit que doit apparaître au débit d'un compte 607 ?");
-        }//net commercial
+            setText("attackText","Complétez la phrase avec le bon mot : 'Le président ___ d'accord avec cette décision.' ? (était/été)");
+        } // "était/étaient" (correction : "était")
         else if(testActual==3){
-            setText("attackText","Dans une facture de Doit que doit apparaître au débit d'un compte 401 ?");
-        }//0
+            setText("attackText","Quel est le mot correctement orthographié dans cette phrase : 'Les oiseaux ____ chaque année.' ? (migres/migrent)");
+        } // "que/qu'ils" (correction : "qu'ils")
         else if(testActual==4){
-            setText("attackText","Dans une facture d'Avoir que doit apparaître au débit d'un compte 401 ?");
-        }//net a payer
+            setText("attackText","Complétez la phrase avec la bonne orthographe : 'Ils ___ aller au concert ce soir.' ? (pourraient/pouraient)");
+        } // "pouvaient/pouvait" (correction : "pouvaient")
         else if(testActual==5){
-            setText("attackText","A quoi correspond le compte 4458 ?");
-        }//TVA en attente
+            setText("attackText","Quelle est la bonne orthographe dans cette phrase : 'La question a été ___ par le professeur.' ? (résolu/résolue)");
+        } // "résolu/résolue" (correction : "résolue")
         else if(testActual==6){
-            setText("attackText","Est-ce que les réductions commerciales apparaissent sur les factures ?");
-        }//non
+            setText("attackText","Quel est le bon choix ici : 'La voiture ___ garée devant la maison.' ? (été/était)");
+        } // "est/était" (correction : "est")
         else if(testActual==7){
-            setText("attackText","Est-ce que les réductions financières apparaissent sur les factures ?");
-        }//oui
+            setText("attackText","Complétez la phrase correctement : 'Le chef a demandé à ce que la réunion ___ avant midi.' ? (soit/soie)");
+        } // "soit/soient" (correction : "soit")
         else if(testActual==8){
-            setText("attackText","Le compte 512 peut-il figurer dans le journal HA ou VTE ?");
-        }//non
+            setText("attackText","Quel mot faut-il utiliser ici : 'La maison ___ trois étages.' ? (a/as)");
+        } // "a/ont" (correction : "a")
         else if(testActual==9){
-            setText("attackText","Le compte 607 peut-il figurer dans le journal BQ ?");
-        }//non
+            setText("attackText","Quelle est l'orthographe correcte dans cette phrase : 'L'orchestre a ___ trois heures.' ? (joué/jouait)");
+        } // "pendant/pendant que" (correction : "pendant")
         else if(testActual==10){
-            setText("attackText","Le compte 401 peut-il figurer dans le journal BQ ?");
-        }//oui
+            setText("attackText","Quel est le bon mot à choisir : 'Les enfants ___ partis en vacances.' ? (sont/son)");
+        } // "sont/son" (correction : "sont")
+        
         document.getElementById("launchSpell1").style.display = "none";
         document.getElementById("launchSpell2").style.display = "none";
         document.getElementById("launchSpell3").style.display = "none";
@@ -510,39 +512,41 @@ function attack2(){
 function attack3(){
     attackActual = 3;
     if (eventActual=="fight"){
-        setText("narration","Vous préparez un Bilan Apocalyptique dans lequel vous faîtes apparaitre le patrimoine ridicule de votre ennemi !");
+        setText("narration","Vous préparez une Pluie de Ponctuation :Une tempête de points, virgules et points-virgules s’abat sur les adversaires, infligeant des dégâts perçants !");
         document.getElementById("test").value = "";
-        testActual = getRandomInt(1,2);
+        testActual = getRandomInt(1,10);
+        
         if(testActual==1){
-            setText("attackText","Pour préparer le Bilan vous devez vous souvenir, qu'est ce que l'ensemble des dettes et créances ?");
-        }//
+            setText("attackText","Quel est l'accord correct du participe passé dans la phrase suivante : 'Les documents qu'elle a ___ lire sont importants.' ? (pu/pus)");
+        } // "lire" (correction : "lus")
         else if(testActual==2){
-            setText("attackText","Pour préparer le Bilan vous devez vous souvenir, quelles sont les deux catégories du Bilan ?");
-        }
+            setText("attackText","Complétez correctement cette phrase : 'Les décisions que nous avons ___ étaient cruciales.' ? (prises/prisent)");
+        } // "prendre" (correction : "prises")
         else if(testActual==3){
-            setText("attackText","Les immobilisations apparaissent-elles au Passif ou à l'Actif ?");
-        }//Actif
+            setText("attackText","Dans cette phrase, quel est l'accord du participe passé : 'Les photos que j'ai ___ sont magnifiques.' ? (prises/prise)");
+        } // "prenez" (correction : "prises")
         else if(testActual==4){
-            setText("attackText","Le Capital apparait-il au Passif ou à l'Actif ?");
-        }//Passif
+            setText("attackText","Complétez la phrase avec le bon choix : 'Les critiques qu'ils ont ___ étaient injustes.' ? (eues/eu)");
+        } // "avoir" (correction : "eues")
         else if(testActual==5){
-            setText("attackText","Les comptes de classe 4 apparaissent-ils à l'actif ou passif ou les deux ?");
-        }//les deux
+            setText("attackText","Dans la phrase suivante, quelle est la bonne conjugaison du participe passé : 'Les livres que nous avons ___ sont en promotion.' ? (achetés/achetait)");
+        } // "acheter" (correction : "achetés")
         else if(testActual==6){
-            setText("attackText","Le résultat comptable apparait-il au bilan ?");
-        }//oui
+            setText("attackText","Quel est l'accord correct du mot dans la phrase : 'Les animaux qu’ils ont ___ sont de race pure.' ? (élevés/élevé)");
+        } // "élevé" (correction : "élevés")
         else if(testActual==7){
-            setText("attackText","L'argent disponible sur le compte en banque peut-il être retrouvé dans le compte de résultat ou dans le bilan ?");
-        }//le bilan
+            setText("attackText","Complétez correctement la phrase : 'Les articles qu'elle a ___ sont en solde.' ? (achetée/achetés)");
+        } // "lire" (correction : "lus")
         else if(testActual==8){
-            setText("attackText","A partir de quel document peut-on calculer un BFR ?");
-        }//le bilan
+            setText("attackText","Quel est l'accord correct dans cette phrase : 'Les résultats que vous avez ___ sont impressionnants.' ? (analysé/analysés)");
+        } // "analyser" (correction : "analysés")
         else if(testActual==9){
-            setText("attackText","A partir de quel document peut-on calculer les SIG ?");
-        }//le compte de résultat
+            setText("attackText","Complétez cette phrase correctement : 'Les options que nous avons ___ n’étaient pas adaptées.' ? (choisies/choisi)");
+        } // "choisir" (correction : "choisies")
         else if(testActual==10){
-            setText("attackText","A partir de quel document peut-on calculer la Trésorerie Nette ?");
-        }//le bilan
+            setText("attackText","Dans cette phrase, quelle est la bonne orthographe : 'Les leçons que j'ai ___ m’ont beaucoup appris.' ? (suivies/suivi)");
+        } // "suivi" (correction : "suivies")
+        
         document.getElementById("launchSpell1").style.display = "none";
         document.getElementById("launchSpell2").style.display = "none";
         document.getElementById("launchSpell3").style.display = "none";
@@ -550,110 +554,112 @@ function attack3(){
         document.getElementById("validate").style.display = "block";
     }
 }
+
 function validate(){
-    if (eventActual == "fight" && attackActual==1){
-        if (testActual == 1 && document.getElementById("test").value == "607"){
+    if (eventActual == "fight" && attackActual == 1){
+        if (testActual == 1 && document.getElementById("test").value == "allée"){
             winFight();
         }
-        else if (testActual == 2 && document.getElementById("test").value == "707"){
+        else if (testActual == 2 && document.getElementById("test").value == "volent"){
             winFight();
         }
-        else if (testActual == 3 && document.getElementById("test").value == "401"){
+        else if (testActual == 3 && document.getElementById("test").value == "fait"){
             winFight();
         }
-        else if (testActual == 4 && document.getElementById("test").value == "512"){
+        else if (testActual == 4 && document.getElementById("test").value == "mis"){
             winFight();
         }
-        else if (testActual == 5 && document.getElementById("test").value == "44571"){
+        else if (testActual == 5 && document.getElementById("test").value == "sont"){
             winFight();
         }
-        else if (testActual == 6 && document.getElementById("test").value == "44566"){
+        else if (testActual == 6 && document.getElementById("test").value == "jouent"){
             winFight();
         }
-        else if (testActual == 7 && document.getElementById("test").value == "44551"){
+        else if (testActual == 7 && document.getElementById("test").value == "pain"){
             winFight();
         }
-        else if (testActual == 8 && document.getElementById("test").value == "604"){
+        else if (testActual == 8 && document.getElementById("test").value == "allait"){
             winFight();
         }
-        else if (testActual == 9 && document.getElementById("test").value == "665"){
+        else if (testActual == 9 && document.getElementById("test").value == "perdu"){
             winFight();
         }
-        else if (testActual == 10 && document.getElementById("test").value == "4191"){
-            winFight();
-        }
-        else{
-            loseFight();
-        }
-    }
-    else if(eventActual == "fight" && attackActual==2){
-        if (testActual == 1 && ["rien", "0"].includes(document.getElementById("test").value.trim().toLowerCase())){
-            winFight();
-        }
-        else if (testActual == 2 && 
-            ["net commercial", "le net commercial", "net-commercial", "netcommercial"].includes(document.getElementById("test").value.trim().toLowerCase())){
-            winFight();
-        }
-        else if (testActual == 3 && ["rien", "0"].includes(document.getElementById("test").value.trim().toLowerCase())){
-            winFight();
-        }
-        else if (testActual == 4 && ["le net a payer", "net a payer", "net à payer", "le net à payer"].includes(document.getElementById("test").value.trim().toLowerCase())){
-            winFight();
-        }
-        else if (testActual == 5 && ["tva en attente","tva attente", "la tva en attente"].includes(document.getElementById("test").value.trim().toLowerCase())){
-            winFight();
-        }
-        else if (testActual == 6 && ["non","faux"].includes(document.getElementById("test").value.trim().toLowerCase())){
-            winFight();
-        }
-        else if (testActual == 7 && ["oui","vrai"].includes(document.getElementById("test").value.trim().toLowerCase())){
-            winFight();
-        }
-        else if (testActual == 8 && ["non","faux"].includes(document.getElementById("test").value.trim().toLowerCase())){
-            winFight();
-        }
-        else if (testActual == 9 && ["non","faux"].includes(document.getElementById("test").value.trim().toLowerCase())){
-            winFight();
-        }
-        else if (testActual == 10 && ["oui","vrai"].includes(document.getElementById("test").value.trim().toLowerCase())){
+        else if (testActual == 10 && document.getElementById("test").value == "posé"){
             winFight();
         }
         else{
             loseFight();
         }
     }
-    else if(eventActual == "fight" && attackActual == 3){
-        if (testActual == 1 && ["patrimoine","le patrimoine"].includes(document.getElementById("test").value.trim().toLowerCase())){
+    else if (eventActual == "fight" && attackActual == 2){
+        if (testActual == 1 && document.getElementById("test").value == "était"){
             winFight();
         }
-        else if (testActual == 2 && ["actif et passif","actif passif","l'actif et le passif"].includes(document.getElementById("test").value.trim().toLowerCase())){
+        else if (testActual == 2 && document.getElementById("test").value == "était"){
             winFight();
         }
-        else if (testActual == 3 && ["actif","l'actif","à l'actif","dans l'actif"].includes(document.getElementById("test").value.trim().toLowerCase())){
+        else if (testActual == 3 && document.getElementById("test").value == "migrent"){
             winFight();
         }
-        else if (testActual == 4 && ["au passif","dans le passif","passif"].includes(document.getElementById("test").value.trim().toLowerCase())){
+        else if (testActual == 4 && document.getElementById("test").value == "pouvaient"){
             winFight();
         }
-        else if (testActual == 5 && ["les deux","des deux cotés","a l'actif et au passif"].includes(document.getElementById("test").value.trim().toLowerCase())){
+        else if (testActual == 5 && document.getElementById("test").value == "résolue"){
             winFight();
         }
-        else if (testActual == 6 && ["oui","vrai"].includes(document.getElementById("test").value.trim().toLowerCase())){
+        else if (testActual == 6 && document.getElementById("test").value == "est"){
             winFight();
         }
-        else if (testActual == 7 && ["dans le bilan","le bilan","bilan","au bilan","un bilan","a partir d'un bilan","à partir d'un bilan"].includes(document.getElementById("test").value.trim().toLowerCase())){
+        else if (testActual == 7 && document.getElementById("test").value == "soit"){
             winFight();
         }
-        else if (testActual == 8 && ["dans le bilan","le bilan","bilan","au bilan","un bilan","a partir d'un bilan","à partir d'un bilan"].includes(document.getElementById("test").value.trim().toLowerCase())){
+        else if (testActual == 8 && document.getElementById("test").value == "a"){
             winFight();
         }
-        else if (testActual == 9 && ["compte de résultat","compte de resultat"," dans un compte de résultat", "a partir d'un compte de résultat", "à partir d'un compte de résultat"," à partir d'un compte de resultat"].includes(document.getElementById("test").value.trim().toLowerCase())){
+        else if (testActual == 9 && document.getElementById("test").value == "pendant"){
             winFight();
         }
-        else if (testActual == 10 && ["dans le bilan","le bilan","bilan","au bilan","un bilan","a partir d'un bilan","à partir d'un bilan"].includes(document.getElementById("test").value.trim().toLowerCase())){
+        else if (testActual == 10 && document.getElementById("test").value == "sont"){
             winFight();
         }
-        else{loseFight();}
+        else{
+            loseFight();
+        }
+    }
+    else if (eventActual == "fight" && attackActual == 3){
+        if (testActual == 1 && document.getElementById("test").value == "pu"){
+            winFight();
+        }
+        else if (testActual == 2 && document.getElementById("test").value == "prises"){
+            winFight();
+        }
+        else if (testActual == 3 && document.getElementById("test").value == "prises"){
+            winFight();
+        }
+        else if (testActual == 4 && document.getElementById("test").value == "eues"){
+            winFight();
+        }
+        else if (testActual == 5 && document.getElementById("test").value == "achetés"){
+            winFight();
+        }
+        else if (testActual == 6 && document.getElementById("test").value == "élevés"){
+            winFight();
+        }
+        else if (testActual == 7 && document.getElementById("test").value == "achetés"){
+            winFight();
+        }
+        else if (testActual == 8 && document.getElementById("test").value == "analysés"){
+            winFight();
+        }
+        else if (testActual == 9 && document.getElementById("test").value == "choisies"){
+            winFight();
+        }
+        else if (testActual == 10 && document.getElementById("test").value == "suivies"){
+            winFight();
+        }
+        else{
+            loseFight();
+        }
     }
 }
 function winFight(){
@@ -718,7 +724,7 @@ function upLevel(){
     else if (xp>199 && lvl == 2){
         document.getElementById("level").innerText = "3";
         textPlus("hpMax",15);textPlus("atk",2);
-        document.getElementById("spell2").innerText = "Facture Empoisonnée";
+        document.getElementById("spell2").innerText = "Accord Fatal";
         document.getElementById("expNextLevel").innerText = "300";
     }
     else if (xp>299 && lvl == 3){
@@ -744,7 +750,7 @@ function upLevel(){
     else if (xp>699 && lvl == 7){
         document.getElementById("level").innerText = "8";
         textPlus("hpMax",40);textPlus("atk",2);
-        document.getElementById("spell3").innerText = "Bilan Apocalyptique";
+        document.getElementById("spell3").innerText = "Pluie de Ponctuation";
         document.getElementById("expNextLevel").innerText = "800";
 
     }
@@ -824,7 +830,7 @@ function gameOver() {
 
     // Ajoute un message
     const message = document.createElement("p");
-    message.textContent = "Hélas, vous avez échoué à rétablir l'équilibre fiscal. Vous êtes désormais la risée du secteur tertiaire et envisagez de vous reconvertir dans les ressources humaines !";
+    message.textContent = "Hélas, vous avez échoué à rétablir l'équilibre grammatical. Vous êtes désormais la risée de la grammaire, il ne vous reste plus qu'à vous mettre aux mathématiques !";
     message.style.fontSize = "20px";
     message.style.fontWeight = "bold";
     message.style.marginBottom = "20px";
