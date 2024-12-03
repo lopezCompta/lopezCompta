@@ -156,10 +156,10 @@ function goDonjon(){
         alea = 2;
     }
     else if (lvlDuHero==3){
-        alea = getRandomInt(2,3); // NIVEAU 3
+        alea = getRandomInt(1,2); // NIVEAU 3
     }
     else if (lvlDuHero>3&&lvlDuHero<7){
-        alea = getRandomInt(2,3); // NIVEAU 4 5 6
+        alea = getRandomInt(1,3); // NIVEAU 4 5 6
     }
     else if (lvlDuHero>6&&lvlDuHero<9){
         alea = getRandomInt(2,4); // NIVEAU 7 8
