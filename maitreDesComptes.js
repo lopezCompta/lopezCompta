@@ -152,17 +152,20 @@ function goDonjon(){
     if (lvlDuHero==1){// NIVEAU 1 banquier
         alea = 1;
     }
+    else if (lvlDuHero==2){
+        alea = getRandomInt(1,2); // NIVEAU 2
+    }
     else if (lvlDuHero==3){
-        alea = getRandomInt(1,2); // NIVEAU 3 banquier rodeur
+        alea = getRandomInt(2,3); // NIVEAU 3
     }
-    else if (lvlDuHero>2&&lvlDuHero<6){
-        alea = getRandomInt(1,3); // NIVEAU 3 5 
+    else if (lvlDuHero>3&&lvlDuHero<7){
+        alea = getRandomInt(2,3); // NIVEAU 4 5 6
     }
-    else if (lvlDuHero>5&&lvlDuHero<8){
-        alea = getRandomInt(2,4); // NIVEAU 6 7 
+    else if (lvlDuHero>6&&lvlDuHero<9){
+        alea = getRandomInt(2,4); // NIVEAU 7 8
     }
-    else if (lvlDuHero>7){
-        alea = getRandomInt(3,5); // NIVEAU 8+ 
+    else if (lvlDuHero>8){
+        alea = getRandomInt(3,5); // NIVEAU 9+ 
     }
     else {
         alea = 5;
@@ -620,97 +623,36 @@ function validate(){
         }
     }
     else if(eventActual == "fight" && attackActual == 3){
-        if (testActual == 1 && document.getElementById("test").value == "le patrimoine"){
+        if (testActual == 1 && ["patrimoine","le patrimoine"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 1 && document.getElementById("test").value == "patrimoine"){
+        else if (testActual == 2 && ["actif et passif","actif passif","l'actif et le passif"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 1 && document.getElementById("test").value == "Le Patrimoine"){
+        else if (testActual == 3 && ["actif","l'actif","à l'actif","dans l'actif"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 2 && document.getElementById("test").value == "actif passif"){
+        else if (testActual == 4 && ["au passif","dans le passif","passif"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 2 && document.getElementById("test").value == "Actif passif"){
+        else if (testActual == 5 && ["les deux","des deux cotés","a l'actif et au passif"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 2 && document.getElementById("test").value == "actif et passif"){
+        else if (testActual == 6 && ["oui","vrai"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 2 && document.getElementById("test").value == "L'actif et le passif"){
+        else if (testActual == 7 && ["dans le bilan","le bilan","bilan","au bilan","un bilan","a partir d'un bilan","à partir d'un bilan"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 2 && document.getElementById("test").value == "l'actif et le passif"){
+        else if (testActual == 8 && ["dans le bilan","le bilan","bilan","au bilan","un bilan","a partir d'un bilan","à partir d'un bilan"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 2 && document.getElementById("test").value == "actif et Passif"){
+        else if (testActual == 9 && ["compte de résultat","compte de resultat"," dans un compte de résultat", "a partir d'un compte de résultat", "à partir d'un compte de résultat"," à partir d'un compte de resultat"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 3 && document.getElementById("test").value == "actif"){
+        else if (testActual == 10 && ["dans le bilan","le bilan","bilan","au bilan","un bilan","a partir d'un bilan","à partir d'un bilan"].includes(document.getElementById("test").value.trim().toLowerCase())){
             winFight();
         }
-        else if (testActual == 3 && document.getElementById("test").value == "Actif"){
-            winFight();
-        }
-        else if (testActual == 3 && document.getElementById("test").value == "L'actif"){
-            winFight();
-        }
-        else if (testActual == 4 && document.getElementById("test").value == "passif"){
-            winFight();
-        }
-        else if (testActual == 4 && document.getElementById("test").value == "Passif"){
-            winFight();
-        }
-        else if (testActual == 4 && document.getElementById("test").value == "Le passif"){
-            winFight();
-        }
-        else if (testActual == 5 && document.getElementById("test").value == "Les deux"){
-            winFight();
-        }
-        else if (testActual == 5 && document.getElementById("test").value == "les deux"){
-            winFight();
-        }
-        else if (testActual == 5 && document.getElementById("test").value == "Les Deux"){
-            winFight();
-        }
-        else if (testActual == 6 && document.getElementById("test").value == "oui"){
-            winFight();
-        }
-        else if (testActual == 6 && document.getElementById("test").value == "Oui"){
-            winFight();
-        }
-        else if (testActual == 7 && document.getElementById("test").value == "Dans le bilan"){
-            winFight();
-        }
-        else if (testActual == 7 && document.getElementById("test").value == "dans le bilan"){
-            winFight();
-        }
-        else if (testActual == 7 && document.getElementById("test").value == "Le bilan"){
-            winFight();
-        }
-        else if (testActual == 7 && document.getElementById("test").value == "le bilan"){
-            winFight();
-        }
-        else if (testActual == 8 && document.getElementById("test").value == "Le bilan"){
-            winFight();
-        }
-        else if (testActual == 8 && document.getElementById("test").value == "le bilan"){
-            winFight();
-        }
-        else if (testActual == 10 && document.getElementById("test").value == "Le bilan"){
-            winFight();
-        }
-        else if (testActual == 10 && document.getElementById("test").value == "le bilan"){
-            winFight();
-        }
-        else if (testActual == 9 && document.getElementById("test").value == "Le compte de résultat"){
-            winFight();
-        }
-        else if (testActual == 9 && document.getElementById("test").value == "le compte de résultat"){
-            winFight();
-        }
-
         else{loseFight();}
     }
 }
