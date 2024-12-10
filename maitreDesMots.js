@@ -363,10 +363,10 @@ function pass(){
         document.getElementById("test").value = "";
         document.getElementById("pass").style.display = "none";
         document.getElementById("launchSpell1").style.display = "block";
-        if(document.getElementById("spell2").innerText=="Facture Empoisonnée"){
+        if(document.getElementById("spell2").innerText=="Accord Fatal"){
         document.getElementById("launchSpell2").style.display = "block";}
         else{document.getElementById("launchSpell2").style.display = "none";}
-        if(document.getElementById("spell3").innerText=="Bilan Apocalyptique"){
+        if(document.getElementById("spell3").innerText=="Pluie de Ponctuation"){
         document.getElementById("launchSpell3").style.display = "block";}
         else{document.getElementById("launchSpell3").style.display = "none";}
     }
