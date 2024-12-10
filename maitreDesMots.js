@@ -745,12 +745,12 @@ function upLevel(){
     else if (xp>599 && lvl == 6){
         document.getElementById("level").innerText = "7";
         textPlus("hpMax",35);textPlus("atk",2);
+        document.getElementById("spell3").innerText = "Pluie de Ponctuation";
         document.getElementById("expNextLevel").innerText = "700";
     }
     else if (xp>699 && lvl == 7){
         document.getElementById("level").innerText = "8";
         textPlus("hpMax",40);textPlus("atk",2);
-        document.getElementById("spell3").innerText = "Pluie de Ponctuation";
         document.getElementById("expNextLevel").innerText = "800";
 
     }
