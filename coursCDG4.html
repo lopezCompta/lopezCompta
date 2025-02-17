@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapitre 4 : La Méthode Activity Based Costing</title>
+    <link rel="stylesheet" href="styleCours.css">
+</head>
+<body>
+    
+    <div class="navbar">
+        <a href="cours.html">Retour aux cours</a>
+    </div>
+
+<h1>Chapitre 4 : La Méthode ABC</h1>
+
+<h2> Une Méthode de Coût Complet</h2>
+
+<p>La Méthode ABC est une méthode de calcul de coût de revient complet. Elle permet donc de calculer le cout de revient d'un bien ou de plusieurs biens en discernant les charges directes et indirectes</p>
+<p>Contrairement à la Méthode des centre d'analyse, dans la méthode d'analyse on ne découpe pas le processus de production en atelier et en centre dans lesquelles les charges seront réparties</p>
+
+<br>
+
+<h3>Répartition des charges par Activité</h3>
+
+<p>Activité Base Costing signifie calcul de coût basé sur des activités. Toutes les charges supportées par l'entreprise vont donc être réparties dans différentes activités.</p>
+
+<p>L'activité est la clé de la méthode. Une activité est une action effectué par plusieurs personnes ou machines dans l'entreprise.</p>
+<p>Ces activités peuvent être des tâches très proches de la production directe comme du découpage, du collage ou de l'assemblage. Mais elles peuvent aussi être intellectuelles comme prendre une commande, gérer un litige en SAV Etc ...</p>
+
+<h2>Etape 1 : Découpage en activités</h2>
+<p>La première étape de la Méthode ABC consiste donc en un découpage en <u>activités</u> de toutes les opérations qui entrainent des charges directes et indirectes.</p>
+<p>En voici un exemple :</p>
+
+<table id="tableauclasses">
+    <style>#tableauclasses {width: 80%;border-collapse: collapse;margin: 20px auto;}</style>
+    <thead><tr><th>Activités</th><th>Montants</th></tr></thead>
+    <tbody>
+        <tr><td>Réceptionner les appels</td><td>25 000€</td></tr>
+        <tr><td>Organiser Planing</td><td>30 000€</td></tr>
+        <tr><td>Commander pièces détachés</td><td>12 000€</td></tr>
+        <tr><td>Suivre relation client</td><td>8 500€</td></tr>
+        <tr><td>Assemblage Machines</td><td>17 000€</td></tr>
+        <tr><td>Entretien Réseau</td><td>35 000€</td></tr>
+    </tbody>
+</table>
+
+<h2>Etape 2 : Déterminer des Inducteurs</h2>
+<p>Par définition les charges indirectes ne peuvent pas être imputées directement aux Activités que nous venons de déterminer.</p>
+<p>Nous utiliserons des Inducteurs pour les répartir, Les Inducteurs sont des sortes d'unités d'oeuvre mais qui présentent une grosse différence. Les inducteurs ne sont pas toujours en rapport avec l'ouvrage directement.</p>
+<p>En d'autres termes la méthode des Centres d'analyse redistribue les charges indirectes dans les centres principaux alors que la Méthode ABC va calculer directement le coût de revient avec des activités annexes comme le facturage ou autres tâches administratives</p>
+
+<br>
+
+<p>Les Inducteurs sont choisis pour ventiler quantitativement au mieux les différentes charges indirectes dans les activités, exemple :</p>
+<table id="tableauclasses">
+    <style>#tableauclasses {width: 80%;border-collapse: collapse;margin: 20px auto;}</style>
+    <thead><tr><th>Activités</th><th>Inducteurs</th><th>Montants</th></tr></thead>
+    <tbody>
+        <tr><td>Réceptionner les appels</td><td>Nombre d'appels</td><td>25 000€</td></tr>
+        <tr><td>Organiser Planing</td><td>Nombre d'appels</td><td>30 000€</td></tr>
+        <tr><td>Commander pièces détachés</td><td>Nombre de pièces</td><td>12 000€</td></tr>
+        <tr><td>Suivre relation client</td><td>Durée d'appels</td><td>8 500€</td></tr>
+        <tr><td>Assemblage Machines</td><td>Nombre de pièces</td><td>17 000€</td></tr>
+        <tr><td>Entretien Réseau</td><td>Nombre d'appels</td><td>35 000€</td></tr>
+    </tbody>
+</table>
+
+<h2>Etape 3 : Déterminer le montant d'un inducteur</h2>
+<p>Pour ce faire il faut connaître le nombre d'inducteurs comptés sur la période qui a générée les charges indirectes</p>
+<p>Attention ! Cette partie paraît facile mais est très souvent sous-estimée car difficile en pratique.</p>
+<p>Dans l'exemple suivant le nombre d'inducteur est donné mais il faut parfois le calculer :</p>
+
+<table id="tableauclasses">
+    <style>#tableauclasses {width: 80%;border-collapse: collapse;margin: 20px auto;}</style>
+    <thead><tr><th>Inducteurs</th><th>Quantité</th></tr></thead>
+    <tbody>
+        <tr><td>Nombre d'appels</td><td>30 000</td></tr>
+        <tr><td>Nombre de pièces</td><td>3500</td></tr>
+        <tr><td>Durée d'appels</td><td>600</td></tr>
+    </tbody>
+</table>
+
+<p>L'unité est toujours le nombre d'inducteur mais peut être ici en heures pour les durées d'appels ou en quantité pour le nombre de pièces.</p>
+
+<h2>Etape 3 Suite</h2>
+<p>Pour déterminer le cout d'un inducteur il faut maintenant regrouper les charges qui incombent aux mêmes inducteurs pour avoir le montant total pour chaque inducteur et le diviser par le nombre d'inducteur</p>
+
+<table id="tableauclasses">
+    <style>#tableauclasses {width: 80%;border-collapse: collapse;margin: 20px auto;}</style>
+    <thead><tr><th> </th><th>Nombre d'appels</th><th>Nombre de pièces</th><th>Durée d'appels</th></tr></thead>
+    <tbody>
+        <tr><td>Réceptionner les appels</td><td>25 000€</td><td>0</td><td>0</td></tr>
+        <tr><td>Organiser Planing</td><td>30 000€</td><td>0</td><td>0</td></tr>
+        <tr><td>Commander pièces détachés</td><td>0</td><td>12 000€</td><td>0</td></tr>
+        <tr><td>Suivre relation client</td><td>0</td><td>0</td><td>8 500€</td></tr>
+        <tr><td>Assemblage Machines</td><td>0</td><td>17 000</td><td>0</td></tr>
+        <tr><td>Entretien Réseau</td><td>35 000€</td><td>0</td><td>0</td></tr>
+        <tr><td>Total</td><td>90 000€</td><td>29 000€/td><td>8 500€</td></tr>
+        <tr><td>Volume</td><td>30 000</td><td>3 500</td><td>600</td></tr>
+        <tr><td>Cout d'un inducteur</td><td>3€</td><td>8,30€</td><td>14,20€</td></tr>
+    </tbody>
+</table>
+
+<h2>Etape 4 Calculer le cout de revient complet des produits</h2>
+
+<p>Pour calculer le cout de revient il faut déterminer le nombres d'inducteurs utilisés par produits et le multiplier par le cout d'inducteur trouvé dans l'étape 3.</p>
+
+<table id="tableauclasses">
+    <style>#tableauclasses {width: 80%;border-collapse: collapse;margin: 20px auto;}</style>
+    <thead><tr><th></th><th>Produit A</th><th>Produit B</th></tr></thead>
+    <tbody>
+        <tr><td>Nombre d'appels</td><td>10 000</td><td>12 000</td></tr>
+        <tr><td>Nombre de pièces</td><td>1100</td><td>1200</td></tr>
+        <tr><td>Durée d'appels</td><td>110</td><td>300</td></tr>
+    </tbody>
+</table>
+
+<table id="tableauclasses">
+    <style>#tableauclasses {width: 80%;border-collapse: collapse;margin: 20px auto;}</style>
+    <thead><tr><th></th><th>Produit A</th><th>Produit B</th></tr></thead>
+    <tbody>
+        <tr><td>Nombre d'appels</td><td>10 000*3</td><td>12 000*3</td></tr>
+        <tr><td>Nombre de pièces</td><td>1100*8,30</td><td>1200*8,30</td></tr>
+        <tr><td>Durée d'appels</td><td>110*14,20</td><td>300*14,20</td></tr>
+        <tr><td>Montant total Charges indirectes</td><td>31653,30€</td><td>50220</td></tr>
+    </tbody>
+</table>
+
+<p>Attention les montants trouvés ne sont pas les coûts de revient complet mais les totaux charges indirectes, auxquels il conviendra d'ajouter les charges directes.</p>
+
+
+<br><br><br><br><br><br><br><br><br>
+</body>
+</html>
