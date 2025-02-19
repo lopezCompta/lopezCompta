@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapitre 7 : Les Effets de Commerce</title>
+
+    <link rel="stylesheet" href="styleCours.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="cours.html">Retour aux cours</a>
+    </div>
+
+    <h1>Chapitre 7 : Les Effets de Commerce</h1>
+
+    <h2>La Lettre de Change Relevé LCR</h2>
+    
+    <p>La LCR est un document qui est signé par un fournisseur et un client lors d'une transaction. Il est généralement établi lors de la facturation.</p>
+    <p>Le Client s'engage à régler sa dette à une date donnée, appelée <u>a date d'échéance.</u>l Le Fournisseur s'assure que son client lui versera l'argent à une date précise.</p>
+
+    <h2>Les Avantages :</h2>
+    <p>Le fournisseur s'assure que son client le paiera à une date précise. Il peut aussi demander à sa banque de lui prêter la créance avant la date d'échéance.</p>
+    <p>Le Client quant à lui peut profiter de la LCR pour négocier avec son fournisseur une date d'échéance et optimiser sa trésorerie car la LCR est <u>un GAGE de paiement</u>.</p>
+
+    <h2>Les Inconvénients :</h2>
+    <p>Le fournisseur s'acquitte de frais de dossier qui correspondent au travail du banquier qui établie des carnets de LCR et du travail administratif qui consiste à gérer les LCR.</p>
+    <p>Il y a toujours des frais de dossiers pour le fournisseur !</p>
+    <p>Il existe aussi des frais financiers si le fournisseur <u>tire l'argent</u> autrement dit s'il demande à la banque de le lui préter.</p>
+
+    <p>Pour le client, la LCR est très engageante car en cas de défaut de paiement, le client aura automatiquement un fichier de non paiement auprès des établissements bancaires.</p>
+
+    <h2>Les écritures comptables :</h2>
+    <h3>Le Client : </h3>
+
+    <p>Il n'y a qu'une écriture à passer lors de la signature de la LCR par le client qui consiste à transformer la dette en dette de type LCR.</p>
+    <table id="tab1">
+        <style>  #tab1 { width: 80%;border-collapse:collapse;margin:auto}</style>
+        <tr><th>Numéro de Compte</th><th>Intitulé des comptes</th><th>Débit</th><th>Crédit</th></tr>
+        <tr><td>401</td><td>Dettes Fournisseurs</td><td>X</td><td></td></tr>
+        <tr><td>403</td><td>Effets à Payer</td><td></td><td>X</td></tr>
+    </table>
+    <p>Au moment du paiement on procède comme habituellement pour éteindre la dette :</p>
+    <table id="tab1">
+        <style>  #tab1 { width: 80%;border-collapse:collapse;margin:auto}</style>
+        <tr><th>Numéro de Compte</th><th>Intitulé des comptes</th><th>Débit</th><th>Crédit</th></tr>
+        <tr><td>403</td><td>Effets à Payer</td><td>X</td><td></td></tr>
+        <tr><td>512</td><td>Banque</td><td></td><td>X</td></tr>
+    </table>
+
+    <h3>Le Fournisseur : </h3>
+    <p>La première étape consiste aussi à transformer la créance en créance de type LCR lors de la signature de la LCR : </p>
+    <table id="tab1">
+        <style>  #tab1 { width: 80%;border-collapse:collapse;margin:auto}</style>
+        <tr><th>Numéro de Compte</th><th>Intitulé des comptes</th><th>Débit</th><th>Crédit</th></tr>
+        <tr><td>413</td><td>Effets à Recevoir</td><td>X</td><td></td></tr>
+        <tr><td>411</td><td>Créances Clients</td><td></td><td>X</td></tr>
+    </table>
+
+    <p>Si le fournisseur ne demande pas à la banque de lui préter la créance, on dit qu'il ne tire pas la créance, on parle alors de <u>remise à l'encaissement</u>.</p>
+    <p>Le Fournisseur envoie la LCR quelque jour avant la date d'échéance à la banque en choisissant l'option remise à l'encaissement.</p>
+    
+    <table id="tab1">
+        <style>  #tab1 { width: 80%;border-collapse:collapse;margin:auto}</style>
+        <tr><th>Numéro de Compte</th><th>Intitulé des comptes</th><th>Débit</th><th>Crédit</th></tr>
+        <tr><td>5113</td><td>Effets à L'Encaissement</td><td>X</td><td></td></tr>
+        <tr><td>413</td><td>Effets à Recevoir</td><td></td><td>X</td></tr>
+    </table>
+
+    <p>Le fournisseur doit payer des frais de dossier soumis à TVA mais pas d'intérêts car il n'y a pas eu d'emprunt.</p>
+    <table id="tab1">
+        <style>  #tab1 { width: 80%;border-collapse:collapse;margin:auto}</style>
+        <tr><th>Numéro de Compte</th><th>Intitulé des comptes</th><th>Débit</th><th>Crédit</th></tr>
+        <tr><td>512</td><td>Banque</td><td>X</td><td></td></tr>
+        <tr><td>627</td><td>Frais Bancaire</td><td>X</td><td></td></tr>
+        <tr><td>44566</td><td>TVA déductible sur A/BS</td><td>X</td><td></td></tr>
+        <tr><td>5113</td><td>Effets à L'Encaissement</td><td></td><td>X</td></tr>
+    </table>
+
+    <p>Si le fournisseur tire l'argent, on parle alors d'effets à l'escompte et le fournisseur va remettre la lettre à l'escompte. Autrement dit il va envoyer la LCR à la banque en demandant un effet d'escompte à partir d'une date précise. Des intérêts vont être calculés à au prorata temporis de la durée d'escompte.</p>
+    <table id="tab1">
+        <style>  #tab1 { width: 80%;border-collapse:collapse;margin:auto}</style>
+        <tr><th>Numéro de Compte</th><th>Intitulé des comptes</th><th>Débit</th><th>Crédit</th></tr>
+        <tr><td>5114</td><td>Effets à L'Escompte</td><td>X</td><td></td></tr>
+        <tr><td>413</td><td>Effets à Recevoir</td><td></td><td>X</td></tr>
+    </table>
+
+    <p>Le fournisseur doit payer des frais de dossier soumis à TVA plus des intérêts que vous devrez calculer vous-même dans le cadre du BTS.</p>
+    <table id="tab1">
+        <style>  #tab1 { width: 80%;border-collapse:collapse;margin:auto}</style>
+        <tr><th>Numéro de Compte</th><th>Intitulé des comptes</th><th>Débit</th><th>Crédit</th></tr>
+        <tr><td>512</td><td>Banque</td><td>X</td><td></td></tr>
+        <tr><td>627</td><td>Frais Bancaire</td><td>X</td><td></td></tr>
+        <tr><td>44566</td><td>TVA déductible sur A/BS</td><td>X</td><td></td></tr>
+        <tr><td>661</td><td>Intérêts bancaires</td><td>X</td><td></td></tr>
+        <tr><td>5114</td><td>Effets à L'Encaissement</td><td></td><td>X</td></tr>
+    </table>
+
+
+    <h2>La LCR Magnétique</h2>
+    <h1>La dématérialisation</h1>
+
+    <p>De nos jours les échanges papiers se font rares et la LCR a quasiment disparu au profit d'un échange similaire mais entièrement dématérialisé.</p>
+    <p>La nouvelle procédure n'engage plus du tout le client qui n'a rien besoin de signer. Ainsi il ne peut plus négocier de durée d'échéance. Le Fournisseur s'engage simplement auprès de sa banque et peut tirer quand il souhaite ses créances en effectuant une démarche électronique.</p>
+    <p>De plus les méthodes comptables se sont adaptés pour comptabiliser cette nouvelle pratique de façon beaucoup plus simple.</p>
+    <p>Il n'existe plus de comptes transitoire 403/413 et 5113/5114. On ne procède dont plus à des écritures comptables pour le client.</p>
+    <p>Pour le fournisseur, on ne passe que l'écriture d'avis de crédit. Dans le cas d'une remise à l'encaissement on procède comme suit :</p>
+
+    <table id="tab1">
+        <style>  #tab1 { width: 80%;border-collapse:collapse;margin:auto}</style>
+        <tr><th>Numéro de Compte</th><th>Intitulé des comptes</th><th>Débit</th><th>Crédit</th></tr>
+        <tr><td>512</td><td>Banque</td><td>X</td><td></td></tr>
+        <tr><td>627</td><td>Frais Bancaire</td><td>X</td><td></td></tr>
+        <tr><td>44566</td><td>TVA déductible sur A/BS</td><td>X</td><td></td></tr>
+        <tr><td>411</td><td>Créances Clients</td><td></td><td>X</td></tr>
+    </table>
+
+    <p>à noter qu'il existe toujours des frais de dossier qui constitue la rémunération de la banque pour la mise en place du service d'effets à l'escompte.</p>
+
+    <p>Pour la remise à l'escompte on procède comme suit :</p>
+    <table id="tab1">
+        <style>  #tab1 { width: 80%;border-collapse:collapse;margin:auto}</style>
+        <tr><th>Numéro de Compte</th><th>Intitulé des comptes</th><th>Débit</th><th>Crédit</th></tr>
+        <tr><td>512</td><td>Banque</td><td>X</td><td></td></tr>
+        <tr><td>627</td><td>Frais Bancaire</td><td>X</td><td></td></tr>
+        <tr><td>44566</td><td>TVA déductible sur A/BS</td><td>X</td><td></td></tr>
+        <tr><td>661</td><td>Intérêts Bancaires</td><td>X</td><td></td></tr>
+        <tr><td>519</td><td>Concours Bancaire Courant</td><td></td><td>X</td></tr>
+    </table>
+
+    <p>Pour finir, le fournisseur devra rembourser l'emprunt qu'il a tiré auprès de la banque lorsque son client l'aura réglé.</p>
+    <table id="tab1">
+        <style>  #tab1 { width: 80%;border-collapse:collapse;margin:auto}</style>
+        <tr><th>Numéro de Compte</th><th>Intitulé des comptes</th><th>Débit</th><th>Crédit</th></tr>
+        <tr><td>519</td><td>Concours Bancaire Courant</td><td>X</td><td></td></tr>
+        <tr><td>512</td><td>Banque</td><td></td><td>X</td></tr>
+    </table>
+
+<br><br><br><br><br><br><br><br>
+</body>
+</html>
