@@ -1,0 +1,355 @@
+body {
+    font-family: 'Cinzel', serif;
+    background: url('https://www.transparenttextures.com/patterns/old-map.png'), /* Texture bois vieilli */
+                linear-gradient(135deg, #2c3e50, #34495e); /* Dégradé de bleu-gris foncé */
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: #e0e0e0; /* Texte gris clair, pour rester dans une ambiance froide */
+    height: 100vh;
+}
+
+
+
+h1 {
+    font-family: 'Cinzel', serif;
+    color: #8ab6d6; /* Bleu-gris clair, un effet gelé/détendu */
+    text-shadow: 2px 2px 4px #1e2a33, 0px 0px 8px rgba(138, 182, 214, 0.6); /* Ombres plus froides */
+    font-size: 3rem;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid #1e2a33; /* Bordure bleu-gris foncé */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.1));
+    border-radius: 8px;
+    max-width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+h1::before,
+h1::after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 50px;
+    background: linear-gradient(to right, #8ab6d6, rgba(138, 182, 214, 0.5));
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+h1::before {
+    left: -70px;
+}
+
+h1::after {
+    right: -70px;
+}
+
+#gameContainer {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    height: 80%;
+}
+
+#charSheet, #inventory, #actionZone {
+    margin: 7%;
+    padding: 5%;
+    height: 80%;
+    background-color: #34495e; /* Fond bleu-gris légèrement éclairci */
+    position: relative;
+    border-radius: 10px;
+    border: 4px solid #22313f; /* Bordure bleu-gris foncé mais plus visible */
+    box-shadow: inset 0 0 10px #22313f, 0 0 20px rgba(0, 0, 0, 0.7); /* Ombres accentuées pour un effet de relief */
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.411), rgba(0, 0, 0, 0.753)); /* Gradient plus équilibré pour mieux se démarquer */
+    color: #ecf0f1; /* Texte clair pour un meilleur contraste */
+    transition: all 0.3s ease-in-out; /* Ajoute une transition pour un effet doux lors des changements */
+}
+
+#charSheet:hover, #inventory:hover, #actionZone:hover {
+    background-color: #3c6e91; /* Survol : éclaircit légèrement pour mettre en évidence */
+    box-shadow: inset 0 0 12px #1e2a33, 0 0 25px rgba(0, 0, 0, 0.8); /* Accentuation des ombres */
+}
+
+/* Bordure médievale style gravé pour chaque section */
+#charSheet::before, #inventory::before, #actionZone::before {
+    content: "❖";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 2rem;
+    color: #8ab6d6; /* Icône bleue claire pour rappeler le thème froid */
+}
+
+#charSheet::after, #inventory::after, #actionZone::after {
+    content: "❖";
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    font-size: 2rem;
+    color: #8ab6d6; /* Icône bleue claire pour rappeler le thème froid */
+}
+
+#inventory {
+    grid-column: 2;
+    border: 4px solid #8b5e3c; 
+    box-shadow: inset 0 0 8px #8b5e3c, 0 0 15px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+}
+
+#actionZone {
+    grid-column: 3;
+    border: 4px solid #8b5e3c;
+    box-shadow: inset 0 0 8px #8b5e3c, 0 0 15px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+}
+
+/* Ajouter des décorations aux coins pour chaque section */
+#charSheet::before, #inventory::before, #actionZone::before {
+    content: "❖"; /* Symbole médiéval décoratif */
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 2rem;
+    color: #d4af37; /* Doré pour rappeler le thème royal */
+}
+
+#charSheet::after, #inventory::after, #actionZone::after {
+    content: "❖"; /* Symbole médiéval décoratif */
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    font-size: 2rem;
+    color: #d4af37;
+}
+
+
+
+button {
+    color: rgb(0, 0, 0);
+    background-color: rgb(21, 255, 0);
+}
+
+#actionZone{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+}
+
+#lieu{
+    grid-row: 1;
+}
+
+#shopZone{
+    grid-row: 2;
+}
+#donjonZone{
+    grid-row: 3;
+    display: none;
+}
+#buttonZone{
+    grid-row: 4;
+}
+
+#shopZone {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    gap: 10px;
+}
+
+#shop1, #shop2, #shop3, #shop4 {
+    margin: 5%;
+    padding: 3%;
+    background-color: rgba(20, 20, 20, 0.9); /* Fond très sombre, presque noir, avec une légère transparence */
+    border-radius: 10px;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.5); /* Ombres internes et externes */
+    overflow: hidden;
+    border: 5px solid #4e3d31; /* Bordure plus foncée pour renforcer l'aspect ancien */
+}
+
+/* Dégradé de lumière avec un contraste plus élevé */
+#shop1, #shop2, #shop3, #shop4 {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(100, 100, 100, 0.3)); /* Dégradé plus sombre */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Lueur externe pour ressortir davantage */
+}
+
+/* Symbole décoratif en haut à gauche et en bas à droite */
+#shop1::before, #shop2::before, #shop3::before, #shop4::before {
+    content: "✦";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 2rem;
+    color: #d4af37;
+}
+
+#shop1::after, #shop2::after, #shop3::after, #shop4::after {
+    content: "✦";
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    font-size: 2rem;
+    color: #d4af37;
+}
+
+
+#goVillage{
+    margin: 10%;
+    height: 40%;
+}
+#goDonjon{
+    margin: 10%;
+    height: 40%;
+}
+button:disabled {
+    background-color: gray; /* Fond gris */
+    color: white; /* Texte blanc */
+    border: 2px solid darkgray; /* Bordure gris foncé */
+    cursor: not-allowed; /* Icône de curseur non autorisé */
+    opacity: 0.6; /* Rendre l'élément légèrement transparent */
+}
+#launchSpell1{
+    display: none;
+}
+#test{
+    display: none;
+}
+#validate{
+    display: none;
+}
+#hpBar{
+    background-color: rgb(0, 255, 0);
+    width: 100%;
+    height: 10px;
+    border-radius: 5px; 
+    border: 2px solid rgb(43, 20, 9);
+    padding: 2px;
+}
+#hpMonsterBar{
+    background-color: rgb(255, 0, 0);
+    width: 100%;
+    height: 10px;
+    border-radius: 5px; 
+    border: 2px solid rgb(43, 20, 9);
+    padding: 2px;
+    display: none;
+}
+/* Style général pour tous les paragraphes */
+p {
+    color: #f5f5f5; /* Couleur blanche légèrement cassée */
+    font-size: 1.2rem; /* Taille du texte légèrement plus grande */
+    line-height: 1; /* Espacement entre les lignes pour une meilleure lisibilité */
+    letter-spacing: 0.5px; /* Espacement entre les lettres pour aérer le texte */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ombre légère pour faire ressortir le texte */
+    font-weight: normal; /* Poids normal pour le texte */
+}
+
+/* Pour les titres ou éléments plus importants */
+h1, h2, h3, h4, h5, h6 {
+    color: #d4af37; /* Jaune doré pour les titres, rappel du thème médiéval */
+    font-size: 2.5rem; /* Taille plus grande pour les titres */
+    font-weight: bold; /* Mettre en gras pour plus de visibilité */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* Ombre plus forte pour les titres */
+    letter-spacing: 1px; /* Un peu plus d'espacement entre les lettres */
+}
+
+/* Exemple d'effet pour un texte en survol (hover) */
+p:hover {
+    color: #5cc1f7; /* Légère lueur bleue au survol */
+    cursor: pointer;
+}
+
+/* Style pour les boutons médiévaux */
+button {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    padding: 6px 12px;
+    color: #f5f5f5;
+    background-color: #1e2a33; /* Bleu-gris pour un fond froid */
+    border: 3px solid #8ab6d6;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7), inset 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #8ab6d6;
+    color: #1a1a1a;
+    border-color: #6b8ba4;
+    box-shadow: 0 0 12px rgba(138, 182, 214, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 15px rgba(138, 182, 214, 0.8);
+}
+
+#launchSpell2,#launchSpell3{
+    display: none;
+}
+.imgPerso{
+    height: 200px;
+    width: 200px;
+    border: 4px solid #4b3621; /* Bordure couleur bois/métal */
+    border-radius: 12px; /* Coins arrondis pour un effet plus doux */
+    background: #6b4f3e; /* Fond imitant le bois ou cuir vieilli */
+    background-image: url('texture-bois.jpg'); /* Texture de bois (ou métal) pour un effet plus réaliste */
+    background-size: cover; /* Pour s'assurer que la texture couvre toute la zone */
+    padding: 4px; /* Un petit espacement pour éviter que la texture se superpose à l'image */
+    box-sizing: border-box; /* Inclure le padding dans la taille totale */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6), inset 0 0 8px rgba(255, 255, 255, 0.1); /* Ombre extérieure et intérieure */
+}
+#liste,#plume,#costume,#cravate{
+    display: none;
+}
+
+.objets{
+    height: 100px;
+    width: 100px;
+    border: 2px solid #b8860b; /* Bordure plus fine, couleur dorée */
+    border-radius: 10px; /* Coins légèrement arrondis */
+    box-shadow: 0 0 8px rgba(184, 134, 11, 0.8), 
+                inset 0 0 3px rgba(255, 255, 255, 0.3); /* Effet lumineux externe et interne */
+    background: linear-gradient(145deg, #e6c660, #b8860b); /* Dégradé doré */
+    padding: 5px; /* Espacement intérieur entre la bordure et l'image */
+    box-sizing: border-box; /* Inclure le padding dans les dimensions */
+}
+#charSheet{
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    text-align: center;
+}
+#inventory {
+    display: flex; /* Active Flexbox */
+    flex-direction: column; /* Empile les éléments verticalement */
+    align-items: center; /* Centre horizontalement */
+    text-align: center; /* Centre le texte des <p> */
+}
+@media only screen and (max-width: 768px) {
+    #gameContainer {
+        grid-template-columns: 1fr; /* Empile les sections */
+        height: auto;
+    }
+
+    #charSheet, #inventory, #actionZone {
+        margin: 5%;
+        padding: 3%;
+        height: auto;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        padding: 5px;
+    }
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le FACTURATOR 2.0</title>
+    <link rel="stylesheet" href="styleJeu.css">
+</head>
+<body>
+    <div class="container">
+        <br><br><br>
+        <h1>Le FACTURATOR 2.0</h1>
+        <p id="exercise-display">Clique sur le bouton pour générer une facture !</p>
+        <button id="exerciceButton">Nouvelle Facture</button>
+        <br>
+        <div class="checkbox-custom"><table><tr>
+            <td><p>Options :</p></td>
+            <td><input type="checkbox" id="caseAvoir">Avoir</td>
+            <td><input type="checkbox" id="caseEscompte">Escompte</td>
+            <td><input type="checkbox" id="caseAcompte">Acompte</td>
+        </tr></table>        </div>
+    </div>
+
+
+    <!-- les ID sont : typeFacture, dayFacture, monthFacture et libelleFacture -->
+    <div id="facture">
+        <p>Nom Fournisseur :</p><p>Adresse fournisseur :</p>
+        <p>Nom Client :</p><p>Adresse Client :</p>
+        <p>Facture <span id="sensFacture"></span> <span id="typeFacture"></span> du 
+        <span style="font-weight: bold;"><span id="dayFacture"></span>/<span id="monthFacture"></span>/2024</p>
+        <p>Facture n° : <span id="libelleFacture">00000</span></span></p>
+  
+        <!-- haut de facture -->
+         <!-- les ID sont : qt1, qt2, qt3, pu1, pu2, pu3 et mt1, mt2 et mt3 -->
+        <table>
+            <tr>
+                <th>Désignation</th>
+                <th>Quantité</th>
+                <th>Prix Unitaire</th>  
+                <th>Montant</th>
+            </tr>
+
+            <tr style="text-align: center;">
+                <td>Marchandise 1</td>
+                <td id="qt1"></td>
+                <td id="pu1"></td>
+                <td><span id="mt1"></span>€</td>
+            </tr>
+            <tr style="text-align: center;">
+                <td>Marchandise 2</td>
+                <td id="qt2"></td>
+                <td id="pu2"></td>
+                <td><span id="mt2"></span>€</td>
+            </tr>
+            <tr style="text-align: center;">
+                <td>Marchandise 3</td>
+                <td id="qt3"></td>
+                <td id="pu3"></td>
+                <td><span id="mt3"></span>€</td>
+            </tr>
+
+        </table>
+        <br>
+            <!-- bas de facture  -->
+             <!-- ID : montantTotal, rabais, mtRabais, remise, mtRemise, netCom, escompte, 
+              mtEscompte, netFi, tauxTVA, montantTVA, netAPayer -->
+        <table id="basFact">
+            <tr style="text-align: center;">
+                <td colspan="2">Montant Total</td>
+                <td><span id="montantTotal"></span>€</td>
+            </tr>
+            <tr style="text-align: center;">
+                <td>Rabais</td>
+                <td><span id="rabais"></span>%</td>
+                <td><span id="mtRabais"></span>€</td>
+            </tr>
+            <tr style="text-align: center;">
+                <td>Remise</td>
+                <td> <span id="remise"></span>%</td>
+                <td><span id="mtRemise"></span>€</td>
+            </tr>
+            <tr style="text-align: center;">
+                <td colspan="2">Net Commercial</td>
+                <td><span id="netCom"></span>€</td>
+            </tr>
+            <tr style="text-align: center;">
+                <td>Escompte</td>
+                <td><span id="escompte"></span>%</td>
+                <td><span id="mtEscompte"></span>€</td>
+            </tr>
+            <tr style="text-align: center;">
+                <td colspan="2">Net Financier</td>
+                <td><span id="netFi">€</span></td>
+            </tr>
+            <tr style="text-align: center;">
+                <td>TVA</td>
+                <td><span id="tauxTVA"></span>%</td>
+                <td><span id="montantTVA"></span>€</td>
+            </tr>
+            <tr style="text-align: center;">
+                <td colspan="2">net à payer</td>
+                <td><span id="netAPayer"></span>€</td>
+            </tr>
+        </table>
+    </div>
+<br><br>
+
+<table class="tabInput">
+    <tr>
+        <th>Numéro de Compte</th>
+        <th>Intitulé Compte</th>
+        <th>Débit</th>
+        <th>Crédit</th>
+    </tr>
+    <tr> 
+        <td><input type="text" id="a11"></td>
+        <td><input type="text" id="a12"></td>
+        <td><input type="text" id="a13" value = 0></td>
+        <td><input type="text" id="a14" value = 0></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="a21"></td>
+        <td><input type="text" id="a22"></td>
+        <td><input type="text" id="a23" value = 0></td>
+        <td><input type="text" id="a24" value = 0></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="a31"></td>
+        <td><input type="text" id="a32"></td>
+        <td><input type="text" id="a33" value = 0></td>
+        <td><input type="text" id="a34" value = 0></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="a41"></td>
+        <td><input type="text" id="a42"></td>
+        <td><input type="text" id="a43" value = 0></td>
+        <td><input type="text" id="a44" value = 0></td>
+    </tr>
+</table>
+<table class="tabInput">
+    <tr>
+        <th>Date</th>
+        <th>Libellé</th>
+    </tr>
+    <tr>
+        <td><input type="date" id="aDate"></td>
+        <td><input type="text" id="aLibelle"></td>
+        
+    </tr>
+</table>
+<div class="boutonEnLigne">
+    <table>
+        <button id="validateButton">Valider</button>
+        <button id="backToMenuButton">Retour au Menu</button>
+    </table>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br>
+    <script src="scriptFacturator2.js"></script>
+</body>
+</html>

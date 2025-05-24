@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapitre 3 : Les Bases de données</title>
+    <link rel="stylesheet" href="styleCours.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="cours.html">Retour aux cours</a>
+    </div>
+    
+    <h1>Chapitre 3 : Les Bases de Données</h1>
+    <h2>La base de données (définition)</h2>
+    <p>Une base de données est un ensemble structuré de données organisées de manière à être facilement accessibles, gérées
+        et mises à jour. Dans le contexte comptable, les
+        bases de données jouent un rôle crucial en stockant de manière efficace et sécurisée les informations financières de
+        l'entreprise. Elles permettent de centraliser
+        les données, facilitant ainsi leur analyse et leur utilisation pour la prise de décision. Les bases de données
+        modernes offrent également des fonctionnalités avancées
+        telles que la gestion des accès utilisateurs et la sauvegarde automatique des données.</p>
+    <h2>Le SGBDR</h2>
+    <p>Un Système de Gestion de Base de Données Relationnelle
+        (SGBDR) est un logiciel qui permet de stocker, organiser et gérer des données dans une base de données
+        relationnelle. Il assure l'intégrité, la sécurité
+        et la cohérence des données tout en facilitant leur manipulation et leur récupération. Les SGBDR les plus couramment
+        utilisés incluent MySQL,
+        Oracle, et Microsoft SQL Server. Dans un contexte comptable, un SGBDR est essentiel pour gérer efficacement les
+        grandes quantités de données financières,
+        permettant des opérations complexes comme la consolidation des comptes ou l'analyse financière détaillée.</p>
+    <h2>L'organisation des données (avec les tables)</h2>
+    <p>Dans une base de données relationnelle, les données sont organisées en tables, également appelées relations. Chaque
+        table représente une entité spécifique (par
+        exemple, clients, factures, produits) et contient des colonnes (attributs) et des lignes (enregistrements). Cette
+        structure permet une organisation logique et
+        efficace des données, facilitant leur accès et leur manipulation. Pour une entreprise, cette organisation peut se
+        traduire par des tables distinctes pour les
+        clients, les fournisseurs, les transactions, les produits, etc., chacune contenant les informations pertinentes à
+        son domaine.</p>
+    <h2>Les tables et les relations</h2>
+    <p>Les tables dans une base de données sont liées entre elles par des relations, créant ainsi une structure interconnectée. Ces relations sont établies à l'aide de
+        clés primaires et étrangères. Une clé primaire est un identifiant unique pour chaque enregistrement dans une table, tandis qu'une clé étrangère est une référence
+        à la clé primaire d'une autre table. Par exemple, une table "Factures" peut avoir une clé étrangère faisant référence à la table "Clients", établissant ainsi u
+        ne relation entre ces deux entités. Cette structure relationnelle permet de maintenir l'intégrité des données et facilite les requêtes complexes impliquant plusieurs tables.</p>
+    <h2>Le modèle relationnel</h2>
+    <p>Le modèle relationnel est un modèle de données qui représente les données sous forme de tables reliées e
+        ntre elles. Il se base sur la théorie mathématique des relations et offre une structure logique pour organiser et
+        manipuler les données. Dans ce modèle, ch
+        aque table représente une relation, et les liens entre les tables sont définis par des contraintes d'intégrité. Le
+        modèle relationnel offre plusieurs avan
+        tages, notamment :</p>
+    <ul>
+        <li>Flexibilité dans la structuration des données</li>
+        <li>Facilité de mise à jour et de maintenance</li>
+        <li>Possibilité d'ef
+            fectuer des requêtes complexes</li>
+        <li>Garantie de l'intégrité et de la cohérence des données</li>
+    </ul>
+    <h2>Exemples de modèle relationnel</h2>
+
+    <table id="tableauclasses">
+        <style>
+            #tableauclasses {
+                width: 80%;
+                border-collapse: collapse;
+                margin: 20px auto;
+            }
+        </style>
+        <thead>
+            <tr>
+                <th>Table</th>
+                <th>Attributs</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ETUDIANTS</td>
+                <td><u>Id_Etudiant</u>, Nom, Prénom, Date_Naissance, Email, #Id_classe</td>
+            </tr>
+            <tr>
+                <td>CLASSES</td>
+                <td><u>Id_Classe</u>, Nom_Classe, Niveau</td>
+            </tr>
+            <tr>
+                <td>COURS</td>
+                <td><u>Id_Cours</u>, Nom_Cours, Description</td>
+            </tr>
+            <tr>
+                <td>ENSEIGNANTS</td>
+                <td><u>Id_Enseignant</u>, Nom, Prénom, Email</td>
+            </tr>
+            <tr>
+                <td>INSCRIPTIONS</td>
+                <td><u>Id_Inscription</u>, #Id_Etudiant, #Id_Cours</td>
+            </tr>
+            <tr>
+                <td>ENSEIGNEMENTS</td>
+                <td><u>Id_Enseignement</u>, #Id_Enseignant, #Id_Cours</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Requêtes SQL et explications</h2>
+
+
+    <h3>Les mots clés SELECT & FROM</h3>
+    <p>Le mot clé SELECT permet d'afficher des champs et FROM permet de charger une Table dans la mémoire, il est indispensable.</p>
+    <p>Chaque requête se termine par un point virgule ; qui indique à l'ordinateur qu'il doit éxecuter les instructions précédentes.</p>
+    <p>Pour afficher les étudiants on utilisera la requête :</p>
+    <pre>
+        SELECT Nom, Prenom
+        FROM ETUDIANTS;
+    </pre>
+
+    <p>le mot clé DISTINCT permet d'éviter d'afficher des doublons dans le select. Par exemple pour afficher tous les noms de familles sans doublons :</p>
+    <pre>
+        SELECT DISTINCT Nom
+        FROM ETUDIANTS;
+    </pre>
+
+    <p>Le mot clé SELECT permet d'afficher des champs, les résultats seront donc des LISTES ! </p>
+    <p>Cependant il est possible de n'afficher qu'un résultat en utilisant des Fonctions. Pour invoquer une fonction, on utilise la synthèse FONCTION(Paramètres)</p>
+    <p>Evidemment FONCTION sera remplacé par la fonction que nous désirons utiliser et les paramètres peuvent être des champs, des nombres ou du texte</p>
+    <p>voici quelques exemples avec des fonctions courantes :</p>
+
+    <pre>
+        SELECT MIN(Date_Naissance), Nom, Prenom
+        FROM ETUDIANTS;
+    <i>Affiche la date de naissance, le nom et le prénom du plus vieil étudiant</i>
+    </pre>
+
+    <pre>
+        SELECT COUNT(Id_Enseignant)
+        FROM ENSEIGNANTS;
+    <i>Affiche le nombre d'enseignant dans la base</i>
+    </pre>
+    <pre>
+        SELECT AUJOURDHUI();
+    <i>affiche la date du jour, à noter que les paramètres ne sont pas obligatoires</i>
+    </pre>
+    <pre>
+        SELECT AVG(Age)
+        FROM ETUDIANTS;
+    <i>En supposant qu'un tel champ existe, affiche l'age moyen des étudiants</i>
+    </pre>
+
+    <p>Des fonctions non connues peuvent être données le jour du BTS avec une explication de leur utilisation.</p>
+
+    <h3>le Mot Clé WHERE</h3>
+
+    <p>WHERE permet d'opérer des clauses de restrictions, autrement dit il permet de restreindre le SELECT à des entrées qui répondent à un critère donné.</p>
+    <p>Par exemple :</p>
+    <pre>
+        SELECT Nom, Prenom
+        FROM ETUDIANTS
+        WHERE Nom = ROBERT;
+    <i>Affiche les noms & prénoms des étudiants dont le nom est ROBERT.</i>
+    </pre>
+
+    <p>Lorsqu'on travaille avec des chaines de caractères (du texte) il est courant d'utiliser LIKE à la place du = :</p>
+    <pre>
+        SELECT Nom, Prenom
+        FROM ETUDIANTS
+        WHERE Nom LIKE ROBERT;
+    </pre>
+
+    <p>Le fait d'utiliser LIKE permet aussi d'utiliser les mots clés IS NOT pour faire des requêtes d'exclusions :</p>
+    <pre>
+        SELECT Nom, Prenom
+        FROM ETUDIANTS
+        WHERE Nom IS NOT LIKE NATHAN;
+    <i>Affiche les noms & prénoms des étudiants dont le nom n'est pas NATHAN.</i>
+    </pre>
+
+    <p>Lorsque l'on utiliser des requêtes avec des chaînes de caractères et le mot clé LIKE, deux caractères permettent une grande flexibilité de recherche</p>
+
+    <h3>Le Underscore _ et le symbole pourcent %</h3>
+
+    <p>Le Underscore permet de remplacer n'importe quel caractère :</p>
+    <pre>
+        SELECT Nom, Prenom
+        FROM ETUDIANTS
+        WHERE Prenom LIKE "Math_o";
+    <i>Affiche les noms & prénoms des étudiants dont le prénom commence par Math suivi d'un et d'un seul caractère puis un o. à Noter que les chaines de caractères se saisissent entre guillements "".</i>
+    </pre>
+
+    <pre>
+        SELECT Nom, Prenom
+        FROM ETUDIANTS
+        WHERE Nom LIKE "M%";
+    <i>Affiche les noms & prénoms des étudiants dont le nom commence par un M.</i>
+    </pre>
+    
+    <pre>
+        SELECT Nom, Prenom
+        FROM ENSEIGNANTS
+        WHERE Nom LIKE "LOP%RAMON";
+    <i>Affiche les noms & prénoms des enseignants dont le nom commence par LOP suivi de n'importe quelle chaine de caractère et se termine par RAMON.
+    Cette requête peut servir lorsque l'on n'est pas sûr d'une orthographe mais n'est pas très précise.</i>
+    </pre>
+
+    <h3>Le WHERE et les nombres</h3>
+    <p>Le Mot Clé WHERE permet de faire des restrictions numériques et tolère les calculs intrinsèques :</p>
+    <pre>
+        SELECT Nom, Prenom, Age
+        FROM ETUDIANTS
+        WHERE Age > 18;
+    <i>Affiche les noms, prénoms et ages des étudiants majeurs.</i>
+    </pre>
+
+    <p>les comparateurs logiques utilisables sont &lt, &gt, =, &lt=, &gt=, et &gt&lt pour différent de.</p>
+
+    <h3>Le Mot Clé JOIN ou la jointure dans le WHERE</h3>
+
+    <p>Jusqu'ici nos requêtes ne concernaient qu'une seule table mais lorsque plusieurs tables sont chargées dans le FROM, il faut les lier.</p>
+    <p>Il existe plusieurs façons pour lier les tables avec le mot Clé JOIN mais en BTS Comptabilité nous feront les jointures dans notre WHERE afin de nous simplifier la tache.</p>
+
+    <p>Pour se rajouter un WHERE nous utiliserons le mot clé AND.</p>
+    <p>Pour faire une jointure nous utiliserons la typologie suivante : CLE ETRANGERE = CLE PRIMAIRE</p>
+
+    <pre>
+        SELECT Nom, Prenom
+        FROM ETUDIANTS, CLASSES
+        WHERE Niveau LIKE "Terminale"
+        AND ETUDIANTS.Id_Classe = CLASSES.Id_Classe;
+    <i>Affiche les noms et prénoms des étudiants qui sont en classe de terminale.</i>
+    </pre>
+
+    <p>Il est possible de faire plusieurs jointures et critères en ajoutant des AND.</p>
+
+    <h3>Le Mot clé ORDER BY</h3>
+
+    <p>ORDER BY qui se traduit en français par trier par, ne change pas les données affichées mais changent la façon dont elles seront affichées.</p>
+    <p>Il est possible de trier par ordre alphabétique ou numérique croissant et décroissant en utilisant les mots clés ASC pour croissants et DESC pour décroissant.</p>
+    <p>Il est possible de mettre plusieurs ORDER BY en utilisant AND et il ne faut pas oublier de mettre le champ que l'on veut trier.</p>
+
+    <pre>
+        SELECT Nom, Prenom
+        FROM ETUDIANTS
+        ORDER BY Nom ASC
+        AND Prenom DESC;
+    <i>Affiche les noms et prénoms de tous les élèves par ordre alphabétique croissant de nom
+    et par ordre décroissant de prénom lorsqu'il y a plusieurs fois le même Nom.
+    </i>
+    </pre>
+
+    <h3>Le Mot clé GROUP BY pour regrouper</h3>
+
+    <p>Le mot clé GROUP BY s'utise avec des FONCTIONS. Nous savons que les fonctions permettent de n'afficher qu'un seul résultat. Par exemple COUNT() permet d'afficher un nombre d'occurence dans un champ.</p>
+    <p>Avec GROUP BY il est possible d'utiliser des fonctions qui s'appliquent sur toutes les lignes d'une requête.</p>
+    <p>Par exemple avec Group By on peut compter le nombres d'étudiant PAR classe. Nous utilisons un COUNT() REGROUPER PAR Classe :</p>
+
+    <pre>
+        SELECT Classe, COUNT(Id_Etudiant)
+        FROM ETUDIANTS, CLASSES
+        WHERE ETUDIANTS.Id_Classe = CLASSES.Id_Classe
+        GROUP BY Classe;
+    <i>Affiche CHAQUE Classe et le nombres d'étudiants qui y sont associés.</i>
+    </pre>
+
+    <h3>le Mot clé HAVING</h3>
+    <p>HAVING fonction avec GROUP BY mais GROUP BY peut être utilisé seul comme nous venons de le voir.</p>
+    <p>Il faut bien comprendre la clause GROUP BY pour comprendre HAVING, car HAVING ne permet que de rajouter une restriction sur le GROUP BY.</p>
+    <p>Reprenons notre exemple pour bien comprendre : en rajoutant un HAVING COUNT(Id_Etudiant)>20 , nous n'afficherons que les classes qui comptent plus de 20 étudiants.</p>
+
+    <pre>
+        SELECT Classe, COUNT(Id_Etudiant)
+        FROM ETUDIANTS, CLASSES
+        WHERE ETUDIANTS.Id_Classe = CLASSES.Id_Classe
+        GROUP BY Classe
+        HAVING COUNT(Id_Etudiant)>20;
+    <i>Affiche CHAQUE Classe qui comptent plus de 20 étudiants et le nombres d'étudiants qui y sont associés.</i>
+    </pre>
+
+
+    <h3>Conseils de Révisions</h3>
+
+    <p>Les requêtes SQL ne sont pas simples à mettre en place même lorsqu'on est entrainé. Je vous conseille donc de vous exercer au maximum en refaisant les éxercices distribués par votre enseignant.</p>
+    <p>Si vous avez l'impression de ne pas comprendre une requête, revenez en arrière et tentez de bien vous familiariser avec les requêtes que vous connaissez déjà. Prenez votre temps !</p>
+    <p>Maîtriser GROUP BY et HAVING peut poser quelques problèmes. Je suggère de bien comprendre HAVING Avant d'essayer de comprendre GROUP BY</p>
+    <p>L'intelligence Artificielle vous suggèrera de nombreuses erreurs et mauvaises pratiques si vous lui demandez des exercices, faites donc attention.</p>
+    <p>Vous pouvez tenter de créer vous-même vos propres exercices, c'est une technique de révision très utilisée par les universitaires.</p>
+
+    <p>Bon courage !</p>
+
+</body>
+</html>

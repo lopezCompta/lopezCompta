@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1 : Base de données</title>
+    <link rel="stylesheet" href="styleCours.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="exercices.html">Retour aux Exercices</a>
+    </div>
+    <h1>Exercice 1 : Requêtes SQL</h1>
+
+    <h2>Exercice : Base de données d'une librairie en ligne</h2>
+
+    <h3>Modèle relationnel</h3>
+    
+    <p>Voici le modèle relationnel de la base de données avec les clés primaires soulignées et les clés étrangères en italique :</p>
+    
+    <pre>
+    CLIENTS (<u>ID_Client</u>, Nom, Prenom, Email, DateInscription)
+    
+    LIVRES (<u>ISBN</u>, Titre, Auteur, Prix, Stock, <i>ID_Categorie</i>)
+    
+    CATEGORIES (<u>ID_Categorie</u>, NomCategorie)
+    
+    COMMANDES (<u>ID_Commande</u>, <i>ID_Client</i>, DateCommande, Statut)
+    
+    DETAILS_COMMANDE (<u><i>ID_Commande</i>, <i>ISBN</i></u>, Quantite, PrixUnitaire)
+    </pre>
+    
+    <p>Légende :</p>
+    <ul>
+        <li><u>Souligné</u> : Clé primaire</li>
+        <li><i>Italique</i> : Clé étrangère</li>
+    </ul>
+    
+    <p>Notes sur les relations :</p>
+    <ul>
+        <li>Un LIVRE appartient à une seule CATEGORIE.</li>
+        <li>Une COMMANDE est passée par un seul CLIENT.</li>
+        <li>Un DETAIL_COMMANDE fait référence à une COMMANDE et à un LIVRE.</li>
+    </ul>
+    
+    <h2>Requêtes à réaliser</h2>
+    
+    <ul>
+        <li>Affichez tous les livres dont le prix est supérieur à 15€.</li>
+        <li>Listez les noms et prénoms des clients inscrits en 2023.</li>
+        <li>Affichez le titre des livres et le nom de leur catégorie.</li>
+        <li>Comptez le nombre de livres par catégorie.</li>
+        <li>Trouvez les 5 livres les plus chers.</li>
+        <li>Listez les clients qui ont passé une commande en 2024.</li>
+        <li>Calculez le montant total de chaque commande.</li>
+        <li>Affichez les livres qui n'ont jamais été commandés.</li>
+        <li>Trouvez le client qui a dépensé le plus d'argent.</li>
+        <li>Listez les catégories qui ont plus de 5 livres avec un stock inférieur à 10.</li>
+    </ul>
+    <br><br><br><br><br><br><br><br><br>
+    <h2>Correction</h2>
+    
+    <ul>
+        <li>
+            <pre>
+    SELECT Titre, Prix
+    FROM LIVRES
+    WHERE Prix > 15;
+            </pre>
+        </li>
+        <li>
+            <pre>
+    SELECT Nom, Prenom
+    FROM CLIENTS
+    WHERE YEAR(DateInscription) = 2023;
+            </pre>
+        </li>
+        <li>
+            <pre>
+    SELECT L.Titre, C.NomCategorie
+    FROM LIVRES L
+    JOIN CATEGORIES C ON L.ID_Categorie = C.ID_Categorie;
+            </pre>
+        </li>
+        <li>
+            <pre>
+    SELECT C.NomCategorie, COUNT(*) AS NombreLivres
+    FROM LIVRES L
+    JOIN CATEGORIES C ON L.ID_Categorie = C.ID_Categorie
+    GROUP BY C.ID_Categorie, C.NomCategorie;
+            </pre>
+        </li>
+        <li>
+            <pre>
+    SELECT Titre, Prix
+    FROM LIVRES
+    ORDER BY Prix DESC
+    LIMIT 5;
+            </pre>
+        </li>
+        <li>
+            <pre>
+    SELECT DISTINCT C.Nom, C.Prenom
+    FROM CLIENTS C
+    JOIN COMMANDES CO ON C.ID_Client = CO.ID_Client
+    WHERE YEAR(CO.DateCommande) = 2024;
+            </pre>
+        </li>
+        <li>
+            <pre>
+    SELECT CO.ID_Commande, SUM(DC.Quantite * DC.PrixUnitaire) AS MontantTotal
+    FROM COMMANDES CO
+    JOIN DETAILS_COMMANDE DC ON CO.ID_Commande = DC.ID_Commande
+    GROUP BY CO.ID_Commande;
+            </pre>
+        </li>
+        <li>
+            <pre>
+    SELECT L.Titre
+    FROM LIVRES L
+    LEFT JOIN DETAILS_COMMANDE DC ON L.ISBN = DC.ISBN
+    WHERE DC.ISBN IS NULL;
+            </pre>
+        </li>
+        <li>
+            <pre>
+    SELECT C.Nom, C.Prenom, SUM(DC.Quantite * DC.PrixUnitaire) AS MontantTotal
+    FROM CLIENTS C
+    JOIN COMMANDES CO ON C.ID_Client = CO.ID_Client
+    JOIN DETAILS_COMMANDE DC ON CO.ID_Commande = DC.ID_Commande
+    GROUP BY C.ID_Client, C.Nom, C.Prenom
+    ORDER BY MontantTotal DESC
+    LIMIT 1;
+            </pre>
+        </li>
+        <li>
+            <pre>
+    SELECT C.NomCategorie, COUNT(*) AS NombreLivres
+    FROM CATEGORIES C
+    JOIN LIVRES L ON C.ID_Categorie = L.ID_Categorie
+    WHERE L.Stock < 10
+    GROUP BY C.ID_Categorie, C.NomCategorie
+    HAVING COUNT(*) > 5;
+            </pre>
+        </li>
+    </ul>
+
+<br>
+<h3>Correction avec syntaxe WHERE</h3>
+
+<ul>
+    <li>
+        <pre>
+SELECT Titre, Prix
+FROM LIVRES
+WHERE Prix > 15;
+        </pre>
+    </li>
+    <li>
+        <pre>
+SELECT Nom, Prenom
+FROM CLIENTS
+WHERE YEAR(DateInscription) = 2023;
+        </pre>
+    </li>
+    <li>
+        <pre>
+SELECT L.Titre, C.NomCategorie
+FROM LIVRES L, CATEGORIES C
+WHERE L.ID_Categorie = C.ID_Categorie;
+        </pre>
+    </li>
+    <li>
+        <pre>
+SELECT C.NomCategorie, COUNT(*) AS NombreLivres
+FROM LIVRES L, CATEGORIES C
+WHERE L.ID_Categorie = C.ID_Categorie
+GROUP BY C.ID_Categorie, C.NomCategorie;
+        </pre>
+    </li>
+    <li>
+        <pre>
+SELECT Titre, Prix
+FROM LIVRES
+ORDER BY Prix DESC
+LIMIT 5;
+        </pre>
+    </li>
+    <li>
+        <pre>
+SELECT DISTINCT C.Nom, C.Prenom
+FROM CLIENTS C, COMMANDES CO
+WHERE C.ID_Client = CO.ID_Client
+  AND YEAR(CO.DateCommande) = 2024;
+        </pre>
+    </li>
+    <li>
+        <pre>
+SELECT CO.ID_Commande, SUM(DC.Quantite * DC.PrixUnitaire) AS MontantTotal
+FROM COMMANDES CO, DETAILS_COMMANDE DC
+WHERE CO.ID_Commande = DC.ID_Commande
+GROUP BY CO.ID_Commande;
+        </pre>
+    </li>
+    <li>
+        <pre>
+SELECT L.Titre
+FROM LIVRES L
+WHERE L.ISBN NOT IN (SELECT ISBN FROM DETAILS_COMMANDE);
+        </pre>
+    </li>
+    <li>
+        <pre>
+SELECT C.Nom, C.Prenom, SUM(DC.Quantite * DC.PrixUnitaire) AS MontantTotal
+FROM CLIENTS C, COMMANDES CO, DETAILS_COMMANDE DC
+WHERE C.ID_Client = CO.ID_Client
+  AND CO.ID_Commande = DC.ID_Commande
+GROUP BY C.ID_Client, C.Nom, C.Prenom
+ORDER BY MontantTotal DESC
+LIMIT 1;
+        </pre>
+    </li>
+    <li>
+        <pre>
+SELECT C.NomCategorie, COUNT(*) AS NombreLivres
+FROM CATEGORIES C, LIVRES L
+WHERE C.ID_Categorie = L.ID_Categorie
+  AND L.Stock < 10
+GROUP BY C.ID_Categorie, C.NomCategorie
+HAVING COUNT(*) > 5;
+        </pre>
+    </li>
+</ul>
+
+    <br><br><br><br><br><br><br><br>
+
+
+
+</body>
+</html>

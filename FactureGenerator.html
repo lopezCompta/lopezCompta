@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Facture</title>
+    <link rel="stylesheet" href="styleFactureGen.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="jeux.html">Retour aux jeux</a>
+    </div> 
+    <h1>Générateur de Facture</h1>
+    <button onclick="genererFacture()">Générer une facture</button>
+
+    <div id="facture" class="clearfix">
+        <div class="fournisseur">
+            <h2>Fournisseur</h2>
+            <p><strong>Nom Fournisseur:</strong> ABC Sarl</p>
+            <p><strong>Adresse Fournisseur:</strong> 123 Rue de l'Exemple, 75001 Paris</p>
+        </div>
+
+        <div class="client">
+            <h2>Client</h2>
+            <p><strong>Nom Client:</strong> Jean Dupont</p>
+            <p><strong>Adresse Client:</strong> 456 Avenue des Clients, 75002 Paris</p>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table id="compteTable">
+            <thead>
+                <tr>
+                    <th>Numéro de Compte</th>
+                    <th>Intitulé du Compte</th>
+                    <th>Débit</th>
+                    <th>Crédit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les lignes seront ajoutées ici par JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="additional-inputs">
+        <input type="text" id="libelle" placeholder="Libellé (Numéro de facture)">
+        <input type="date" id="dateFacture">
+    </div>
+
+    <button id="validateButton" onclick="validerInputs()">Valider</button>
+    <button id="genererIntitule" onclick="genererIntitules()">Générer Intitulés</button>
+
+    <div id="validationResult"></div>
+    <div id="score">Score : 0</div>
+
+    <script>
+        let isFactureVente;
+        let netCommercial;
+        let tauxTVA;
+        let numeroFactureGenere;
+        let dateFactureGeneree;
+        let score = 0;
+
+        function genererDateAleatoire() {
+            const debut = new Date(2023, 0, 1).getTime();
+            const fin = new Date().getTime();
+            const dateAleatoire = new Date(debut + Math.random() * (fin - debut));
+            return dateAleatoire.toLocaleDateString('fr-FR');
+        }
+
+        function genererFacture() {
+            document.getElementById('facture').innerHTML = `
+                <div class="fournisseur">
+                    <h2>Fournisseur</h2>
+                    <p><strong>Nom Fournisseur:</strong> ABC Sarl</p>
+                    <p><strong>Adresse Fournisseur:</strong> 123 Rue de l'Exemple, 75001 Paris</p>
+                </div>
+
+                <div class="client">
+                    <h2>Client</h2>
+                    <p><strong>Nom Client:</strong> Jean Dupont</p>
+                    <p><strong>Adresse Client:</strong> 456 Avenue des Clients, 75002 Paris</p>
+                </div>
+            `;
+
+            numeroFactureGenere = "F" + Math.floor(Math.random() * 10000);
+            netCommercial = Math.floor(Math.random() * 10000) + 1000;
+            tauxTVA = 20;
+            let montantTVA = netCommercial * (tauxTVA / 100);
+            let netAPayer = netCommercial + montantTVA;
+            dateFactureGeneree = genererDateAleatoire();
+
+            isFactureVente = Math.random() < 0.5;
+            let factureType = isFactureVente ? "Facture de vente de marchandises" : "Facture d'achat de marchandises";
+
+            let factureHTML = `
+                <h2>Facture N° ${numeroFactureGenere}</h2>
+                <p>Date : ${dateFactureGeneree}</p>
+                <p>Net commercial : ${netCommercial.toFixed(2)} €</p>
+                <p>Taux de TVA : ${tauxTVA}%</p>
+                <p>Montant TVA : ${montantTVA.toFixed(2)} €</p>
+                <p><strong>Net à payer : ${netAPayer.toFixed(2)} €</strong></p>
+                <p><strong>${factureType}</strong></p>
+            `;
+
+            document.getElementById('facture').innerHTML += factureHTML;
+
+            netCommercial = parseFloat(netCommercial.toFixed(2));
+        }
+
+        function ajouterLigne() {
+            const tbody = document.querySelector('#compteTable tbody');
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td><input type="text" name="numero"></td>
+                <td><input type="text" name="intitule"></td>
+                <td><input type="number" name="debit" step="0.01"></td>
+                <td><input type="number" name="credit" step="0.01"></td>
+            `;
+            tbody.appendChild(newRow);
+        }
+
+        function validerInputs() {
+            const rows = document.querySelectorAll('#compteTable tbody tr');
+            let isValid = true;
+            let errorMessage = "";
+
+            const libelleInput = document.getElementById('libelle').value;
+            const dateInput = document.getElementById('dateFacture').value;
+
+            if (libelleInput !== numeroFactureGenere) {
+                errorMessage += "Le numéro de facture est incorrect. ";
+                isValid = false;
+            }
+
+            const dateEntree = new Date(dateInput).toLocaleDateString('fr-FR');
+            if (dateEntree !== dateFactureGeneree) {
+                errorMessage += "La date de facture est incorrecte. ";
+                isValid = false;
+            }
+
+            if (rows.length < 3) {
+                errorMessage += "Il doit y avoir au moins 3 lignes dans le tableau. ";
+                isValid = false;
+            } else {
+                const montantTVA = netCommercial * (tauxTVA / 100);
+                const totalTTC = netCommercial + montantTVA;
+
+                if (isFactureVente) {
+                    if (rows[0].querySelector('input[name="numero"]').value !== "411" ||
+                        parseFloat(rows[0].querySelector('input[name="debit"]').value) !== totalTTC) {
+                        errorMessage += "Ligne 1 incorrecte pour une facture de vente. ";
+                        isValid = false;
+                    }
+                    if (rows[1].querySelector('input[name="numero"]').value !== "707" ||
+                        parseFloat(rows[1].querySelector('input[name="credit"]').value) !== netCommercial) {
+                        errorMessage += "Ligne 2 incorrecte pour une facture de vente. ";
+                        isValid = false;
+                    }
+                    if (rows[2].querySelector('input[name="numero"]').value !== "44571" ||
+                        parseFloat(rows[2].querySelector('input[name="credit"]').value) !== montantTVA) {
+                        errorMessage += "Ligne 3 incorrecte pour une facture de vente. ";
+                        isValid = false;
+                    }
+                } else {
+                    if (rows[0].querySelector('input[name="numero"]').value !== "607" ||
+                        parseFloat(rows[0].querySelector('input[name="debit"]').value) !== netCommercial) {
+                        errorMessage += "Ligne 1 incorrecte pour une facture d'achat. ";
+                        isValid = false;
+                    }
+                    if (rows[1].querySelector('input[name="numero"]').value !== "44566" ||
+                        parseFloat(rows[1].querySelector('input[name="debit"]').value) !== montantTVA) {
+                        errorMessage += "Ligne 2 incorrecte pour une facture d'achat. ";
+                        isValid = false;
+                    }
+                    if (rows[2].querySelector('input[name="numero"]').value !== "401" ||
+                        parseFloat(rows[2].querySelector('input[name="credit"]').value) !== totalTTC) {
+                        errorMessage += "Ligne 3 incorrecte pour une facture d'achat. ";
+                        isValid = false;
+                    }
+                }
+            }
+
+            const resultDiv = document.getElementById('validationResult');
+            if (isValid) {
+                score += 100;
+                resultDiv.innerHTML = "<p style='color: green;'>Les inputs sont correctement remplis ! +100 points</p>";
+            } else {
+                resultDiv.innerHTML = `<p class="error">Erreurs détectées : ${errorMessage}</p>`;
+            }
+
+            document.getElementById('score').innerHTML = `Score : ${score}`;
+        }
+
+        function genererIntitules() {
+            const rows = document.querySelectorAll('#compteTable tbody tr');
+            rows.forEach(row => {
+                const numeroInput = row.querySelector('input[name="numero"]');
+                const intituleInput = row.querySelector('input[name="intitule"]');
+                switch(numeroInput.value) {
+                    case "607":
+                        intituleInput.value = "Achats de Marchandises";
+                        break;
+                    case "707":
+                        intituleInput.value = "Ventes de Marchandises";
+                        break;
+                    case "411":
+                        intituleInput.value = "Créances Clients";
+                        break;
+                    case "401":
+                        intituleInput.value = "Dettes Fournisseurs";
+                        break;
+                    case "44566":
+                        intituleInput.value = "TVA Déductible";
+                        break;
+                    case "44571":
+                        intituleInput.value = "TVA Collectée";
+                        break;
+                    default:
+                        intituleInput.value = "";
+                }
+            });
+        }
+
+        window.onload = function() {
+            for (let i = 0; i < 3; i++) {
+                ajouterLigne();
+            }
+        };
+    </script>
+</body>
+</html>

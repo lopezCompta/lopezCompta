@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cja46ogdgnrxy"]
+
+[ext_resource type="Texture2D" uid="uid://byc8rl8vnu7um" path="res://sprites/backgroundInstruction.png" id="1_2lp2r"]
+[ext_resource type="Script" path="res://scripts/instructions.gd" id="1_vmgq4"]
+[ext_resource type="Texture2D" uid="uid://bcwu7gyesxxa6" path="res://sprites/instructionstexte.png" id="2_okh4f"]
+[ext_resource type="Texture2D" uid="uid://bqwllxmxrfkxl" path="res://sprites/retour.png" id="3_5exq6"]
+[ext_resource type="Texture2D" uid="uid://80y87h8hp1g6" path="res://sprites/retourHover.png" id="4_ug3ou"]
+
+[node name="instructions" type="Node2D"]
+script = ExtResource("1_vmgq4")
+
+[node name="background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.768627)
+position = Vector2(514, 471)
+texture = ExtResource("1_2lp2r")
+
+[node name="texte" type="Sprite2D" parent="."]
+position = Vector2(507, 409)
+scale = Vector2(0.85641, 0.85641)
+texture = ExtResource("2_okh4f")
+
+[node name="retour" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 884.0
+offset_top = 19.0
+offset_right = 984.0
+offset_bottom = 119.0
+texture_normal = ExtResource("3_5exq6")
+texture_hover = ExtResource("4_ug3ou")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="retour" to="." method="_on_retour_pressed"]

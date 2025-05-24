@@ -1,0 +1,338 @@
+body {
+    font-family: 'Cinzel', serif;
+    background: url('https://www.transparenttextures.com/patterns/dark-wood.png'), /* Texture bois foncé, peut évoquer une ambiance plus sombre et rugueuse */
+                linear-gradient(135deg, #2c2c2c, #1b1b1b); /* Dégradé plus sombre avec un fond foncé et plus discret */
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: #e0e0e0; /* Texte clair mais doux, pour mieux ressortir sur le fond sombre */
+    height: 100vh;
+}
+
+
+
+h1 {
+    font-family: 'Cinzel', serif; /* Police élégante */
+    color: #d4af37; /* Doré royal */
+    text-shadow: 2px 2px 4px #8b5e3c, 0px 0px 8px rgba(212, 175, 55, 0.7); /* Effet gravure et lueur douce */
+    font-size: 3rem; /* Taille du titre */
+    letter-spacing: 3px; /* Espacement pour une allure majestueuse */
+    text-align: center; /* Alignement centré */
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid #8b5e3c; /* Bordure pour un effet parcheminé */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1)); /* Texture subtile */
+    border-radius: 8px; /* Angles légèrement arrondis */
+    max-width: 80%; /* Pour éviter que le texte ne prenne trop de place */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Effet d'encadrement */
+}
+
+
+h1::before,
+h1::after {
+    content: ''; /* Décorations autour du texte */
+    position: absolute;
+    height: 5px;
+    width: 50px;
+    background: linear-gradient(to right, gold, rgba(255, 215, 0, 0.5));
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+h1::before {
+    left: -70px;
+}
+
+h1::after {
+    right: -70px;
+}
+
+
+#gameContainer {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    height: 80%;
+}
+
+#charSheet, #inventory, #actionZone {
+    margin: 7%;
+    padding: 5%;
+    height: 80%;
+    background-color: black;
+    position: relative;
+    border-radius: 10px; /* Coins légèrement arrondis pour un effet classique */
+}
+
+/* Bordure médievale style gravé pour chaque section */
+#charSheet {
+    grid-column: 1;
+    border: 4px solid #8b5e3c; /* Bordure en couleur bronze/argent */
+    box-shadow: inset 0 0 8px #8b5e3c, 0 0 15px rgba(0, 0, 0, 0.8); /* Ombres internes et externes pour un effet de profondeur */
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+}
+
+#inventory {
+    grid-column: 2;
+    border: 4px solid #8b5e3c; 
+    box-shadow: inset 0 0 8px #8b5e3c, 0 0 15px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+}
+
+#actionZone {
+    grid-column: 3;
+    border: 4px solid #8b5e3c;
+    box-shadow: inset 0 0 8px #8b5e3c, 0 0 15px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+}
+
+/* Ajouter des décorations aux coins pour chaque section */
+#charSheet::before, #inventory::before, #actionZone::before {
+    content: "❖"; /* Symbole médiéval décoratif */
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 2rem;
+    color: #d4af37; /* Doré pour rappeler le thème royal */
+}
+
+#charSheet::after, #inventory::after, #actionZone::after {
+    content: "❖"; /* Symbole médiéval décoratif */
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    font-size: 2rem;
+    color: #d4af37;
+}
+
+
+
+button {
+    color: rgb(0, 0, 0);
+    background-color: rgb(21, 255, 0);
+}
+
+#actionZone{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+}
+
+#lieu{
+    grid-row: 1;
+}
+
+#shopZone{
+    grid-row: 2;
+}
+#donjonZone{
+    grid-row: 3;
+    display: none;
+}
+#buttonZone{
+    grid-row: 4;
+}
+
+#shopZone {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    gap: 10px;
+}
+
+#shop1, #shop2, #shop3, #shop4 {
+    margin: 5%;
+    padding: 3%;
+    background-color: rgba(20, 20, 20, 0.9); /* Fond très sombre, presque noir, avec une légère transparence */
+    border-radius: 10px;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.5); /* Ombres internes et externes */
+    overflow: hidden;
+    border: 5px solid #4e3d31; /* Bordure plus foncée pour renforcer l'aspect ancien */
+}
+
+/* Dégradé de lumière avec un contraste plus élevé */
+#shop1, #shop2, #shop3, #shop4 {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(100, 100, 100, 0.3)); /* Dégradé plus sombre */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Lueur externe pour ressortir davantage */
+}
+
+/* Symbole décoratif en haut à gauche et en bas à droite */
+#shop1::before, #shop2::before, #shop3::before, #shop4::before {
+    content: "✦";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 2rem;
+    color: #d4af37;
+}
+
+#shop1::after, #shop2::after, #shop3::after, #shop4::after {
+    content: "✦";
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    font-size: 2rem;
+    color: #d4af37;
+}
+
+
+#goVillage{
+    margin: 10%;
+    height: 40%;
+}
+#goDonjon{
+    margin: 10%;
+    height: 40%;
+}
+button:disabled {
+    background-color: gray; /* Fond gris */
+    color: white; /* Texte blanc */
+    border: 2px solid darkgray; /* Bordure gris foncé */
+    cursor: not-allowed; /* Icône de curseur non autorisé */
+    opacity: 0.6; /* Rendre l'élément légèrement transparent */
+}
+#launchSpell1{
+    display: none;
+}
+#test{
+    display: none;
+}
+#validate{
+    display: none;
+}
+#hpBar{
+    background-color: rgb(0, 255, 0);
+    width: 100%;
+    height: 10px;
+    border-radius: 5px; 
+    border: 2px solid rgb(43, 20, 9);
+    padding: 2px;
+}
+#hpMonsterBar{
+    background-color: rgb(255, 0, 0);
+    width: 100%;
+    height: 10px;
+    border-radius: 5px; 
+    border: 2px solid rgb(43, 20, 9);
+    padding: 2px;
+    display: none;
+}
+/* Style général pour tous les paragraphes */
+p {
+    color: #f5f5f5; /* Couleur blanche légèrement cassée */
+    font-size: 1.2rem; /* Taille du texte légèrement plus grande */
+    line-height: 1; /* Espacement entre les lignes pour une meilleure lisibilité */
+    letter-spacing: 0.5px; /* Espacement entre les lettres pour aérer le texte */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ombre légère pour faire ressortir le texte */
+    font-weight: normal; /* Poids normal pour le texte */
+}
+
+/* Pour les titres ou éléments plus importants */
+h1, h2, h3, h4, h5, h6 {
+    color: #d4af37; /* Jaune doré pour les titres, rappel du thème médiéval */
+    font-size: 2.5rem; /* Taille plus grande pour les titres */
+    font-weight: bold; /* Mettre en gras pour plus de visibilité */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* Ombre plus forte pour les titres */
+    letter-spacing: 1px; /* Un peu plus d'espacement entre les lettres */
+}
+
+/* Exemple d'effet pour un texte en survol (hover) */
+p:hover {
+    color: #f5d04c; /* Couleur dorée pour attirer l'attention */
+    cursor: pointer;
+}
+
+/* Style pour les boutons médiévaux */
+button {
+    font-family: 'Cinzel', serif; /* Police médiévale */
+    font-size: 1rem; /* Taille de texte confortable */
+    padding: 6px 12px; /* Espacement autour du texte */
+    color: #f5f5f5; /* Texte clair pour contraster avec les fonds sombres */
+    background-color: #6a4f32; /* Fond brun riche pour rappeler le bois ou le métal */
+    border: 3px solid #d4af37; /* Bordure dorée pour un effet royal */
+    border-radius: 8px; /* Coins légèrement arrondis */
+    cursor: pointer; /* Changer le curseur au survol */
+    text-transform: uppercase; /* Texte en majuscules pour l'effet médiéval */
+    letter-spacing: 1px; /* Espacement des lettres pour l'élégance */
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7), inset 0 0 10px rgba(0, 0, 0, 0.5); /* Ombres internes et externes pour l'effet de profondeur */
+    transition: all 0.3s ease; /* Transition douce pour les effets de survol */
+}
+
+/* Effet de survol (hover) */
+button:hover {
+    background-color: #d4af37; /* Changement de couleur de fond en doré au survol */
+    color: #1a1a1a; /* Texte noir pour plus de contraste */
+    border-color: #b28c18; /* Bordure légèrement plus foncée */
+    box-shadow: 0 0 12px rgba(255, 215, 0, 1), 0 0 20px rgba(255, 215, 0, 0.7); /* Lueur dorée au survol */
+    transform: scale(1.05); /* Agrandissement léger pour l'effet de mise en valeur */
+}
+
+/* Effet au clic (active) */
+button:active {
+    background-color: #d4af37; /* Maintenir la couleur dorée au clic */
+    transform: scale(0.98); /* Légère réduction de taille pour l'effet de clic */
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8); /* Ombre interne au clic */
+}
+#launchSpell2,#launchSpell3{
+    display: none;
+}
+.imgPerso{
+    height: 200px;
+    width: 200px;
+    border: 4px solid #4b3621; /* Bordure couleur bois/métal */
+    border-radius: 12px; /* Coins arrondis pour un effet plus doux */
+    background: #6b4f3e; /* Fond imitant le bois ou cuir vieilli */
+    background-image: url('texture-bois.jpg'); /* Texture de bois (ou métal) pour un effet plus réaliste */
+    background-size: cover; /* Pour s'assurer que la texture couvre toute la zone */
+    padding: 4px; /* Un petit espacement pour éviter que la texture se superpose à l'image */
+    box-sizing: border-box; /* Inclure le padding dans la taille totale */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6), inset 0 0 8px rgba(255, 255, 255, 0.1); /* Ombre extérieure et intérieure */
+}
+#liste,#plume,#costume,#cravate{
+    display: none;
+}
+
+.objets{
+    height: 100px;
+    width: 100px;
+    border: 2px solid #b8860b; /* Bordure plus fine, couleur dorée */
+    border-radius: 10px; /* Coins légèrement arrondis */
+    box-shadow: 0 0 8px rgba(184, 134, 11, 0.8), 
+                inset 0 0 3px rgba(255, 255, 255, 0.3); /* Effet lumineux externe et interne */
+    background: linear-gradient(145deg, #e6c660, #b8860b); /* Dégradé doré */
+    padding: 5px; /* Espacement intérieur entre la bordure et l'image */
+    box-sizing: border-box; /* Inclure le padding dans les dimensions */
+}
+#charSheet{
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    text-align: center;
+}
+#inventory {
+    display: flex; /* Active Flexbox */
+    flex-direction: column; /* Empile les éléments verticalement */
+    align-items: center; /* Centre horizontalement */
+    text-align: center; /* Centre le texte des <p> */
+}
+@media only screen and (max-width: 768px) {
+    #gameContainer {
+        grid-template-columns: 1fr; /* Empile les sections */
+        height: auto;
+    }
+
+    #charSheet, #inventory, #actionZone {
+        margin: 5%;
+        padding: 3%;
+        height: auto;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        padding: 5px;
+    }
+}

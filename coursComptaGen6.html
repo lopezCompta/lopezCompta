@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapitre 6 : Les Ecritures commerciales</title>
+
+    <link rel="stylesheet" href="styleCours.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="cours.html">Retour aux cours</a>
+    </div>
+
+    <h1>Chapitre 6 : Les Ecritures commerciales</h1>
+
+    <h2>Point de vue Fournisseur</h2>
+    <p>Nous étudierons dans un premier temps, les écritures de ventes dans les cas suivants :</p>
+
+    <h2>Facture de Doit : </h2>
+    <p>Cette écriture permet de comptabiliser toutes les opérations de ventes à l'exception des prestations de services qui font l'objet d'un traitement spécial.</p>
+    <p>On y retrouve les comptes 7 (flux physiques sortants), les comptes 411 (flux monétaire différés entrants) et les comptes 44571 (Flux monétaires entrants différés)</p>
+    <div class = "container"><table>
+        <thead>
+            <tr>
+                <th>Numéro de Compte</th>
+                <th>Intitulé</th>
+                <th>Débit</th>
+                <th>Crédit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>411</td>
+                <td>Créances Clients</td>
+                <td>Net à Payer</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7XX</td>
+                <td>Ventes de XXX</td>
+                <td></td>
+                <td>Net Commercial</td>
+            </tr>
+            <tr>
+                <td>44571</td>
+                <td>TVA Collectée</td>
+                <td></td>
+                <td>Net Commercial * Taux de TVA</td>
+            </tr>
+        </tbody>
+    </table></div>
+
+    <h2>Les factures d'Avoir : </h2>
+    <p>se comptabilisent en inversant débit et crédit à partir de la facture de Doit</p>
+
+    <div class = "container"><table>
+        <thead>
+            <tr>
+                <th>Numéro de Compte</th>
+                <th>Intitulé</th>
+                <th>Débit</th>
+                <th>Crédit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>7XX</td>
+                <td>Ventes de XXX</td>
+                <td>Net Commercial</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>44571</td>
+                <td>TVA Collectée</td>
+                <td>Net Commercial * Taux de TVA</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>411</td>
+                <td>Créances Clients</td>
+                <td></td>
+                <td>Net à Payer</td>
+            </tr>
+        </tbody>
+    </table></div>
+
+    <h2>Les écritures de paiements :</h2>
+    <p>Consiste à enregistrer l'entrée monétaire (compte 5) et à éteindre la créance (compte 411). <br> Ces écritures sont déclenchées par la réception d'un chèque ou d'un avis de Crédit Bancaire</p>
+    
+
+    <div class = "container"><table>
+        <thead>
+            <tr>
+                <th>Numéro de Compte</th>
+                <th>Intitulé</th>
+                <th>Débit</th>
+                <th>Crédit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>512</td>
+                <td>Banque</td>
+                <td>Montant payé</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>411</td>
+                <td>Créances Clients</td>
+                <td></td>
+                <td>Montant payé</td>
+            </tr>
+        </tbody>
+    </table></div>
+
+    <h2>Ecritures avec Réductions (RRR) :</h2>
+    <p>En comptabilité on ne comptabilise PAS les RRR dans les factures de Doit ! <br>L'écriture reste donc inchangée</p>
+    <div class = "container"><table>
+        <thead>
+            <tr>
+                <th>Numéro de Compte</th>
+                <th>Intitulé</th>
+                <th>Débit</th>
+                <th>Crédit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>411</td>
+                <td>Créances Clients</td>
+                <td>Net à Payer</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7XX</td>
+                <td>Ventes de XXX</td>
+                <td></td>
+                <td>Net Commercial</td>
+            </tr>
+            <tr>
+                <td>44571</td>
+                <td>TVA Collectée</td>
+                <td></td>
+                <td>Net Commercial * Taux de TVA</td>
+            </tr>
+        </tbody>
+    </table></div>
+
+    <h2>Ecritures avec Réductions financières (Escomptes) :</h2>
+    <p>En revanche on comptabilise les Escomptes en les considérant comme des charges</p>
+    <div class = "container"><table>
+        <thead>
+            <tr>
+                <th>Numéro de Compte</th>
+                <th>Intitulé</th>
+                <th>Débit</th>
+                <th>Crédit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>411</td>
+                <td>Créances Clients</td>
+                <td>Net à Payer</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>665</td>
+                <td>Escomptes</td>
+                <td>Montant Escompte</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>7XX</td>
+                <td>Ventes de XXX</td>
+                <td></td>
+                <td>Net Commercial</td>
+            </tr>
+            <tr>
+                <td>44571</td>
+                <td>TVA Collectée</td>
+                <td></td>
+                <td>Net Financier * Taux de TVA</td>
+            </tr>
+        </tbody>
+    </table></div>
+
+    <h2>Les Factures d'Avoir avec Réductions ou Escomptes</h2>
+    <p>Sont encore des factures de Doit dans lesquelles Débit et Crédit sont inversés.</p>
+
+    <div class = "container"><table>
+        <thead>
+            <tr>
+                <th>Numéro de Compte</th>
+                <th>Intitulé</th>
+                <th>Débit</th>
+                <th>Crédit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>70X</td>
+                <td>Ventes de XXX</td>
+                <td>Net Financier</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>44571</td>
+                <td>TVA Collectée</td>
+                <td>Net Fi * Taux de TVA</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>665</td>
+                <td>Escomptes</td>
+                <td></td>
+                <td>Montant Escompte</td>
+            </tr>
+            <tr>
+                <td>411</td>
+                <td>Créances Clients</td>
+                <td></td>
+                <td>Net à Payer</td>
+            </tr>
+        </tbody>
+    </table></div>
+
+    <h2>Les factures d'avoir avec Réductions après Vente</h2>
+    <p>Des comptes pour les RRR existent dans le PCG (7091,7096,7097), on ne les utilisera QUE dans le cas où une réduction est accordée après la vente quelqu'en soit la raison. <br> ATTENTION ces comptes comportent un 9 et fonctionnent donc à l'envers !</p>
+
+    <div class = "container"><table>
+        <thead>
+            <tr>
+                <th>Numéro de Compte</th>
+                <th>Intitulé</th>
+                <th>Débit</th>
+                <th>Crédit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>709X</td>
+                <td>RRR Accordées</td>
+                <td>Montant RRR</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>44571</td>
+                <td>TVA Collectée</td>
+                <td>Montant RRR * taux de TVA (voir facture)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>411</td><td>Créances Clients</td><td></td><td>Net à déduire</td>
+            </tr>
+        </tbody>
+    </table></div>
+
+    <h2>Les Acomptes :</h2>
+    <p>Depuis 2023, une TVA doit figurer sur tous les acomptes. Etant donné le caractère non définitif de la vente, nous utiliserons un compte TVA Attente 4458.</p>
+
+    <div class = "container"><table>
+        <thead>
+            <tr>
+                <th>Numéro de Compte</th>
+                <th>Intitulé</th>
+                <th>Débit</th>
+                <th>Crédit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>512</td>
+                <td>Banques</td>
+                <td>Montant TTC</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4458</td>
+                <td>TVA à régulariser</td>
+                <td>Montant TVA</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4191</td>
+                <td>Acomptes reçus</td>
+                <td></td>
+                <td>Montant TTC</td>
+            </tr>
+            <tr>
+                <td>44571</td>
+                <td>TVA Collectée</td>
+                <td></td>
+                <td>Montant TVA</td>
+            </tr>
+
+            
+        </tbody>
+    </table></div>
+
+
+    <div class = "container"><table>
+        <thead><tr><th>Numéro de Compte</th> <th>Intitulé</th><th>Débit</th><th>Crédit</th></tr> </thead>
+        <tbody>
+            <tr><td>411</td><td>Créances Clients</td><td>Net à Payer</td><td></td></tr>
+            <tr><td>4191</td><td>Acomptes reçus</td><td>Montant TTC</td><td></td></tr>
+            <tr><td>70X</td><td>Ventes de XXX</td><td></td><td>Montant HT</td></tr>
+            <tr><td>44571</td><td>TVA Collectée</td><td></td><td>Montant TVA restant</td></tr>
+            <tr><td>4458</td><td>TVA à régulariser</td><td></td><td>Montant TVA Acompte</td></tr>
+        </tbody>
+    </table></div>
+
+    <h2>Les Factures de vente de Prestations de services :</h2>
+    <p>Nécessitent un traitement particulier concernant la TVA, si la TVA est sur les encaissements, il faut décaler l'enregistrement du compte 44571</p>
+
+    <div class = "container"><table>
+        <thead><tr><th>Numéro de Compte</th> <th>Intitulé</th><th>Débit</th><th>Crédit</th></tr> </thead>
+        <tbody>
+            <tr><td>411</td><td>Créances Clients</td><td>Net à Payer</td><td></td></tr>
+            <tr><td>706</td><td>Vente de Prestation de Service</td><td></td><td>Montant HT</td></tr>
+            <tr><td>4458</td><td>TVA à régulariser</td><td></td><td>Montant TVA</td></tr>
+        </tbody>
+    </table></div>
+
+    <p>La TVA apparait sur l'enregistrement du paiement :</p>
+    <div class = "container"><table>
+        <thead><tr><th>Numéro de Compte</th> <th>Intitulé</th><th>Débit</th><th>Crédit</th></tr> </thead>
+        <tbody>
+            <tr><td>512</td><td>Banque</td><td>Montant Payé</td><td></td></tr>
+            <tr><td>4458</td><td>TVA à régulariser</td><td>Montant TVA</td><td></td></tr>
+            <tr><td>411</td><td>Créances Clients</td><td></td><td>Montant Payé</td></tr>
+            <tr><td>44571</td><td>TVA Collectée</td><td></td><td>Montant TVA</td></tr>
+        </tbody>
+    </table></div>
+    <p>à noter : pour les prestations de services avec options sur les débits, l'écriture de ventes habituelle sera passée au journal.</p>
+
+
+<br><br><br><br><br><br><br><br>
+
+
+<h2>Point de vue Client</h2>
+
+<p>Du point de vue Client la logique est la même, mais les flux sont inversés, les comptes 7 au crédit sont remplacés par des comptes 6 au débit et les comptes 41X par des comptes 40X</p>
+
+<h2>Les Factures de Doit : </h2>
+<div class = "container"><table>
+    <thead><tr><th>Numéro de Compte</th> <th>Intitulé</th><th>Débit</th><th>Crédit</th></tr> </thead>
+    <tbody>
+        <tr><td>60X</td><td>Achats de XXX</td><td>Net Commercial</td><td></td></tr>
+        <tr><td>44566</td><td>TVA déductible</td><td>Montant TVA</td><td></td></tr>
+        <tr><td>401</td><td>Dettes Fournisseurs</td><td></td><td>Net à Payer</td></tr>
+    </tbody>
+</table></div>
+
+<h2>Les factures d'Avoir : </h2>
+<p>se comptabilisent en inversant débit et crédit à partir de la facture de Doit</p>
+
+<div class = "container"><table>
+    <thead><tr><th>Numéro de Compte</th> <th>Intitulé</th><th>Débit</th><th>Crédit</th></tr> </thead>
+    <tbody>
+        <tr><td>401</td><td>Dettes Fournisseurs</td><td>Net à Payer</td><td></td></tr>
+        <tr><td>60X</td><td>Achats de XXX</td><td></td><td>Achats de XXX</td></tr>
+        <tr><td>44566</td><td>TVA déductible</td><td></td><td>TVA Déductible</td></tr>
+    </tbody>
+</table></div>
+
+<h2>Les écritures de paiements :</h2>
+
+<div class = "container"><table>
+    <thead><tr><th>Numéro de Compte</th> <th>Intitulé</th><th>Débit</th><th>Crédit</th></tr> </thead>
+    <tbody>
+        <tr><td>401</td><td>Dettes Fournisseurs</td><td>Montant Décaissé</td><td></td></tr>
+        <tr><td>512</td><td>Banque</td><td> </td><td>Montant Décaissé</td></tr>
+    </tbody>
+</table></div>
+
+<h2>Ecritures avec Réductions (RRR) :</h2>
+<p>En comptabilité on ne comptabilise PAS les RRR dans les factures de Doit ! <br>L'écriture reste donc inchangée</p>
+
+<div class = "container"><table>
+    <thead><tr><th>Numéro de Compte</th> <th>Intitulé</th><th>Débit</th><th>Crédit</th></tr> </thead>
+    <tbody>
+        <tr><td>60X</td><td>Achats de XXX</td><td>Net Commercial</td><td></td></tr>
+        <tr><td>44566</td><td>TVA déductible</td><td>Montant TVA</td><td></td></tr>
+        <tr><td>401</td><td>Dettes Fournisseurs</td><td></td><td>Net à Payer</td></tr>
+    </tbody>
+</table></div>
+
+<h2>Ecritures avec Réductions financières (Escomptes) :</h2>
+<p>En revanche on comptabilise les Escomptes en les considérant comme des produits</p>
+
+<div class = "container"><table>
+    <thead><tr><th>Numéro de Compte</th> <th>Intitulé</th><th>Débit</th><th>Crédit</th></tr> </thead>
+    <tbody>
+        <tr><td>60X</td><td>Achats de XXX</td><td>Net Financier</td><td></td></tr>
+        <tr><td>44566</td><td>TVA déductible</td><td>Net financier * taux TVA</td><td></td></tr>
+        <tr><td>765</td><td>Escompte Obtenu</td><td></td><td>Montant Escompte</td></tr>
+        <tr><td>401</td><td>Dettes Fournisseurs</td><td></td><td>Net à Payer</td></tr>
+    </tbody>
+</table></div>
+
+<h2>Les Factures d'Avoir avec Réductions ou Escomptes</h2>
+<p>Sont encore des factures de Doit dans lesquelles Débit et Crédit sont inversés.</p>
+
+<div class = "container"><table>
+    <thead><tr><th>Numéro de Compte</th> <th>Intitulé</th><th>Débit</th><th>Crédit</th></tr> </thead>
+    <tbody>
+        <tr><td>765</td><td>Escompte Obtenu</td><td>Montant Escompte</td><td></td></tr>
+        <tr><td>401</td><td>Dettes Fournisseurs</td><td>Net à Payer</td><td></td></tr>
+        <tr><td>60X</td><td>Achats de XXX</td><td></td><td>Net Financier</td></tr>
+        <tr><td>44566</td><td>TVA déductible</td><td></td><td>Net financier * taux TVA</td></tr>
+    </tbody>
+</table></div>
+
+<h2>Les factures d'avoir avec Réductions après Achat</h2>
+<p>Des comptes pour les RRR existent dans le PCG (6091,6096,6097), on ne les utilisera QUE dans le cas où une réduction est accordée après l'achat quelqu'en soit la raison. <br> ATTENTION ces comptes comportent un 9 et fonctionnent donc à l'envers !</p>
+
+<div class = "container"><table>
+    <thead><tr><th>Numéro de Compte</th> <th>Intitulé</th><th>Débit</th><th>Crédit</th></tr> </thead>
+    <tbody>
+        <tr><td>401</td><td>Dettes Fournisseurs</td><td>Montant Escompte</td><td></td></tr>
+        <tr><td>609X</td><td>RRR obtenus sur achat de XXX</td><td></td><td>Net Financier</td></tr>
+        <tr><td>44566</td><td>TVA Déductible</td><td></td><td>Net à Payer</td></tr>
+    </tbody>
+</table></div>
+
+<h2>Les Acomptes :</h2>
+<p>Depuis 2023, une TVA doit figurer sur tous les acomptes. Etant donné le caractère non définitif de la vente, nous utiliserons un compte TVA Attente 4458.</p>
+
+<div class = "container"><table>
+    <thead><tr><th>Numéro de Compte</th> <th>Intitulé</th><th>Débit</th><th>Crédit</th></tr> </thead>
+    <tbody>
+        <tr><td>4091</td><td>Acomptes versés</td><td>Montant TTC</td><td></td></tr>
+        <tr><td>44566</td><td>TVA Déductible</td><td>Montant TVA</td><td></td></tr>
+        <tr><td>512</td><td>Banque</td><td></td><td>Montant TTC</td></tr>
+        <tr><td>4458</td><td>TVA en attente</td><td></td><td>Montant TVA</td></tr>
+    </tbody>
+</table></div>
+
+<div class = "container"><table>
+    <thead><tr><th>Numéro de Compte</th> <th>Intitulé</th><th>Débit</th><th>Crédit</th></tr> </thead>
+    <tbody>
+        <tr><td>60X</td><td>Achats de XXX</td><td>Net Commercial</td><td></td></tr>
+        <tr><td>44566</td><td>TVA déductible</td><td>Montant TVA</td><td></td></tr>
+        <tr><td>401</td><td>Dettes Fournisseurs</td><td></td><td>Restant à Payer</td></tr>
+        <tr><td>4091</td><td>Acomptes versés</td><td></td><td>Montant TTC</td></tr>
+        <tr><td>4458</td><td>TVA en attente</td><td></td><td>Montant TVA</td></tr>  
+    </tbody>
+</table></div>
+
+<h2>Les Factures d'Achat de Prestations de services :</h2>
+<p>Nécessitent un traitement particulier concernant la TVA, si la TVA est sur les encaissements, il faut décaler l'enregistrement du compte 44571 <br>ATTENTION dans la comptabilité Client l'option est SUBIE ! voir mention sur facture.</p>
+
+<div class = "container"><table>
+    <thead><tr><th>Numéro de Compte</th> <th>Intitulé</th><th>Débit</th><th>Crédit</th></tr> </thead>
+    <tbody>
+        <tr><td>606</td><td>Achats de prestation de service</td><td>Net Commercial</td><td></td></tr>
+        <tr><td>4458</td><td>TVA en attente</td><td>Montant TVA</td><td></td></tr>
+        <tr><td>401</td><td>Dettes Fournisseurs</td><td></td><td>Net à Payer</td></tr>
+    </tbody>
+</table></div>
+
+<div class = "container"><table>
+    <thead><tr><th>Numéro de Compte</th> <th>Intitulé</th><th>Débit</th><th>Crédit</th></tr> </thead>
+    <tbody>
+        <tr><td>401</td><td>Dettes fournisseurs</td><td>Montant réglé</td><td></td></tr>
+        <tr><td>44566</td><td>TVA Déductible</td><td>Montant TVA</td><td></td></tr>
+        <tr><td>512</td><td>Banque</td><td></td><td>Montant réglé</td></tr>
+        <tr><td>4458</td><td>TVA en attente</td><td></td><td>Montant TVA</td></tr>
+    </tbody>
+</table></div>
+
+<p>à noter : pour les prestations de services avec options sur les débits, l'écriture d'achat habituelle sera passée au journal.</p>
+
+<br><br><br><br><br><br><br><br>
+</body>
+</html>

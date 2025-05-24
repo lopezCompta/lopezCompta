@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="maitreDesNombres.css">
+    <title>Le Maître des Mots</title>
+</head>
+<body>
+    
+    <h1>Le Maître des Mots</h1>
+
+    <div id="gameContainer">
+
+        <span id="charSheet">
+            <p>FICHE PERSONNAGE</p>
+            <img src="image/mathematicien.jpg" alt="image d'un mathematicien" class="imgPerso">
+            <p>Classe : Mathématicien Héroïque</p>
+            <p>Niveau : <span id="level">1</span></p>
+            <p>XP : <span id="exp">0</span>/ <span id="expNextLevel">100</span></p>
+            <p>HP : <span id="hp">30</span>/ <span id="hpMax">30</span></p>
+            <p><div id="hpBar"></div></p>
+            <p>ATK : <span id="atk">15</span></p>
+            <p>Or : <span id="gold">0</span></p>
+            <p>Sort 1 : <span id="spell1">Équation Fulgurante</span></p>
+            <p>Sort 2 : <span id="spell2">Débloqué au niveau 3</span></p>
+            <p>Sort 3 : <span id="spell3">Débloque au niveau 7</span></p>
+        </span>
+
+        <span id="inventory"> 
+            <p>INVENTAIRE :</p>
+            <p><span id="slot1">Emplacement vide</span></p>
+            <img src="image/calculatrice.jpg" alt="Calculatrice du Destin" id="liste" class="objets">
+            <p><span id="slot2">Emplacement vide</span></p>
+            <img src="image/regle.jpg" alt="plume" id="plume" class="objets">
+            <p><span id="slot3">Emplacement vide</span></p>
+            <img src="image/compas.jpg" alt="costume" id="costume" class="objets">
+            <p><span id="slot4">Emplacement vide</span></p>
+            <img src="image/pierre.jpg" alt="cravate" id="cravate" class="objets">
+        </span>
+
+        <span id="actionZone">
+            
+            <p id="lieu">Lieu actuel : <span id="placeActual">Village</span>
+            </p>
+            
+            <span id="shopZone">
+                <span id="shop1">
+                    <p>La Calculatrice du Destin</p>
+                    <p>+5 dégats</p>
+                    <p>prix d'achats : 50or</p>
+                    <button id="buyItem1">Acheter</button>
+                </span>
+                <span id="shop2">
+                    <p>La Règle des Dimensions Infinies</p>
+                    <p>+15 hp</p>
+                    <p>prix d'achats : 25or</p>
+                    <button id="buyItem2">Acheter</button>
+                </span>
+                <span id="shop3">
+                    <p>Le Compas de la Précision</p>
+                    <p>+50 hp</p>
+                    <p>prix d'achats : 300or</p>
+                    <button id="buyItem3">Acheter</button>
+                </span>
+                <span id="shop4">
+                    <p>La Pierre des Logarithmes</p>
+                    <p>+15 dégats</p>
+                    <p>prix d'achats : 100or</p>
+                    <button id="buyItem4">Acheter</button>
+                </span>
+            </span>
+            
+            <span id="donjonZone">      
+                <img src="image/calculateur.jpg" alt="image du monstre qui attaque" class="imgPerso" id="imgMonster">          
+                <p><span id="monster"></span><span id="hpMonster"></span><span id="separBar"></span><span id="hpMaxMonster"></span></p>
+                <p><div id="hpMonsterBar"></div></p>
+                <p><span id="narration">Vous entrez dans un donjon puant où règne l'anarchie et la terreur, saurez-vous affronter les monstres qui y règnent en maître avec votre calculatrice ?</span></p>
+                <p><span id="attackText"></span></p>
+                <button id="pass">Passer</button><br>
+                <button id="launchSpell1">Équation Fulgurante</button><br>
+                <button id="launchSpell2">Piège de Fractales</button><br>
+                <button id="launchSpell3">Numération Explosive</button>
+                <input type="text" id="test"><br>
+                <button id="validate">Valider</button>
+            
+            </span>
+
+            <span id="buttonZone">
+                <button id="goVillage" disabled>Village</button>
+                <button id="goDonjon">Donjon</button>
+            </span> 
+        </span>
+
+    </div>
+
+
+
+<script src="maitreDesNombres.js"></script>
+</body>
+</html>
