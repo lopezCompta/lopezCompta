@@ -1,0 +1,193 @@
+/* Styles modernisés et dynamiques avec nouvelles couleurs et typographie */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Nouvelle police moderne */
+}
+
+body {
+    background-color: #0d1117; /* Fond sombre moderne */
+    color: #c9d1d9; /* Texte clair et élégant */
+    line-height: 1.8;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* En-tête */
+header {
+    background: linear-gradient(135deg, #161b22, #21262d);
+    color: #ffffff;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out;
+}
+
+header h1 {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #58a6ff; /* Couleur d'accent moderne */
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Ajoute de l'impact visuel */
+    letter-spacing: 2px; /* Espacement pour une meilleure lisibilité */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Effet visuel subtil */
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #58a6ff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #79c0ff;
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    margin: 30px auto;
+    max-width: 1000px;
+    padding: 30px;
+    background-color: #161b22;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+h2 {
+    font-size: 2em;
+    color: #58a6ff;
+    margin-bottom: 20px;
+    border-left: 5px solid #58a6ff;
+    padding-left: 15px;
+}
+
+p, ul {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+ul li {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+/* Vidéo */
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+iframe {
+    border: 4px solid #58a6ff;
+    border-radius: 15px;
+    width: 100%;
+    height: 315px;
+    transition: transform 0.3s ease-in-out;
+}
+
+iframe:hover {
+    transform: scale(1.05);
+}
+
+/* Liens de téléchargement et jeux */
+a {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #79c0ff;
+    text-decoration: underline;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #161b22;
+    color: #c9d1d9;
+    margin-top: 40px;
+    border-top: 2px solid #30363d;
+    font-size: 0.85em;
+}
+
+footer p {
+    color: #8b949e;
+}
+
+/* Centrage et images */
+.center {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav a {
+        font-size: 0.9em;
+        margin: 0 10px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    iframe {
+        height: 250px;
+    }
+
+    img {
+        max-width: 90%;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

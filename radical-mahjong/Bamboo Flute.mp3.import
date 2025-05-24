@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c6x6tcn1is02f"
+path="res://.godot/imported/Bamboo Flute.mp3-d167dc3bebdfa8924972fbb54759a023.mp3str"
+
+[deps]
+
+source_file="res://Bamboo Flute.mp3"
+dest_files=["res://.godot/imported/Bamboo Flute.mp3-d167dc3bebdfa8924972fbb54759a023.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

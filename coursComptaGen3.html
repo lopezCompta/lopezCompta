@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapitre 3 : Les Mécanismes Comptables</title>
+
+    <link rel="stylesheet" href="styleCours.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="cours.html">Retour aux cours</a>
+    </div>
+
+    <h1>Chapitre 3 : Les Mécanismes Comptables</h1>
+
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p>La comptabilité est affaire de flux. Ces flux peuvent être classés en deux grandes catégories :</p>
+        <ul>
+            <li><strong>Flux physiques</strong> : échanges de biens ou de services (par exemple, achats et ventes de marchandises).</li>
+            <li><strong>Flux monétaires</strong> : mouvements d’argent (par exemple, paiements et encaissements).</li>
+        </ul>
+        <p>Ces flux se décomposent en <strong>flux entrants</strong> (apport de ressources) et <strong>flux sortants</strong> (utilisation de ressources), formant la base des <strong>emplois et ressources</strong> en comptabilité.</p>
+        <p>Il est essentiel de comprendre que chaque opération comptable doit être enregistrée dans les livres comptables, suivant un processus rigoureux qui garantit la transparence et la vérifiabilité des informations financières.</p>
+    </section>
+
+    <section id="plan-comptable-general">
+        <h2>Les comptes du Plan Comptable Général (PCG)</h2>
+        <p>Le Plan Comptable Général (PCG) organise les comptes en classes, permettant de catégoriser les opérations comptables. Chaque classe regroupe des comptes similaires :</p>
+        <ul>
+            <li><strong>Classe 1</strong> : Comptes de capitaux (fonds propres et dettes à long terme).</li>
+            <li><strong>Classe 2</strong> : Comptes d’immobilisations (actifs immobilisés).</li>
+            <li><strong>Classe 3</strong> : Comptes de stocks et en-cours (marchandises, matières premières).</li>
+            <li><strong>Classe 4</strong> : Comptes de tiers (créances et dettes à court terme, par exemple, clients et fournisseurs).</li>
+            <li><strong>Classe 5</strong> : Comptes financiers (trésorerie, comptes bancaires).</li>
+            <li><strong>Classe 6</strong> : Comptes de charges (coûts engagés, comme les salaires, les loyers).</li>
+            <li><strong>Classe 7</strong> : Comptes de produits (revenus générés par l'activité, comme les ventes).</li>
+            <li><strong>Classe 8</strong> : Comptes spéciaux (comptes de gestion et de suivi des résultats).</li>
+        </ul>
+        <p>Chaque classe de comptes est divisée en sous-comptes pour détailler les opérations spécifiques. Par exemple, la classe 6 peut avoir des sous-comptes pour les charges de personnel, les charges externes, etc.</p>
+    </section>
+
+    <section id="ecritures-comptables">
+        <h2>Les Écritures Comptables</h2>
+        <p>Une écriture comptable doit être datée et libellée avec précision pour garantir la traçabilité et la fonction de preuve. Elle consiste à enregistrer les flux d'emplois et de ressources.</p>
+        
+        <h3>Exemple d'écriture comptable simple</h3>
+        <p>Lorsqu'une entreprise achète des marchandises pour un montant de 1 000 € à crédit, l'écriture comptable est la suivante :</p>
+        <div class = "container"><table>
+            <thead>
+                <tr>
+                    <th>Numéro de Compte</th>
+                    <th>Intitulé</th>
+                    <th>Débit</th>
+                    <th>Crédit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>607</td>
+                    <td>Achats de marchandises</td>
+                    <td>1 000 €</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>401</td>
+                    <td>Fournisseurs</td>
+                    <td></td>
+                    <td>1 000 €</td>
+                </tr>
+            </tbody>
+        </table></div>
+
+        <h3>Exemple d'écriture comptable avec TVA</h3>
+        <p>Si l'achat ci-dessus inclut une TVA de 20 %, le montant total à payer sera de 1 200 € (1 000 € + 200 € de TVA). L'écriture comptable sera alors :</p>
+        <div class = "container"><table>
+            <thead>
+                <tr>
+                    <th>Numéro de Compte</th>
+                    <th>Intitulé</th>
+                    <th>Débit</th>
+                    <th>Crédit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>607</td>
+                    <td>Achats de marchandises</td>
+                    <td>1 000 €</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>44566</td>
+                    <td>TVA déductible</td>
+                    <td>200 €</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>401</td>
+                    <td>Fournisseurs</td>
+                    <td></td>
+                    <td>1 200 €</td>
+                </tr>
+            </tbody>
+        </table></div>
+        <p>Dans cet exemple, le compte 44566 enregistre la TVA déductible sur les achats, qui pourra être récupérée lors de la déclaration de TVA.</p>
+        <h3>Exemple d'écriture comptable pour la Vente de Produits Finis</h3>
+<p>Pour une vente de produits finis d'une valeur de 2 500 € HT avec une TVA de 20 %, l'écriture comptable sera la suivante :</p>
+
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Numéro de Compte</th>
+                <th>Intitulé</th>
+                <th>Débit</th>
+                <th>Crédit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>701</td>
+                <td>Ventes de produits finis</td>
+                <td></td>
+                <td>2 500 €</td>
+            </tr>
+            <tr>
+                <td>44571</td>
+                <td>TVA collectée</td>
+                <td></td>
+                <td>500 €</td>
+            </tr>
+            <tr>
+                <td>411</td>
+                <td>Clients</td>
+                <td>3 000 €</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>Exemple d'écriture comptable pour l'Achat de Matières Premières</h3>
+<p>Lors de l'achat de matières premières d'une valeur de 1 200 € HT avec une TVA de 20 %, l'écriture comptable sera la suivante :</p>
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Numéro de Compte</th>
+                <th>Intitulé</th>
+                <th>Débit</th>
+                <th>Crédit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>601</td>
+                <td>Achats de matières premières</td>
+                <td>1 200 €</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>44566</td>
+                <td>TVA déductible</td>
+                <td>240 €</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>401</td>
+                <td>Fournisseurs</td>
+                <td></td>
+                <td>1 440 €</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+    </section>
+
+    <section id="tva">
+        <h2>Le Principe de la TVA</h2>
+        <p>La Taxe sur la Valeur Ajoutée (TVA) est un impôt indirect perçu par l'État. En comptabilité, elle est divisée en deux catégories :</p>
+        <ul>
+            <li><strong>TVA collectée</strong> : TVA facturée sur les ventes, due à l’État.</li>
+            <li><strong>TVA déductible</strong> : TVA payée sur les achats, déductible de la TVA collectée.</li>
+        </ul>
+        <p>Les entreprises doivent déclarer la TVA collectée et déductible dans leur déclaration de TVA. Le solde (TVA collectée - TVA déductible) doit être versé à l'État si la TVA collectée est supérieure à la TVA déductible.</p>
+    </section>
+
+    <section id="debit-credit">
+        <h2>Débit et Crédit, et Soldes des Comptes</h2>
+        <p>Les comptes se structurent en mouvements de débit et crédit :</p>
+        <ul>
+            <li><strong>Débit</strong> : Enregistre les emplois (utilisation de ressources), par exemple, un achat de matériel.</li>
+            <li><strong>Crédit</strong> : Enregistre les ressources (sources de financement), par exemple, une vente de biens.</li>
+        </ul>
+        <p>Le solde d’un compte est la différence entre le débit et le crédit, indiquant la position nette. Si le débit est supérieur au crédit, le compte est débiteur. Si le crédit est supérieur, le compte est créditeur.</p>
+    </section>
+
+    <section id="types-comptabilite">
+        <h2>Comptabilité sur les Encaissements et Comptabilité d’Engagement</h2>
+        <p>Deux méthodes principales sont utilisées :</p>
+        <ul>
+            <li><strong>Comptabilité d’encaissement</strong> : Enregistre les flux financiers uniquement au moment du paiement ou de l’encaissement. Cette méthode est souvent utilisée par les petites entreprises.</li>
+            <li><strong>Comptabilité d’engagement</strong> : Enregistre les flux dès que l’opération est réalisée, indépendamment de son règlement. Cela donne une image plus précise de la situation financière d'une entreprise.</li>
+        </ul>
+        <p>Exemple :</p>
+        <ul>
+            <li>Avec la comptabilité d'engagement, si une facture de vente est émise, elle est enregistrée même si le client ne paie pas immédiatement.</li>
+            <li>Avec la comptabilité d'encaissement, l'écriture ne sera enregistrée qu'à la date de réception du paiement.</li>
+        </ul>
+    </section>
+
+    <section id="journaux-auxiliaires">
+        <h2>Les Journaux Auxiliaires</h2>
+        <p>Les journaux auxiliaires permettent d’enregistrer les opérations par type, facilitant ainsi le suivi et la gestion des écritures. Voici quelques exemples de journaux auxiliaires courants :</p>
+        <ul>
+            <li><strong>Journal des achats</strong> : Enregistre toutes les transactions d'achats de biens et services.</li>
+            <li><strong>Journal des ventes</strong> : Enregistre toutes les transactions de ventes.</li>
+            <li><strong>Journal de banque</strong> : Suit les mouvements de la trésorerie, tels que les dépôts et les retraits.</li>
+            <li><strong>Journal de caisse</strong> : Enregistre les encaissements et décaissements en espèces.</li>
+        </ul>
+        <p>Ces journaux sont cruciaux pour une gestion efficace des comptes et permettent de simplifier la saisie des écritures dans le grand livre.</p>
+    </section>
+
+    <section id="parametrage-pgi">
+        <h2>Paramétrage du Progiciel de Gestion Intégré (PGI)</h2>
+        <p>Le PGI (ou ERP en anglais) permet d’automatiser le processus comptable. Il inclut le paramétrage des comptes, des écritures et des flux financiers pour réduire le travail manuel et minimiser les erreurs.</p>
+        <p>Le paramétrage efficace d'un PGI inclut :</p>
+        <ul>
+            <li>Définition des comptes à utiliser dans les écritures comptables.</li>
+            <li>Configuration des taux de TVA applicables aux différents types de produits et services.</li>
+            <li>Création de modèles d'écritures pour automatiser des transactions récurrentes.</li>
+        </ul>
+        <p>Une bonne configuration du PGI facilite le suivi des opérations et améliore la fiabilité des informations financières.</p>
+    </section>
+
+    <section id="compte-resultat-bilan">
+        <h2>Comptes dans le Compte de Résultat et le Bilan</h2>
+        <p>Les comptes de charges et de produits (classe 6 et 7) alimentent le <strong>Compte de Résultat</strong>, tandis que les comptes de capitaux, immobilisations, et trésorerie (classe 1, 2, et 5) alimentent le <strong>Bilan</strong>.</p>
+        <p>Le Compte de Résultat présente la performance de l'entreprise sur une période donnée, montrant le résultat net obtenu (produits - charges).</p>
+        <p>Le Bilan, quant à lui, fournit une photographie de la situation financière de l’entreprise à un instant T, détaillant les actifs (ressources) et les passifs (financements).</p>
+    </section>
+<br><br><br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://slfotjjq0ujm"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_4kmkg"]
+[ext_resource type="Texture2D" uid="uid://bij8rm8vkvxjm" path="res://sprites/menu.png" id="1_rl2ao"]
+[ext_resource type="Texture2D" uid="uid://dat0jndwdwjx" path="res://sprites/titre.png" id="2_y855f"]
+[ext_resource type="Texture2D" uid="uid://bthmejoc6fpen" path="res://sprites/playerButtton.png" id="4_h1hri"]
+[ext_resource type="Texture2D" uid="uid://d2000behlnt6s" path="res://sprites/playerButttonhover.png" id="5_bys5v"]
+[ext_resource type="Texture2D" uid="uid://cuhsbay2e44su" path="res://sprites/instructions.png" id="6_lrbhx"]
+[ext_resource type="Texture2D" uid="uid://ivt4bdfycqmy" path="res://sprites/instructionshover.png" id="7_mfchl"]
+[ext_resource type="AudioStream" uid="uid://diq7emjcnryj1" path="res://sounds/intromenumusic.mp3" id="8_hu6cp"]
+[ext_resource type="Texture2D" uid="uid://cf3ckxrdye4k8" path="res://sprites/quitter.png" id="9_48svc"]
+[ext_resource type="Texture2D" uid="uid://disgvpqe32rqu" path="res://sprites/quitterHover.png" id="10_eorru"]
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_4kmkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(509, 424)
+scale = Vector2(1.02344, 1.02344)
+texture = ExtResource("1_rl2ao")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(503, 316)
+scale = Vector2(1.451, 1.28495)
+texture = ExtResource("2_y855f")
+
+[node name="jouerButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(350, 200)
+offset_left = 433.0
+offset_top = 546.0
+offset_right = 783.0
+offset_bottom = 746.0
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("4_h1hri")
+texture_hover = ExtResource("5_bys5v")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="insctructionsButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(350, 200)
+offset_left = 435.0
+offset_top = 655.0
+offset_right = 785.0
+offset_bottom = 855.0
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("6_lrbhx")
+texture_hover = ExtResource("7_mfchl")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_hu6cp")
+autoplay = true
+
+[node name="quitterButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(150, 100)
+offset_left = 867.0
+offset_top = 23.0
+offset_right = 1247.0
+offset_bottom = 213.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("9_48svc")
+texture_hover = ExtResource("10_eorru")
+ignore_texture_size = true
+stretch_mode = 3
+
+[connection signal="pressed" from="jouerButton" to="." method="_on_jouer_button_pressed"]
+[connection signal="pressed" from="jouerButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="insctructionsButton" to="." method="_on_insctructions_button_pressed"]
+[connection signal="pressed" from="insctructionsButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="quitterButton" to="." method="_on_quitter_button_pressed"]

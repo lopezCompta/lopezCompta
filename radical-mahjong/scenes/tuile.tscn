@@ -1,0 +1,118 @@
+[gd_scene load_steps=10 format=3 uid="uid://b3or2ijygamp6"]
+
+[ext_resource type="Script" path="res://scripts/tuile.gd" id="1_sewv4"]
+[ext_resource type="Texture2D" uid="uid://dr0u5gt1gssm3" path="res://sprites/tuile.png" id="2_kuxbi"]
+[ext_resource type="LabelSettings" uid="uid://biqj7fk1pil6" path="res://LabelSettings/blue.tres" id="3_foitx"]
+[ext_resource type="LabelSettings" uid="uid://l0fs30c2r1uw" path="res://LabelSettings/red.tres" id="3_fq0t6"]
+[ext_resource type="LabelSettings" uid="uid://i8puji2ctqve" path="res://LabelSettings/black.tres" id="3_vv6jn"]
+[ext_resource type="FontFile" uid="uid://ddtx3w3nw71ro" path="res://sprites/NotoSansSC-VariableFont_wght.ttf" id="6_awqhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43ft1"]
+size = Vector2(46.25, 52)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h1cy6"]
+font = ExtResource("6_awqhk")
+font_size = 44
+font_color = Color(0.379856, 0.00138405, 0.605111, 1)
+outline_size = 7
+outline_color = Color(0.380392, 0, 0.603922, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h0c1w"]
+font = ExtResource("6_awqhk")
+font_size = 44
+font_color = Color(0.0920663, 0.33663, 5.29438e-07, 1)
+outline_size = 7
+outline_color = Color(0.0901961, 0.337255, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="tuile" type="Node2D"]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_sewv4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(60, 56)
+scale = Vector2(0.583643, 0.536293)
+texture = ExtResource("2_kuxbi")
+metadata/_edit_lock_ = true
+
+[node name="left" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left"]
+position = Vector2(32.75, 47)
+shape = SubResource("RectangleShape2D_43ft1")
+metadata/_edit_lock_ = true
+
+[node name="right" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right"]
+position = Vector2(81, 47)
+shape = SubResource("RectangleShape2D_43ft1")
+metadata/_edit_lock_ = true
+
+[node name="black_text" type="Label" parent="."]
+offset_left = 33.0
+offset_top = 21.0
+offset_right = 80.0
+offset_bottom = 86.0
+label_settings = ExtResource("3_vv6jn")
+horizontal_alignment = 1
+
+[node name="red_text" type="Label" parent="."]
+offset_left = 33.0
+offset_top = 21.0
+offset_right = 81.0
+offset_bottom = 86.0
+label_settings = ExtResource("3_fq0t6")
+horizontal_alignment = 1
+
+[node name="blue_text" type="Label" parent="."]
+offset_left = 33.0
+offset_top = 21.0
+offset_right = 83.0
+offset_bottom = 86.0
+label_settings = ExtResource("3_foitx")
+horizontal_alignment = 1
+
+[node name="purple_text" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 19.0
+offset_right = 81.0
+offset_bottom = 84.0
+label_settings = SubResource("LabelSettings_h1cy6")
+horizontal_alignment = 1
+
+[node name="green_text" type="Label" parent="."]
+offset_left = 36.25
+offset_top = 18.75
+offset_right = 82.25
+offset_bottom = 83.75
+label_settings = SubResource("LabelSettings_h0c1w")
+horizontal_alignment = 1
+
+[node name="hitBox" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 28.75
+offset_top = 18.75
+offset_right = 81.75
+offset_bottom = 86.75
+metadata/_edit_lock_ = true
+
+[connection signal="area_entered" from="left" to="." method="_on_left_area_entered"]
+[connection signal="area_shape_entered" from="left" to="." method="_on_left_area_shape_entered"]
+[connection signal="area_shape_exited" from="left" to="." method="_on_left_area_shape_exited"]
+[connection signal="body_entered" from="left" to="." method="_on_left_body_entered"]
+[connection signal="body_exited" from="left" to="." method="_on_left_body_exited"]
+[connection signal="area_entered" from="right" to="." method="_on_right_area_entered"]
+[connection signal="area_shape_entered" from="right" to="." method="_on_right_area_shape_entered"]
+[connection signal="area_shape_exited" from="right" to="." method="_on_right_area_shape_exited"]
+[connection signal="body_entered" from="right" to="." method="_on_right_body_entered"]
+[connection signal="body_exited" from="right" to="." method="_on_right_body_exited"]
+[connection signal="pressed" from="hitBox" to="." method="_on_hit_box_pressed"]
+[connection signal="pressed" from="hitBox" to="." method="_on_button_pressed"]

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2 : Les Formules Excel</title>
+    <link rel="stylesheet" href="styleCours.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="exercices.html">Retour aux Exercices</a>
+    </div>
+    <h1>Exercice 2 : Formules Excel</h1>
+
+
+    
+        <h2>Exercice 1 : Calcul de ventes</h2>
+        <p><strong>Questions :</strong></p>
+        <ul>
+            <li>Utilisez une formule pour calculer le Chiffre d'affaires (Prix unitaire * Quantité vendue).</li>
+            <li>Calculez le total du Chiffre d'affaires en bas de la colonne.</li>
+            <li>Trouvez le produit ayant généré le plus de ventes en utilisant une formule.</li>
+        </ul>
+    
+        <div class="container"><table>
+            <tr>
+                <th>Produit</th>
+                <th>Prix unitaire</th>
+                <th>Quantité vendue</th>
+                <th>Chiffre d'affaires</th>
+            </tr>
+            <tr>
+                <td>Produit A</td>
+                <td>10</td>
+                <td>100</td>
+                <td>=B2*C2</td>
+            </tr>
+            <tr>
+                <td>Produit B</td>
+                <td>15</td>
+                <td>80</td>
+                <td>=B3*C3</td>
+            </tr>
+            <tr>
+                <td>Produit C</td>
+                <td>20</td>
+                <td>60</td>
+                <td>=B4*C4</td>
+            </tr>
+            <tr>
+                <td>Produit D</td>
+                <td>25</td>
+                <td>40</td>
+                <td>=B5*C5</td>
+            </tr>
+            <tr>
+                <td>Produit E</td>
+                <td>30</td>
+                <td>20</td>
+                <td>=B6*C6</td>
+            </tr>
+            <tr>
+                <td colspan="3">Total</td>
+                <td>=SOMME(D2:D6)</td>
+            </tr>
+        </table></div>
+    
+        <p><strong>Trouver le produit ayant généré le plus de ventes :</strong></p>
+        <p>=RECHERCHEV(MAX(D2:D6);A2:D6;1;FAUX)</p>
+    
+        <h2>Exercice 2 : Analyse de données clients</h2>
+
+        <p><strong>Questions :</strong></p>
+        <ul>
+            <li>Utilisez la fonction MOYENNE pour calculer l'âge moyen des clients.</li>
+            <li>Utilisez NBSI pour compter combien de clients ont plus de 40 ans.</li>
+            <li>Avec SOMME.SI, calculez le total des achats pour la ville de Paris.</li>
+            <li>Utilisez RECHERCHEV pour trouver le montant des achats du client "Dubois".</li>
+        </ul>
+        
+        <div class="container"><table border="1">
+            <tr>
+                <th>Nom du client</th>
+                <th>Âge</th>
+                <th>Ville</th>
+                <th>Montant des achats</th>
+            </tr>
+            <tr>
+                <td>Martin</td>
+                <td>35</td>
+                <td>Paris</td>
+                <td>1200</td>
+            </tr>
+            <tr>
+                <td>Dubois</td>
+                <td>42</td>
+                <td>Lyon</td>
+                <td>1500</td>
+            </tr>
+            <tr>
+                <td>Bernard</td>
+                <td>28</td>
+                <td>Paris</td>
+                <td>800</td>
+            </tr>
+            <tr>
+                <td>Petit</td>
+                <td>50</td>
+                <td>Marseille</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>Robert</td>
+                <td>39</td>
+                <td>Lyon</td>
+                <td>1300</td>
+            </tr>
+            <tr>
+                <td>Durand</td>
+                <td>45</td>
+                <td>Paris</td>
+                <td>1800</td>
+            </tr>
+            <tr>
+                <td>Moreau</td>
+                <td>33</td>
+                <td>Bordeaux</td>
+                <td>950</td>
+            </tr>
+            <tr>
+                <td>Laurent</td>
+                <td>55</td>
+                <td>Paris</td>
+                <td>2200</td>
+            </tr>
+            <tr>
+                <td>Simon</td>
+                <td>30</td>
+                <td>Lyon</td>
+                <td>1100</td>
+            </tr>
+            <tr>
+                <td>Michel</td>
+                <td>48</td>
+                <td>Marseille</td>
+                <td>1700</td>
+            </tr>
+        </table></div>
+        
+        <p><strong>Formules à utiliser :</strong></p>
+        <ul>
+            <li>Âge moyen : =MOYENNE(B2:B11)</li>
+            <li>Nombre de clients de plus de 40 ans : =NBSI(B2:B11;">40")</li>
+            <li>Total des achats pour Paris : =SOMME.SI(C2:C11;"Paris";D2:D11)</li>
+            <li>Montant des achats de Dubois : =RECHERCHEV("Dubois";A2:D11;4;FAUX)</li>
+        </ul>
+
+
+        <h2>Exercice 3 : Gestion des stocks</h2>
+
+<p><strong>Questions :</strong></p>
+<ul>
+    <li>Calculez le Stock final avec la formule : Stock initial + Entrées - Sorties.</li>
+    <li>Utilisez la fonction SI pour marquer "Réapprovisionner" si le stock final est inférieur à 10.</li>
+    <li>Calculez le pourcentage de produits à réapprovisionner.</li>
+</ul>
+
+<div class="container"><table border="1">
+    <tr>
+        <th>Référence produit</th>
+        <th>Nom du produit</th>
+        <th>Stock initial</th>
+        <th>Entrées</th>
+        <th>Sorties</th>
+        <th>Stock final</th>
+        <th>Statut</th>
+    </tr>
+    <tr>
+        <td>REF001</td>
+        <td>Stylo bleu</td>
+        <td>50</td>
+        <td>20</td>
+        <td>45</td>
+        <td>=C2+D2-E2</td>
+        <td>=SI(F2<10;"Réapprovisionner";"")</td>
+    </tr>
+    <tr>
+        <td>REF002</td>
+        <td>Cahier A4</td>
+        <td>30</td>
+        <td>50</td>
+        <td>60</td>
+        <td>=C3+D3-E3</td>
+        <td>=SI(F3<10;"Réapprovisionner";"")</td>
+    </tr>
+    <tr>
+        <td>REF003</td>
+        <td>Gomme</td>
+        <td>100</td>
+        <td>0</td>
+        <td>95</td>
+        <td>=C4+D4-E4</td>
+        <td>=SI(F4<10;"Réapprovisionner";"")</td>
+    </tr>
+    <tr>
+        <td>REF004</td>
+        <td>Classeur</td>
+        <td>25</td>
+        <td>30</td>
+        <td>40</td>
+        <td>=C5+D5-E5</td>
+        <td>=SI(F5<10;"Réapprovisionner";"")</td>
+    </tr>
+    <tr>
+        <td>REF005</td>
+        <td>Crayon HB</td>
+        <td>80</td>
+        <td>50</td>
+        <td>100</td>
+        <td>=C6+D6-E6</td>
+        <td>=SI(F6<10;"Réapprovisionner";"")</td>
+    </tr>
+    <tr>
+        <td>REF006</td>
+        <td>Marqueur</td>
+        <td>40</td>
+        <td>20</td>
+        <td>55</td>
+        <td>=C7+D7-E7</td>
+        <td>=SI(F7<10;"Réapprovisionner";"")</td>
+    </tr>
+    <tr>
+        <td>REF007</td>
+        <td>Bloc-notes</td>
+        <td>60</td>
+        <td>40</td>
+        <td>90</td>
+        <td>=C8+D8-E8</td>
+        <td>=SI(F8<10;"Réapprovisionner";"")</td>
+    </tr>
+    <tr>
+        <td>REF008</td>
+        <td>Taille-crayon</td>
+        <td>35</td>
+        <td>15</td>
+        <td>30</td>
+        <td>=C9+D9-E9</td>
+        <td>=SI(F9<10;"Réapprovisionner";"")</td>
+    </tr>
+</table></div>
+
+<p><strong>Formules à utiliser :</strong></p>
+<ul>
+    <li>Stock final (colonne F) : =C2+D2-E2 (ajustez les numéros de ligne pour chaque produit)</li>
+    <li>Statut (colonne G) : =SI(F2<10;"Réapprovisionner";"")</li>
+    <li>Pourcentage de produits à réapprovisionner : =NBSI(G2:G9;"Réapprovisionner")/NBVAL(A2:A9)</li>
+</ul>
+
+    
+
+
+<br><br><br><br><br><br><br><br>
+</body>
+</html>

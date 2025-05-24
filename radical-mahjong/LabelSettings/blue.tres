@@ -1,0 +1,12 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://biqj7fk1pil6"]
+
+[ext_resource type="FontFile" uid="uid://ddtx3w3nw71ro" path="res://sprites/NotoSansSC-VariableFont_wght.ttf" id="1_qe3xp"]
+
+[resource]
+font = ExtResource("1_qe3xp")
+font_size = 44
+font_color = Color(0, 0, 0.85098, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0.85098, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)

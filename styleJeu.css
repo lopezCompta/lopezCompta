@@ -1,0 +1,358 @@
+/* Général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #121212; /* Arrière-plan sombre pour un effet "sérieux" */
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* Conteneur principal */
+.container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #00adb5;
+    text-shadow: 0px 0px 10px rgba(0, 173, 181, 0.7);
+    margin-bottom: 20px;
+}
+
+#exercise-display {
+    font-size: 1.2em;
+    color: #f5f5f5;
+    margin-bottom: 15px;
+}
+
+/* Boutons */
+button {
+    background-color: #00adb5;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0px 4px 8px rgba(0, 173, 181, 0.4);
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #007a7e;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 173, 181, 0.6);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Table des écritures comptables */
+.entry-table {
+    width: 90%;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colonnes pour les entrées et les en-têtes */
+    gap: 10px; /* Ajustez l'espacement entre les colonnes */
+    margin: 20px auto;
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 8px;
+    color: #e0e0e0;
+}
+
+.entry-table .header, .entry-table .cell {
+    padding: 10px;
+    text-align: center;
+}
+
+.entry-table .header {
+    grid-column: span 2;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #333333;
+    color: #00adb5;
+    border-radius: 4px;
+    padding: 10px 0;
+}
+
+.entry-table .label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00adb5;
+    font-weight: bold;
+}
+
+.entry-table .cell input[type="text"],
+.entry-table .cell input[type="number"],
+.entry-table .cell input[type="date"] {
+    width: 100%;
+    max-width: 180px;
+    background-color: #292929;
+    color: #ffffff;
+    border: 1px solid #555555;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+    transition: border 0.3s;
+}
+
+/* Ajustement du focus sur les inputs */
+.entry-table .cell input[type="text"]:focus,
+.entry-table .cell input[type="number"]:focus,
+.entry-table .cell input[type="date"]:focus {
+    border: 1px solid #00adb5;
+    outline: none;
+}
+
+/* Ajout de légères animations pour les boutons */
+@keyframes buttonGlow {
+    0% {
+        box-shadow: 0px 4px 8px rgba(0, 173, 181, 0.4);
+    }
+    50% {
+        box-shadow: 0px 4px 16px rgba(0, 173, 181, 0.6);
+    }
+    100% {
+        box-shadow: 0px 4px 8px rgba(0, 173, 181, 0.4);
+    }
+}
+
+button:hover {
+    animation: buttonGlow 1s infinite alternate;
+}
+
+
+#facture {
+    width: 60%;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    font-size: 16px;
+    line-height: 14px;
+    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+#facture p {
+    margin: 0 0 10px 0;
+}
+
+/* Centrer le nom et l'adresse du client */
+#facture p:nth-child(3),
+#facture p:nth-child(4) {
+    text-align: center;
+}
+
+#facture table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Trait de séparation avant chaque tableau */
+#facture table::before {
+    content: '';
+    display: block;
+    width: 100%;
+    border-top: 2px solid #ddd;
+    margin-bottom: 20px;
+}
+
+#facture table th,
+#facture table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+#facture table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+#facture table tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+
+#typeFacture, #dateFacture, #libelleFacture {
+    font-weight: bold;
+}
+
+/* Styles pour le haut de la facture */
+#facture > p:nth-child(-n+4) {
+    margin-bottom: 5px;
+}
+
+#facture > p:nth-child(5),
+#facture > p:nth-child(6) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Styles pour le bas de la facture */
+#facture > table:last-of-type {
+    width: 50%;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+#facture > table:last-of-type td:first-child {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.basFact {
+    text-align: center
+}
+
+/* Style pour les cases à cocher */
+.checkbox-custom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #00adb5; /* Couleur du texte pour le label */
+    font-weight: bold;
+}
+
+.checkbox-custom input[type="checkbox"] {
+    /* Supprime les styles de la case par défaut */
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00adb5;
+    border-radius: 4px;
+    margin: 10px;
+    vertical-align: middle;
+    background-color: #1f1f1f;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.checkbox-custom input[type="checkbox"]:checked {
+    background-color: #00adb5;
+}
+
+.checkbox-custom input[type="checkbox"]::before {
+    content: '✓';
+    position: absolute;
+    display: block;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.checkbox-custom input[type="checkbox"]:checked::before {
+    opacity: 1;
+}
+
+/* Styles pour la table des entrées (tabInput) */
+.tabInput {
+    width: 95%;  /* Augmente la largeur de la table */
+    max-width: 1000px;  /* Augmente la largeur maximale de la table */
+    margin: 20px auto;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    padding: 20px;
+    color: #e0e0e0;
+    border-collapse: collapse;
+}
+
+/* En-tête de la table */
+.tabInput th {
+    text-align: center;
+    padding: 12px;
+    background-color: #333333;
+    color: #00adb5;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Corps de la table */
+.tabInput td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #555555;
+}
+
+/* Style des champs de saisie dans la table */
+.tabInput input[type="text"],
+.tabInput input[type="number"] {
+    width: 100%;
+    max-width: 200px;  /* Augmente la largeur des champs de saisie */
+    padding: 8px;
+    background-color: #ffffff;  /* Change le fond à blanc */
+    color: #333333;  /* Change la couleur du texte à une teinte foncée pour mieux contraster */
+    border: 1px solid #555555;
+    border-radius: 4px;
+    text-align: center;
+    transition: border 0.3s;
+}
+
+/* Focus sur les champs de saisie */
+.tabInput input[type="text"]:focus,
+.tabInput input[type="number"]:focus {
+    border: 1px solid #00adb5;
+    outline: none;
+}
+
+/* Style des boutons */
+.boutonEnLigne button {
+    background-color: #00adb5;
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    margin: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0px 4px 8px rgba(0, 173, 181, 0.4);
+    border-radius: 5px;
+}
+
+/* Effet au survol du bouton */
+.boutonEnLigne button:hover {
+    background-color: #007a7e;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 173, 181, 0.6);
+}
+
+/* Effet au clic du bouton */
+.boutonEnLigne button:active {
+    transform: scale(0.98);
+}
+
+/* Espacement entre les colonnes de la table */
+.tabInput tr {
+    border-bottom: 1px solid #555555;
+}
+
+/* Pour les cases à cocher à l'intérieur des options */
+.tabInput input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}

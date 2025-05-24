@@ -1,0 +1,317 @@
+[gd_scene load_steps=27 format=3 uid="uid://bw120vena7vir"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_0m8dw"]
+[ext_resource type="Texture2D" uid="uid://cje56ho2yfavp" path="res://sprites/background2.png" id="2_lr3ql"]
+[ext_resource type="Texture2D" uid="uid://dfm8crwmwmjdg" path="res://sprites/backgroundlevel1.png" id="3_35esd"]
+[ext_resource type="Texture2D" uid="uid://ddajcfyi31yv" path="res://sprites/cadre-chinois-fond-modele-chinois-or-rouge_42612-48.png" id="4_5abiv"]
+[ext_resource type="Texture2D" uid="uid://bb831svgy4mf4" path="res://sprites/backgroundlevel2.png" id="4_6svy7"]
+[ext_resource type="Texture2D" uid="uid://diadqy1l2qrbv" path="res://sprites/backgroundlevel3.png" id="5_qsqo8"]
+[ext_resource type="Texture2D" uid="uid://cp02knhulqncy" path="res://sprites/light3.png" id="5_wphkf"]
+[ext_resource type="Texture2D" uid="uid://buxm7rlp3a6cy" path="res://sprites/backgroundlevel4.png" id="6_e2e8e"]
+[ext_resource type="AudioStream" uid="uid://73ry6oximnq6" path="res://sounds/association.mp3" id="6_uxwcs"]
+[ext_resource type="AudioStream" uid="uid://dxa6px3jxjt11" path="res://sounds/select.mp3" id="7_72i6b"]
+[ext_resource type="Texture2D" uid="uid://ca4an0vsm4p7i" path="res://sprites/melange.png" id="8_udng5"]
+[ext_resource type="FontFile" uid="uid://ddtx3w3nw71ro" path="res://sprites/NotoSansSC-VariableFont_wght.ttf" id="9_httka"]
+[ext_resource type="Texture2D" uid="uid://b2x13m1cd1vwu" path="res://sprites/melangehover.png" id="9_l7dsk"]
+[ext_resource type="Texture2D" uid="uid://bqwllxmxrfkxl" path="res://sprites/retour.png" id="10_7pa24"]
+[ext_resource type="Texture2D" uid="uid://80y87h8hp1g6" path="res://sprites/retourHover.png" id="11_nad6a"]
+[ext_resource type="AudioStream" uid="uid://bgvpexexut6ww" path="res://sounds/levelmusic1.mp3" id="15_pp6ea"]
+[ext_resource type="AudioStream" uid="uid://cs6jh83jp6h45" path="res://sounds/levelmusic2.mp3" id="16_l7fmr"]
+[ext_resource type="AudioStream" uid="uid://cfltrx6gckh0r" path="res://sounds/levelmusic3.mp3" id="17_ajcpw"]
+[ext_resource type="AudioStream" uid="uid://my1qohw5fxf0" path="res://sounds/levelmusic4.mp3" id="18_6y7bn"]
+[ext_resource type="AudioStream" uid="uid://5fulisnbq5yb" path="res://sounds/levelmusic5.mp3" id="19_lrhmr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtf4n"]
+size = Vector2(1030, 1022)
+
+[sub_resource type="Gradient" id="Gradient_evna8"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.243902, 0.634146)
+colors = PackedColorArray(1, 0, 0, 1, 0.93, 0.87358, 0.0837, 1, 1, 0, 0, 1)
+metadata/_snap_count = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lmpac"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h4gb8"]
+font_size = 45
+font_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_muhvt"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nxnuh"]
+font = ExtResource("9_httka")
+font_size = 80
+font_color = Color(0, 0, 0, 1)
+outline_size = 8
+shadow_size = 25
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="level" type="Area2D"]
+collision_layer = 1024
+collision_mask = 1024
+script = ExtResource("1_0m8dw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(511, 511)
+shape = SubResource("RectangleShape2D_vtf4n")
+
+[node name="background1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(525, 498)
+texture = ExtResource("2_lr3ql")
+
+[node name="background2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(513, 392)
+texture = ExtResource("3_35esd")
+
+[node name="background3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(527, 600)
+texture = ExtResource("4_6svy7")
+
+[node name="background4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(525, 498)
+texture = ExtResource("5_qsqo8")
+
+[node name="background5" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(529, 432)
+texture = ExtResource("6_e2e8e")
+
+[node name="tile_list" type="Node2D" parent="."]
+
+[node name="animation" type="Node2D" parent="."]
+visible = false
+position = Vector2(-16, 109)
+
+[node name="cadre" type="Sprite2D" parent="animation"]
+modulate = Color(1, 1, 1, 0.929412)
+position = Vector2(529, 420)
+texture = ExtResource("4_5abiv")
+
+[node name="particulesgauche" type="CPUParticles2D" parent="animation"]
+position = Vector2(140, 413)
+scale = Vector2(0.7, 0.7)
+amount = 500
+lifetime = 1.5
+speed_scale = 0.2
+texture = ExtResource("5_wphkf")
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(0, -1)
+spread = 21.22
+gravity = Vector2(0, 300)
+initial_velocity_min = 400.0
+initial_velocity_max = 400.0
+radial_accel_min = 100.0
+radial_accel_max = 100.0
+angle_max = 360.0
+color = Color(1, 0.937255, 0, 1)
+color_ramp = SubResource("Gradient_evna8")
+hue_variation_min = 1.0
+hue_variation_max = 1.0
+
+[node name="particulesdroite" type="CPUParticles2D" parent="animation"]
+position = Vector2(925, 420)
+scale = Vector2(0.7, 0.7)
+amount = 500
+lifetime = 1.5
+speed_scale = 0.2
+texture = ExtResource("5_wphkf")
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(0, -1)
+spread = 21.22
+gravity = Vector2(0, 300)
+initial_velocity_min = 400.0
+initial_velocity_max = 400.0
+radial_accel_min = 100.0
+radial_accel_max = 100.0
+angle_max = 360.0
+color = Color(1, 0.937255, 0, 1)
+color_ramp = SubResource("Gradient_evna8")
+hue_variation_min = 1.0
+hue_variation_max = 1.0
+
+[node name="image_caractere" type="Sprite2D" parent="animation"]
+modulate = Color(1, 1, 1, 0.8)
+position = Vector2(606, 393)
+scale = Vector2(0.166992, 0.166992)
+texture = SubResource("CompressedTexture2D_lmpac")
+
+[node name="pinyin" type="Label" parent="animation"]
+offset_left = 325.0
+offset_top = 427.0
+offset_right = 391.0
+offset_bottom = 490.0
+text = "Shi"
+label_settings = SubResource("LabelSettings_h4gb8")
+
+[node name="francais" type="Label" parent="animation"]
+offset_left = 512.0
+offset_top = 470.0
+offset_right = 693.0
+offset_bottom = 539.0
+text = "Cochon"
+label_settings = SubResource("LabelSettings_muhvt")
+
+[node name="caractere" type="Label" parent="animation"]
+offset_left = 390.0
+offset_top = 316.0
+offset_right = 470.0
+offset_bottom = 426.0
+text = "豕"
+label_settings = SubResource("LabelSettings_nxnuh")
+
+[node name="Timer" type="Timer" parent="animation"]
+wait_time = 2.0
+
+[node name="win_animation" type="Node2D" parent="."]
+visible = false
+position = Vector2(-16, 109)
+
+[node name="cadre" type="Sprite2D" parent="win_animation"]
+modulate = Color(1, 1, 1, 0.929412)
+position = Vector2(529, 420)
+texture = ExtResource("4_5abiv")
+
+[node name="particulesgauche" type="CPUParticles2D" parent="win_animation"]
+position = Vector2(140, 413)
+scale = Vector2(0.7, 0.7)
+amount = 500
+lifetime = 1.5
+speed_scale = 0.2
+texture = ExtResource("5_wphkf")
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(0, -1)
+spread = 21.22
+gravity = Vector2(0, 300)
+initial_velocity_min = 400.0
+initial_velocity_max = 400.0
+radial_accel_min = 100.0
+radial_accel_max = 100.0
+angle_max = 360.0
+color = Color(1, 0.937255, 0, 1)
+color_ramp = SubResource("Gradient_evna8")
+hue_variation_min = 1.0
+hue_variation_max = 1.0
+
+[node name="particulesdroite" type="CPUParticles2D" parent="win_animation"]
+position = Vector2(925, 420)
+scale = Vector2(0.7, 0.7)
+amount = 500
+lifetime = 1.5
+speed_scale = 0.2
+texture = ExtResource("5_wphkf")
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(0, -1)
+spread = 21.22
+gravity = Vector2(0, 300)
+initial_velocity_min = 400.0
+initial_velocity_max = 400.0
+radial_accel_min = 100.0
+radial_accel_max = 100.0
+angle_max = 360.0
+color = Color(1, 0.937255, 0, 1)
+color_ramp = SubResource("Gradient_evna8")
+hue_variation_min = 1.0
+hue_variation_max = 1.0
+
+[node name="pinyin" type="Label" parent="win_animation"]
+offset_left = 358.0
+offset_top = 328.0
+offset_right = 852.0
+offset_bottom = 457.0
+text = "Félicitations vous 
+avez gagné !!"
+label_settings = SubResource("LabelSettings_h4gb8")
+
+[node name="retourMenuButton" type="Button" parent="win_animation"]
+offset_left = 350.0
+offset_top = 474.0
+offset_right = 504.0
+offset_bottom = 528.0
+text = "Retour au menu"
+
+[node name="nouvellePartieButton" type="Button" parent="win_animation"]
+offset_left = 541.0
+offset_top = 474.0
+offset_right = 695.0
+offset_bottom = 528.0
+text = "Nouvelle Partie"
+
+[node name="associationSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_uxwcs")
+volume_db = -2.0
+
+[node name="clickButton" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_72i6b")
+volume_db = 6.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 852.0
+offset_top = 832.0
+offset_right = 1224.0
+offset_bottom = 902.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("8_udng5")
+texture_hover = ExtResource("9_l7dsk")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="retourButton" type="TextureButton" parent="."]
+offset_left = 928.0
+offset_top = 132.0
+offset_right = 974.0
+offset_bottom = 173.0
+texture_normal = ExtResource("10_7pa24")
+texture_hover = ExtResource("11_nad6a")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(525, 498)
+
+[node name="musique1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_pp6ea")
+parameters/looping = true
+
+[node name="musique2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_l7fmr")
+parameters/looping = true
+
+[node name="musique3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_ajcpw")
+parameters/looping = true
+
+[node name="musique4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_6y7bn")
+parameters/looping = true
+
+[node name="musique5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_lrhmr")
+parameters/looping = true
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="timeout" from="animation/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="win_animation/retourMenuButton" to="." method="_on_retour_menu_button_pressed"]
+[connection signal="pressed" from="win_animation/nouvellePartieButton" to="." method="_on_nouvelle_partie_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="retourButton" to="." method="_on_retour_button_pressed"]
